@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class baseapi
  * @package App\Http\Controllers
- * 编辑的大家常用的方法
+ * 编辑的大家常用的方法   基础方法类
  * 欢迎大家的补充 TODO
  */
 class baseapi extends Controller
