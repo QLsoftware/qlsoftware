@@ -1,0 +1,5 @@
+{
+    "require": {
+        "devdojo/chatter": "0.2.*"
+    }
+}
