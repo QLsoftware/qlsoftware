@@ -81,7 +81,8 @@ class ChatterDiscussionController extends Controller
                 $minute_copy = (config('chatter.security.time_between_posts') == 1) ? ' minute' : ' minutes';
                 $chatter_alert = [
                     'chatter_alert_type' => 'danger',
-                    'chatter_alert'      => 'In order to prevent spam, please allow at least '.config('chatter.security.time_between_posts').$minute_copy.' in between submitting content.',
+                    /*'chatter_alert'      => 'In order to prevent spam, please allow at least '.config('chatter.security.time_between_posts').$minute_copy.' in between submitting content.',*/
+                    'chatter_alert'      => '为了避免产生垃圾邮件，请在两次提交之间,等待'.config('chatter.security.time_between_posts').$minute_copy,
                     ];
 
                 return redirect('/'.config('chatter.routes.home'))->with($chatter_alert)->withInput();
@@ -89,8 +90,10 @@ class ChatterDiscussionController extends Controller
         }
 
         // *** Let's gaurantee that we always have a generic slug *** //
-        $slug = str_slug($request->title, '-');
-
+        /*zjt更改*/
+//        $slug = str_slug($request->title, '-');
+        $slug = urlencode($request->title);
+        /*zjt更改*/
         $discussion_exists = Models::discussion()->where('slug', '=', $slug)->first();
         $incrementer = 1;
         $new_slug = $slug;
@@ -142,14 +145,16 @@ class ChatterDiscussionController extends Controller
 
             $chatter_alert = [
                 'chatter_alert_type' => 'success',
-                'chatter_alert'      => 'Successfully created a new '.config('chatter.titles.discussion').'.',
+//                'chatter_alert'      => 'Successfully created a new '.config('chatter.titles.discussion').'.',
+                'chatter_alert'      => '成功创建了'.config('chatter.titles.discussion').'.',
                 ];
 
             return redirect('/'.config('chatter.routes.home').'/'.config('chatter.routes.discussion').'/'.$category->slug.'/'.$slug)->with($chatter_alert);
         } else {
             $chatter_alert = [
                 'chatter_alert_type' => 'danger',
-                'chatter_alert'      => 'Whoops :( There seems to be a problem creating your '.config('chatter.titles.discussion').'.',
+//                'chatter_alert'      => 'Whoops :( There seems to be a problem creating your '.config('chatter.titles.discussion').'.',
+                'chatter_alert'      => '您创建'.config('chatter.titles.discussion').'，貌似遇到了问题',
                 ];
 
             return redirect('/'.config('chatter.routes.home').'/'.config('chatter.routes.discussion').'/'.$category->slug.'/'.$slug)->with($chatter_alert);

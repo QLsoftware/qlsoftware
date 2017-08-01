@@ -46,8 +46,9 @@ class test_ZJT extends Controller
 
     public function index()
     {
-        $re = DB::select('select count(*) as num from article_recorded');
-        echo head($re)->num;
+       echo urlencode('解释  我是谁  ');
+//        $re = DB::select('select count(*) as num from article_recorded');
+//        echo head($re)->num;
 //        $hrefs = DB::table('article_recorded')->get();
 //        foreach ($hrefs as $href) {
 //            dispatch(new curl($href->href));
