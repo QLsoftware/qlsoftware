@@ -208,8 +208,8 @@ return [
     |
     */
 
-//    'editor' => 'tinymce',
-    'editor' => 'simplemde',  /*富文本编辑器*/
+    'editor' => 'tinymce',
+//    'editor' => 'simplemde',  /*富文本编辑器*/
     /*
     |--------------------------------------------------------------------------
     | TinyMCE WYSIWYG Editor Options (Must be the selected editor)
