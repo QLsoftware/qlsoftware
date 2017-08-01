@@ -191,7 +191,7 @@ return [
     */
 
     'security' => [
-        'limit_time_between_posts' => true, //
+        'limit_time_between_posts' => false, //
         'time_between_posts' => 1, // In minutes
     ],
 
@@ -208,8 +208,8 @@ return [
     |
     */
 
-    'editor' => 'tinymce',
-//    'editor' => 'simplemde',  /*富文本编辑器*/
+//    'editor' => 'tinymce',
+    'editor' => 'simplemde',  /*富文本编辑器*/
     /*
     |--------------------------------------------------------------------------
     | TinyMCE WYSIWYG Editor Options (Must be the selected editor)
