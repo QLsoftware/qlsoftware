@@ -189,7 +189,7 @@ class ChatterDiscussionController extends Controller
             return redirect(config('chatter.routes.home'));
         }
 
-        $discussion = Models::discussion()->where('slug', '=', $slug)->first();
+        $discussion = Models::discussion()->where('slug', '=', urlencode($slug))->first();
         if (is_null($discussion)) {
             abort(404);
         }
