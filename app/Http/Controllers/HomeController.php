@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
+use Intervention\Image\Facades\Image;
 
 /**
  * Class HomeController
@@ -65,4 +66,25 @@ class HomeController extends Controller
             return view('link')->with($where);
         }
     }
+
+//    个人设置
+    public function profile()
+    {
+        return view('profile')->with(array('user' => Auth::user()));
+    }
+
+//上传图片
+    public function update_avatar(Request $request)
+    {
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $file_name = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $file_name));
+            $user = Auth::user();
+            $user->avatar = '/uploads/avatars/' . $file_name;
+            $user->save();
+        }
+        return view('profile')->with(array('user' => Auth::user()));
+    }
+
 }

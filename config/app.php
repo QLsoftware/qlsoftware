@@ -161,6 +161,8 @@ return [
 
         DevDojo\Chatter\ChatterServiceProvider::class,
 
+//图片上出传使用
+        Intervention\Image\ImageServiceProvider::class
     ],
 
     /*
@@ -207,7 +209,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Htmldom' => Yangqi\Htmldom\HtmldomServiceProvider::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

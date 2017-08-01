@@ -3,7 +3,7 @@
 return [
 
 
-    'locale' => 'zh_cn',
+    'language' => "zh_CN",
 
     /*
     |--------------------------------------------------------------------------
@@ -16,12 +16,12 @@ return [
     */
 
     'routes' => [
-        'home'       => 'forums',
+        'home' => 'forums',
         'discussion' => 'discussion',
-        'category'   => 'category',
-        'post'       => 'posts',
-        'register'   => 'register',
-        'login'      => 'login',
+        'category' => 'category',
+        'post' => 'posts',
+        'register' => 'register',
+        'login' => 'login',
     ],
 
     /*
@@ -35,31 +35,32 @@ return [
     */
 
     'titles' => [
-        'discussion'  => 'Discussion',
-        'discussions' => 'Discussions',
-        'category'    => 'Category',
+        'discussion' => '话题',
+        'discussions' => '话题',
+        'category' => '',
+        'New' => '新建',
     ],
 
-   /*
-    |--------------------------------------------------------------------------
-    | The main headline and description of your forum
-    |--------------------------------------------------------------------------
-    |
-    | Your headline and your description will be shown on the homepage of your
-    | forum, unless you change the default theme.
-    |
-    |   *headline*: This is the main headline on the forum homepage
-    |
-    |   *description*: This is the main description that will show under the
-    |       headline on the forum homepage.
-    |   *headline_logo*: If this is set an image will be used on the forum home
-    |       instead of text. Specify the relative path to the image here.
-    |
-    */
+    /*
+     |--------------------------------------------------------------------------
+     | The main headline and description of your forum
+     |--------------------------------------------------------------------------
+     |
+     | Your headline and your description will be shown on the homepage of your
+     | forum, unless you change the default theme.
+     |
+     |   *headline*: This is the main headline on the forum homepage
+     |
+     |   *description*: This is the main description that will show under the
+     |       headline on the forum homepage.
+     |   *headline_logo*: If this is set an image will be used on the forum home
+     |       instead of text. Specify the relative path to the image here.
+     |
+     */
 
-    'headline'      => 'Welcome to Chatter',
-    'description'   => 'A simple forum package for your Laravel app.',
-    'headline_logo' => '/vendor/devdojo/chatter/assets/images/logo-light.png',
+    'headline' => '欢迎来到聊天室',
+    'description' => '智慧山大',
+    'headline_logo' => /*/vendor/devdojo/chatter/assets/images/logo-light.png*/'',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +81,7 @@ return [
     */
 
     'yields' => [
-        'head'   => 'css',
+        'head' => 'css',
         'footer' => 'js',
     ],
 
@@ -147,11 +148,11 @@ return [
     */
 
     'user' => [
-        'namespace'                     => 'App\User',
+        'namespace' => 'App\User',
         'database_field_with_user_name' => 'name',
-        'relative_url_to_profile'       => '',
-        'relative_url_to_image_assets'  => '',
-        'avatar_image_database_field'   => '',
+        'relative_url_to_profile' => '',
+        'relative_url_to_image_assets' => '',
+        'avatar_image_database_field' => 'avatar',
     ],
 
     /*
@@ -167,9 +168,9 @@ return [
 
     'alert_messages' => [
         'success' => 'Well done!',
-        'info'    => 'Heads Up!',
+        'info' => 'Heads Up!',
         'warning' => 'Wuh Oh!',
-        'danger'  => 'Oh Snap!',
+        'danger' => 'Oh Snap!',
     ],
 
     /*
@@ -191,7 +192,7 @@ return [
 
     'security' => [
         'limit_time_between_posts' => true, //
-        'time_between_posts'       => 1, // In minutes
+        'time_between_posts' => 1, // In minutes
     ],
 
     /*
@@ -208,7 +209,7 @@ return [
     */
 
     'editor' => 'tinymce',
-    //'editor' => 'simplemde',  /*富文本编辑器*/
+//    'editor' => 'simplemde',  /*富文本编辑器*/
     /*
     |--------------------------------------------------------------------------
     | TinyMCE WYSIWYG Editor Options (Must be the selected editor)
@@ -247,7 +248,7 @@ return [
 
     'email' => [
         'enabled' => true,
-        'view'    => 'chatter::email',
+        'view' => 'chatter::email',
     ],
 
     /*
@@ -279,28 +280,29 @@ return [
     */
 
     'middleware' => [
-        'global'     => ['web'],
-        'home'       => [],
+        'global' => ['web'],
+        'home' => [],
         'discussion' => [
-            'index'   => [],
-            'show'    => [],
-            'create'  => [],
-            'store'   => [],
+            'index' => [],
+            'show' => [],
+            'create' => [],
+            'store' => [],
             'destroy' => [],
-            'edit'    => [],
-            'update'  => [],
+            'edit' => [],
+            'update' => [],
         ],
         'post' => [
-            'index'   => [],
-            'show'    => [],
-            'create'  => [],
-            'store'   => [],
+            'index' => [],
+            'show' => [],
+            'create' => [],
+            'store' => [],
             'destroy' => [],
-            'edit'    => [],
-            'update'  => [],
+            'edit' => [],
+            'update' => [],
         ],
         'category' => [
-            'show' => [],
+            'show' => [
+            ],
         ],
     ],
 ];

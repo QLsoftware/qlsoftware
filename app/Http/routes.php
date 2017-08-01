@@ -32,6 +32,9 @@ Route::get('/link', 'HomeController@link');
 Route::post('/link/request', 'HomeController@link_request');
 Route::post('/link/cancel', 'HomeController@link_cancel');
 Route::get('/e', 'test_ZJT@index');
+//个人设置
+Route::get('/profile', 'HomeController@profile');
+Route::post('/profile', 'HomeController@update_avatar');
 //zjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjt
 
 //fcq

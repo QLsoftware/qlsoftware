@@ -74,7 +74,9 @@
                                                 class="label label-default">{{Auth::user()["j_username"]}}</span></h3>
                                     <form action="{{ url('/link/cancel')}}" method="post">
                                         {{ csrf_field() }}
+                                        <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-default">解绑</button>
+                                        </div>
                                     </form>
                                 @endif
                         </div>

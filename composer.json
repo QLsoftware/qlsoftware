@@ -14,7 +14,8 @@
     "caouecs/laravel-lang": "~3.0",
     "yangqi/htmldom": "dev-master",
     "devdojo/chatter": "0.2.*",
-    "graham-campbell/markdown": "^7.1"
+    "graham-campbell/markdown": "^7.1",
+    "intervention/image": "^2.4"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
