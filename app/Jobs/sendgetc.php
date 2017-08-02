@@ -46,16 +46,21 @@ class sendgetc extends Job implements ShouldQueue
     {
         //
         echo '邮件发送任务：';
-        $flag = Mail::send('email.getc', ['name' => $this->name, 'kch' => $this->kch, 'kxh' => $this->kxh, 'status' => $this - status],
-            function ($message) {
-                $message->to($this->email)->subject('智慧山大抢课通知');
-            });
-        if ($flag) {
-            Log::info($this->email . '发送成功');
-            echo '成功';
-        } else {
+        try {
+            $flag = Mail::send('email.getc', ['name' => $this->name, 'kch' => $this->kch, 'kxh' => $this->kxh, 'status' => $this - status],
+                function ($message) {
+                    $message->to($this->email)->subject('智慧山大抢课通知');
+                });
+            if ($flag) {
+                Log::info($this->email . '发送成功');
+                echo '成功';
+            } else {
+                Log::info($this->email . '发送失败失败');
+                echo '失败';
+            }
+        } catch (\Exception $exception) {
             Log::info($this->email . '发送失败失败');
-            echo '失败';
         }
+        sleep(10);
     }
 }

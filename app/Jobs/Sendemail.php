@@ -49,16 +49,21 @@ class Sendemail extends Job implements ShouldQueue
     public function handle()
     {
         echo '邮件发送任务：';
-        $flag = Mail::send('email.notification', ['name' => $this->name, 'link' => $this->link, 'from' => $this->from, 'data' => $this->data, 'title' => $this->title],
-            function ($message) {
-                $message->to($this->email)->subject('智慧山大通知邮件');
-            });
-        if ($flag) {
-            Log::info($this->email . '发送成功');
-            echo '成功';
-        } else {
-            Log::info($this->email . '发送失败<br>');
-            echo '失败';
+        try {
+            $flag = Mail::send('email.notification', ['name' => $this->name, 'link' => $this->link, 'from' => $this->from, 'data' => $this->data, 'title' => $this->title],
+                function ($message) {
+                    $message->to($this->email)->subject('智慧山大通知邮件');
+                });
+            if ($flag) {
+                Log::info($this->email . '发送成功');
+                echo '成功';
+            } else {
+                Log::info($this->email . '发送失败失败');
+                echo '失败';
+            }
+        } catch (\Exception $exception) {
+            Log::info($this->email . '发送失败失败');
         }
+        sleep(10);
     }
 }
