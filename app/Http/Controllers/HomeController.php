@@ -73,7 +73,7 @@ class HomeController extends Controller
         return view('profile')->with(array('user' => Auth::user()));
     }
 
-//上传图片
+//上传头像
     public function update_avatar(Request $request)
     {
         if ($request->hasFile('avatar')) {
@@ -87,4 +87,21 @@ class HomeController extends Controller
         return view('profile')->with(array('user' => Auth::user()));
     }
 
+    /**拒绝接收山东大学的通知**/
+    public function sdu_notify_unaccept()
+    {
+        $user = Auth::user();
+        $user->sdu_notify = false;
+        $user->save();
+        return redirect('/profile');
+    }
+
+    /**接收山东大学的通知**/
+    public function sdu_notify_accept()
+    {
+        $user = Auth::user();
+        $user->sdu_notify = true;
+        $user->save();
+        return redirect('/profile');
+    }
 }

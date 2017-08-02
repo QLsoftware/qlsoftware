@@ -35,6 +35,9 @@ Route::get('/e', 'test_ZJT@index');
 //个人设置
 Route::get('/profile', 'HomeController@profile');
 Route::post('/profile', 'HomeController@update_avatar');
+Route::post('/profile/sdu_notify_unaccept', 'HomeController@sdu_notify_unaccept');
+Route::post('/profile/sdu_notify_accept', 'HomeController@sdu_notify_accept');
+
 //zjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjt
 
 //fcq

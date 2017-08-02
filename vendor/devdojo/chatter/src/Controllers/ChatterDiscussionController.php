@@ -279,6 +279,7 @@ class ChatterDiscussionController extends Controller
             return redirect(config('chatter.routes.home'));
         }
 
+        $slug = urlencode($slug);
         $discussion = Models::discussion()->where('slug', '=', $slug)->first();
 
         $user_id = Auth::user()->id;

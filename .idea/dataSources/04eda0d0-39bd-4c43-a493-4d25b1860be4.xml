@@ -521,17 +521,22 @@ reserved_at</ColNames>
     <column id="121" parent="17" name="avatar">
       <Position>11</Position>
       <DataType>varchar(80)|0</DataType>
-      <DefaultExpression>&apos;default.jpg&apos;</DefaultExpression>
+      <DefaultExpression>&apos;/uploads/avatars/default.jpg&apos;</DefaultExpression>
     </column>
-    <index id="122" parent="17" name="users_email_unique">
+    <column id="122" parent="17" name="sdu_notify">
+      <Position>12</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="123" parent="17" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="123" parent="17" name="PRIMARY">
+    <key id="124" parent="17" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="124" parent="17" name="users_email_unique">
+    <key id="125" parent="17" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
