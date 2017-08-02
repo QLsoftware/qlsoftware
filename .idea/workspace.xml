@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9632849-f57b-4bef-80e8-20b810215438" name="Default" comment="ZJT:init">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Jobs/Sendemail.php" afterPath="$PROJECT_DIR$/app/Jobs/Sendemail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Jobs/sendgetc.php" afterPath="$PROJECT_DIR$/app/Jobs/sendgetc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d339f256-409d-4497-a90b-6135989ab23c" name="ZJT:添加闲谈功能" comment="ZJT:添加闲谈功能" />
     <ignored path="$PROJECT_DIR$/vendor/classpreloader/classpreloader/" />
@@ -119,16 +118,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GetC.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Jobs/GetC.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="105" column="112" lean-forward="true" selection-start-line="105" selection-start-column="112" selection-end-line="105" selection-end-column="112" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="zhsd.migrations" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.migrations">
           <provider editor-type-id="text-editor">
@@ -144,8 +133,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zhsd.jobs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zhsd.jobs" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.jobs">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zhsd.failed_jobs" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.failed_jobs">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -667,7 +671,7 @@
       <workItem from="1501550118372" duration="7450000" />
       <workItem from="1501558510123" duration="160000" />
       <workItem from="1501558704951" duration="16760000" />
-      <workItem from="1501662223469" duration="3492000" />
+      <workItem from="1501662223469" duration="5722000" />
     </task>
     <task id="LOCAL-00001" summary="ZJT:添加示例程序，获取学生的联系方式，实例只涉及app中的文件，其他地方的更新为框架的自己更改。可能出现的错误，若提示没有找到文件则执行php composer.phar require guzzlehttp/guzzle:~6.0命令安装Guzzle.祝好！">
       <created>1500625184879</created>
@@ -848,7 +852,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246948000" />
+    <option name="totallyTimeSpent" value="249178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -969,13 +973,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/devdojo/chatter/src/Models/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/ef80bb269414d29140c8687944fd450a7832c02c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1312,21 +1309,8 @@
     <entry file="file://$PROJECT_DIR$/app/Jobs/GetC.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
-          <caret line="105" column="112" lean-forward="true" selection-start-line="105" selection-start-column="112" selection-end-line="105" selection-end-column="112" />
+          <caret line="105" column="112" lean-forward="false" selection-start-line="105" selection-start-column="112" selection-end-line="105" selection-end-column="112" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.migrations">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1392,7 +1376,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.migrations">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.jobs">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.failed_jobs">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

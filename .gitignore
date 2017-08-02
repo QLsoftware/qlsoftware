@@ -1,0 +1,6 @@
+.gitignore
+/.idea
+/storage/logs
+/tests
+/vendor
+.env
