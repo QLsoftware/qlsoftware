@@ -96,7 +96,7 @@ class GetC extends Job implements ShouldQueue
 
             if (substr($msg, -3, -1) == $this->selected) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
-                dispatch(new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1));
+                dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
             }
             if (substr($msg, -8) == $this->full) {
                 dispatch(new GetC($this->index));
@@ -104,7 +104,7 @@ class GetC extends Job implements ShouldQueue
             if (substr($msg, -3) == $this->failed) {
 //              TODO 不知所措
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => $msg]);
-                dispatch(new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, -2));
+                dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, -2))->onQueue('email'));
             }
         }
     }

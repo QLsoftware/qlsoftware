@@ -23,7 +23,8 @@ class studenonline extends Model
         $re = DB::table('users')->where(['sdu_notify', true])->get();
         foreach ($re as $el) {
             Log::info('请求向' . $el->email . '发送邮件');
-            dispatch(new \App\Jobs\Sendemail($el->email, $title, $el->name, $href, $from, $data));
+//            TODO 添加到email队列
+            dispatch((new \App\Jobs\Sendemail($el->email, $title, $el->name, $href, $from, $data))->onQueue('email'));
         }
     }
 
