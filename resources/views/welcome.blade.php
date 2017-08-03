@@ -8,7 +8,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>欢迎来到智慧山大</strong></div>
-
+<!--接收到更新-->
                 </div>
             </div>
         </div>
