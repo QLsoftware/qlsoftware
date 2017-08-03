@@ -610,7 +610,7 @@
       <workItem from="1501558704951" duration="16760000" />
       <workItem from="1501662223469" duration="6572000" />
       <workItem from="1501730191486" duration="46000" />
-      <workItem from="1501730268719" duration="114000" />
+      <workItem from="1501730268719" duration="192000" />
     </task>
     <task id="LOCAL-00001" summary="ZJT:添加示例程序，获取学生的联系方式，实例只涉及app中的文件，其他地方的更新为框架的自己更改。可能出现的错误，若提示没有找到文件则执行php composer.phar require guzzlehttp/guzzle:~6.0命令安装Guzzle.祝好！">
       <created>1500625184879</created>
@@ -791,7 +791,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250188000" />
+    <option name="totallyTimeSpent" value="250266000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
