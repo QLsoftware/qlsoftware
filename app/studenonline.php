@@ -25,6 +25,7 @@ class studenonline extends Model
             Log::info('请求向' . $el->email . '发送邮件');
 //            TODO 添加到email队列
             dispatch((new \App\Jobs\Sendemail($el->email, $title, $el->name, $href, $from, $data))->onQueue('email'));
+            dispatch(new \App\Jobs\curl($href));
         }
     }
 
@@ -32,5 +33,6 @@ class studenonline extends Model
     {
         if (DB::table('article_recorded')->where(['href' => $href])->first()) return;
         DB::table('article_recorded')->insert(['title' => $title, 'data' => $data, 'href' => $href, 'from' => $from]);
+        dispatch(new \App\Jobs\curl($href));
     }
 }

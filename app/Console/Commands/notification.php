@@ -213,10 +213,10 @@ class notification extends Command
             $this->studentonline_init();
             $this->yourth_init();
             $this->education_init();
-            $hrefs = DB::table('article_recorded')->get();
-            foreach ($hrefs as $href) {
-                dispatch(new \App\Jobs\curl($href->href));
-            }
+//            $hrefs = DB::table('article_recorded')->get();
+//            foreach ($hrefs as $href) {
+//                dispatch(new \App\Jobs\curl($href->href));
+//            }
             Log::info(date('h:i:sa') . '山大信息初始化成功');
         } else {
             $this->studentonline();
