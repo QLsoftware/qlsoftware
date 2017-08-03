@@ -46,7 +46,9 @@ class test_ZJT extends Controller
 
     public function index()
     {
-       echo urlencode('解释  我是谁  ');
+        $re = DB::table('users')->where(['sdu_notify' => true])->get();
+        return $re;
+//       echo urlencode('解释  我是谁  ');
 //        $re = DB::select('select count(*) as num from article_recorded');
 //        echo head($re)->num;
 //        $hrefs = DB::table('article_recorded')->get();
