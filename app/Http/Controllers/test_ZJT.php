@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Auth;
 
 use Yangqi\Htmldom\Htmldom;
 use Yangqi\Htmldom\HtmldomServiceProvider;
-
 use App\Http\Requests;
 
 /**
@@ -46,8 +45,13 @@ class test_ZJT extends Controller
 
     public function index()
     {
-        $re = DB::table('users')->where(['sdu_notify' => true])->get();
-        return $re;
+
+        Mail::raw('这是一封测试邮件', function ($message) {
+            $to = '851207685@qq.com';
+            $message ->to($to)->subject('测试邮件');
+        });
+//        $re = DB::table('users')->where(['sdu_notify' => true])->get();
+//        return $re;
 //       echo urlencode('解释  我是谁  ');
 //        $re = DB::select('select count(*) as num from article_recorded');
 //        echo head($re)->num;
