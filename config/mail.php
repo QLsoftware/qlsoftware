@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'sduqlsoftware@163.com', 'name' => '智慧山大'],
+    'from' => ['address' => 'qlzhsd@gmail.com', 'name' => '智慧山大'],
 
     /*
     |--------------------------------------------------------------------------
