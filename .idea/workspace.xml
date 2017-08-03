@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9632849-f57b-4bef-80e8-20b810215438" name="Default" comment="ZJT:init">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d339f256-409d-4497-a90b-6135989ab23c" name="ZJT:添加闲谈功能" comment="ZJT:添加闲谈功能" />
     <ignored path="$PROJECT_DIR$/vendor/classpreloader/classpreloader/" />
@@ -143,6 +144,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="zhsd.article_recorded" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.article_recorded">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="zhsd.failed_jobs" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.failed_jobs">
           <provider editor-type-id="text-editor">
@@ -190,16 +206,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studenonline.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/studenonline.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" column="71" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_ZJT.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/test_ZJT.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -210,17 +216,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="182">
+              <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/mail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -634,7 +640,7 @@
       <workItem from="1501558704951" duration="16760000" />
       <workItem from="1501662223469" duration="6572000" />
       <workItem from="1501730191486" duration="46000" />
-      <workItem from="1501730268719" duration="3066000" />
+      <workItem from="1501730268719" duration="3679000" />
     </task>
     <task id="LOCAL-00001" summary="ZJT:添加示例程序，获取学生的联系方式，实例只涉及app中的文件，其他地方的更新为框架的自己更改。可能出现的错误，若提示没有找到文件则执行php composer.phar require guzzlehttp/guzzle:~6.0命令安装Guzzle.祝好！">
       <created>1500625184879</created>
@@ -815,7 +821,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253140000" />
+    <option name="totallyTimeSpent" value="253753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -936,7 +942,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/ce8688d4/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.chatter_user_discussion" />
     <entry file="file://$PROJECT_DIR$/vendor/devdojo/chatter/src/Models/Discussion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1213,6 +1218,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.failed_jobs">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.jobs">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1226,7 +1252,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.failed_jobs">
+    <entry file="dbDummy://dbtable:/ce8688d5/04eda0d0-39bd-4c43-a493-4d25b1860be4/zhsd.article_recorded">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1249,16 +1275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state relative-caret-position="182">
+          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding />
         </state>
       </provider>
