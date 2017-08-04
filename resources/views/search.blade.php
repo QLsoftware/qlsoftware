@@ -27,7 +27,8 @@
                             <button type="submit" class="btn btn-default">绩点查询</button>
                             </form>
                         @elseif($SearchOption == 1)
-                            <h1>课程查询界面</h1>
+                            <h3>学生 <span
+                                        class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表</h3>
                         @elseif($SearchOption == 2)
                             <h2>自习室查询界面</h2>
                         @elseif($SearchOption == 3)
