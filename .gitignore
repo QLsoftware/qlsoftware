@@ -2,5 +2,10 @@
 /.idea
 /storage/logs
 /tests
+/bootstrap
+/config
+/database
+/public
+/storage
 /vendor
 .env
