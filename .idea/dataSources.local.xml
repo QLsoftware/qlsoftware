@@ -2,8 +2,14 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="zhsd@do.qingfengpiao.cn" uuid="04eda0d0-39bd-4c43-a493-4d25b1860be4">
+      <database-info product="MySQL" version="5.5.57-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <resolve-scope>zhsd:</resolve-scope>
     </data-source>
   </component>
 </project>
