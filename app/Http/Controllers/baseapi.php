@@ -43,8 +43,9 @@ class baseapi extends Controller
         }
         if ((string)$result->getBody() == '"success"')
             return $client;
-        elseif ((string)$result->getBody() == '"用户名或密码错误!"')
-            return null;
+        elseif ((string)$result->getBody() == '"用户名或密码错误!"'){
+//            TODO 添加异常
+            return null;}
         else {
             echo '未判断';
             return null;
