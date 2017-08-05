@@ -7,4 +7,5 @@
 /database
 /public
 /storage
+/vendor
 .env
