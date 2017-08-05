@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Discussion Update</title>
+    <title>您的话题有新回复</title>
     <style type="text/css">
     /* -------------------------------------
         INLINED WITH https://putsmail.com/inliner
@@ -85,8 +85,8 @@
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;">
                     <tr>
                       <td style="font-family:sans-serif;font-size:14px;vertical-align:top;">
-                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Hi there,</p>
-                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Just wanted to let you know that someone has responded to a forum post at <a href="{{ url('/') }}/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.discussion') }}/{{ $discussion->category->slug }}/{{ $discussion->slug }}" target="_blank" style="color:#3498db">{{ url('/') }}</a></p>
+                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">您好</p>
+                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">您的话题有新的回复了 <a href="{{ url('/') }}/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.discussion') }}/{{ $discussion->category->slug }}/{{ $discussion->slug }}" target="_blank" style="color:#3498db">{{ url('/') }}</a></p>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;box-sizing:border-box;width:100%;">
                           <tbody>
                             <tr>
@@ -102,8 +102,8 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">If you no longer wish to be notified when someone responds to this form post be sure to uncheck the notification setting at the bottom of the page :)</p>
-                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">Have a great day!</p>
+                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">如果你不想再接收到此类信息，请到该话题的最下面取消该话题的关注</p>
+                        <p style="font-family:sans-serif;font-size:14px;font-weight:normal;margin:0;Margin-bottom:15px;">祝你愉快</p>
                       </td>
                     </tr>
                   </table>
@@ -116,7 +116,7 @@
               <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%;">
                 <tr>
                   <td class="content-block" style="font-family:sans-serif;font-size:14px;vertical-align:top;color:#999999;font-size:12px;text-align:center;">
-                     Don't like these emails? <a href="{{ url('/') }}/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.discussion') }}/{{ $discussion->category->slug }}/{{ $discussion->slug }}" style="color:#3498db;text-decoration:underline;color:#999999;font-size:12px;text-align:center;">Unsubscribe to this Discussion</a>.
+                     不喜欢此类邮件？ <a href="{{ url('/') }}/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.discussion') }}/{{ $discussion->category->slug }}/{{ $discussion->slug }}" style="color:#3498db;text-decoration:underline;color:#999999;font-size:12px;text-align:center;">不再接受此话题的回复</a>.
                   </td>
                 </tr>
               </table>
