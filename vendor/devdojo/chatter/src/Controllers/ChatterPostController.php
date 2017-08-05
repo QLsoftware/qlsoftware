@@ -142,12 +142,12 @@ class ChatterPostController extends Controller
         $users = $discussion->users->except(Auth::user()->id);
         foreach ($users as $user) {
 //            发出邮件请求
-//            $this->email = $user->email;
-//            Mail::queueOn('email', new ChatterDiscussionUpdated($discussion),
-//                function ($message) {
-//                    $message->to($this->email)->subject('智慧山大闲谈通知邮件');
-//                });
-            Mail::to($user)->queue(new ChatterDiscussionUpdated($discussion));
+            $this->email = $user->email;
+            Mail::queueOn('email', config('chatter.email.view'), ['discussion' => $discussion],
+                function ($message) {
+                    $message->to($this->email)->subject('智慧山大闲谈通知邮件');
+                });
+//            Mail::to($user)->queue(new ChatterDiscussionUpdated($discussion));
         }
     }
 
