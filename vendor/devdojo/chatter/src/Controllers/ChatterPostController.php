@@ -18,6 +18,7 @@ use Validator;
 class ChatterPostController extends Controller
 {
     private $email;
+
     /**
      * Display a listing of the resource.
      *
@@ -142,7 +143,7 @@ class ChatterPostController extends Controller
         foreach ($users as $user) {
 //            发出邮件请求
             $this->email = $user->email;
-            Mail::queueOn('email', config('chatter.email.view'), ['discussion' => $discussion,],
+            Mail::queueOn('email', new ChatterDiscussionUpdated($discussion),
                 function ($message) {
                     $message->to($this->email)->subject('智慧山大闲谈通知邮件');
                 });
