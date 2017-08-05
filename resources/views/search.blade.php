@@ -31,7 +31,7 @@
                                         class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表</h3>
                         @elseif($SearchOption == 2)
                             <h2>自习室查询界面</h2>
-                        @elseif($SearchOption == 3)
+                        @elseif($SearchOption== 3)
                             <h3>校车查询界面</h3>
                         @elseif($SearchOption == 4)
                             <h4>绩点查询界面</h4>
