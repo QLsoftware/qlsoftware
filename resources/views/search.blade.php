@@ -28,8 +28,19 @@
                             </form>
                         @elseif($SearchOption == 1)
                             <div class="panel panel-default">
-                                <div class="panel-heading"><h3>学生 <span
-                                        class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表：</h3></div>
+                                <div class="panel-heading">
+                                    <div class="container">
+                                        <div class="row">
+
+                                <form action="{{ url('/search')}}" method="get">
+                                    {{ csrf_field() }}
+                                    <h3><div class="col-xs-6 col-sm-8">
+                                            学生 <span
+                                                class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表：</div>
+                                        <div class="col-xs-6 col-sm-2" >
+                                    <button type="submit" class="btn btn-default">返回</button></div></h3>
+                                </form>
+                                </div></div></div>
                                 <div class="panel-body">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><h4>本学期课表</h4></div>
