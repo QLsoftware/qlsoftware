@@ -27,8 +27,41 @@
                             <button type="submit" class="btn btn-default">绩点查询</button>
                             </form>
                         @elseif($SearchOption == 1)
-                            <h3>学生 <span
-                                        class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表</h3>
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h3>学生 <span
+                                        class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表：</h3></div>
+                                <div class="panel-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>本学期课表</h4></div>
+                                <div class="panel-body">
+                                <table class="table table-bordered">
+                                    @foreach($CourseArray as $CourseArray_1)
+                                        <tr>
+                                            @foreach($CourseArray_1 as $CourseArray_2)
+                                                <th>{{$CourseArray_2}}</th>
+                                            @endforeach
+                                        </tr>
+                                    @endforeach
+                                </table>
+                                </div>
+                             </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><h4>详细上课信息</h4></div>
+                                <div class="panel-body">
+                                <table class="table table-bordered">
+                                    @foreach($countarray as $countarray_1)
+                                        <tr>
+                                            @foreach($countarray_1 as $countarray_2)
+                                                <th>{{$countarray_2}}</th>
+                                             @endforeach
+                                        </tr>
+                                     @endforeach
+                                </table>
+                                </div>
+                            </div>
+                                </div>
+
                         @elseif($SearchOption == 2)
                             <h2>自习室查询界面</h2>
                         @elseif($SearchOption== 3)
