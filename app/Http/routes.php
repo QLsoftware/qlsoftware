@@ -20,7 +20,9 @@ Route::get('/zjt/look_info', 'test_ZJT@fun_test1_zjt');
 //搜索导航
 Route::get('/search', 'HomeController@search');
 //空文件
-Route::get('/home', 'HomeController@search');
+Route::get('/home', function (){
+    return view("home");
+});
 //抢课
 Route::get('/zjt/getc', 'Getcourses@index');//返回
 Route::post('/zjt/getc/request', 'Getcourses@getnew');

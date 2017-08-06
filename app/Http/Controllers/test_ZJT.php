@@ -45,6 +45,7 @@ class test_ZJT extends Controller
 
     public function index()
     {
+
         $html = new Htmldom();
         $html->load('<a href="www.sdu.edu.cn"></a>');
         echo $html->find('a',0)->href;
