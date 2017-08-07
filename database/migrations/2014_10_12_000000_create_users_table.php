@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('j_username');
             $table->string('j_password');
+            $table->integer('i_dentify');
+            $table->string('avator');
+            $table->boolean('sdu_notify');
             $table->rememberToken();
             $table->timestamps();
         });
