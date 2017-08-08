@@ -163,11 +163,10 @@ class baseapi extends Controller
         $client=baseapi::ConnectToBkjs($j_username, $j_password);
 
         if(!$client) return null;
-        //并不知道是个啥
-        $json = urldecode('%5B%7B%22name%22%3A%22sEcho%22%2C%22value%22%3A1%7D%2C%7B%22name%22%3A%22iColumns%22%2C%22value%22%3A7%7D%2C%7B%22name%22%3A%22sColumns%22%2C%22value%22%3A%22%22%7D%2C%7B%22name%22%3A%22iDisplayStart%22%2C%22value%22%3A0%7D%2C%7B%22name%22%3A%22iDisplayLength%22%2C%22value%22%3A-1%7D%2C%7B%22name%22%3A%22mDataProp_0%22%2C%22value%22%3A%22xnxq%22%7D%2C%7B%22name%22%3A%22mDataProp_1%22%2C%22value%22%3A%22kch%22%7D%2C%7B%22name%22%3A%22mDataProp_2%22%2C%22value%22%3A%22kcm%22%7D%2C%7B%22name%22%3A%22mDataProp_3%22%2C%22value%22%3A%22kxh%22%7D%2C%7B%22name%22%3A%22mDataProp_4%22%2C%22value%22%3A%22xf%22%7D%2C%7B%22name%22%3A%22mDataProp_5%22%2C%22value%22%3A%22kssj%22%7D%2C%7B%22name%22%3A%22mDataProp_6%22%2C%22value%22%3A%22kscjView%22%7D%2C%7B%22name%22%3A%22iSortCol_0%22%2C%22value%22%3A5%7D%2C%7B%22name%22%3A%22sSortDir_0%22%2C%22value%22%3A%22desc%22%7D%2C%7B%22name%22%3A%22iSortingCols%22%2C%22value%22%3A1%7D%2C%7B%22name%22%3A%22bSortable_0%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_1%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_2%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_3%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_4%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_5%22%2C%22value%22%3Atrue%7D%2C%7B%22name%22%3A%22bSortable_6%22%2C%22value%22%3Afalse%7D%5D');
-        //并不知道是个啥
+        //添加表头信息
+        $aoDate = '[{"name":"sEcho","value":1},{"name":"iColumns","value":8},{"name":"sColumns","value":""},{"name":"iDisplayStart","value":0},{"name":"iDisplayLength","value":-1},{"name":"mDataProp_0","value":"function"},{"name":"mDataProp_1","value":"kch"},{"name":"mDataProp_2","value":"kcm"},{"name":"mDataProp_3","value":"kxh"},{"name":"mDataProp_4","value":"xf"},{"name":"mDataProp_5","value":"kssj"},{"name":"mDataProp_6","value":"kscjView"},{"name":"mDataProp_7","value":"kcsx"},{"name":"iSortingCols","value":0},{"name":"bSortable_0","value":false},{"name":"bSortable_1","value":false},{"name":"bSortable_2","value":false},{"name":"bSortable_3","value":false},{"name":"bSortable_4","value":false},{"name":"bSortable_5","value":false},{"name":"bSortable_6","value":false},{"name":"bSortable_7","value":false}]';
         $result = $client->request('post', '/b/cj/cjcx/xs/list',['form_params' => [
-            'aoData' => $json,
+            'aoData' => $aoDate,
         ]], ['allow_redirects' => false]);
         $result = get_object_vars(json_decode($result->getBody()));
         //return $result;
