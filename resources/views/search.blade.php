@@ -10,24 +10,31 @@
                 <div class="panel-body">
                     <div class="row">
                         @if($SearchOption == 0)
+                            @if(Auth::user()["j_username"]==null)
+                                <h4>貌似你还没有绑定你的学号哦</h4>
+                                <form action="{{ url('/link')}}" method="get">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-default">去绑定</button>
+                                </form>
 
-                            <form action="{{ url('/search/course')}}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-default">课表查询</button>
-                            </form>
-                            <form action="{{ url('/search/room')}}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-default">自习室查询</button>
-                            </form>
-                            <form action="{{ url('/search/car')}}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-default">校车查询</button>
-                            </form>
-                            <form action="{{ url('/search/grade')}}" method="post">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-default">绩点查询</button>
-                            </form>
-
+                            @else
+                                <form action="{{ url('/search/course')}}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-default">课表查询</button>
+                                </form>
+                                <form action="{{ url('/search/room')}}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-default">自习室查询</button>
+                                </form>
+                                <form action="{{ url('/search/car')}}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-default">校车查询</button>
+                                </form>
+                                <form action="{{ url('/search/grade')}}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-default">绩点查询</button>
+                                </form>
+                            @endif
                         @elseif($SearchOption == 1)
                             <div class="panel panel-default">
                                 <div class="panel-heading">
