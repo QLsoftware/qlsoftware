@@ -129,7 +129,74 @@ class SearchController extends Controller
 
     public function search_grade()
     {
-        $SearchOption = ['SearchOption' => 4];
+        //$gradearray=baseapi::S_Grade_Inter(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
+        //return $gradearray['0']['0'];
+        $client=baseapi::ConnectToBkjs(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
+
+        if(!$client) return null;
+        //并不知道是个啥
+        $json = urldecode('%5B%7B%22name%22%3A%22sEcho%22%2C%22value%22%3A1%7D%2C%7B%22name%22%3A%22iColumns%22%2C%22value%22%3A7%7D%2C%7B%22name%22%3A%22sColumns%22%2C%22value%22%3A%22%22%7D%2C%7B%22name%22%3A%22iDisplayStart%22%2C%22value%22%3A0%7D%2C%7B%22name%22%3A%22iDisplayLength%22%2C%22value%22%3A-1%7D%2C%7B%22name%22%3A%22mDataProp_0%22%2C%22value%22%3A%22xnxq%22%7D%2C%7B%22name%22%3A%22mDataProp_1%22%2C%22value%22%3A%22kch%22%7D%2C%7B%22name%22%3A%22mDataProp_2%22%2C%22value%22%3A%22kcm%22%7D%2C%7B%22name%22%3A%22mDataProp_3%22%2C%22value%22%3A%22kxh%22%7D%2C%7B%22name%22%3A%22mDataProp_4%22%2C%22value%22%3A%22xf%22%7D%2C%7B%22name%22%3A%22mDataProp_5%22%2C%22value%22%3A%22kssj%22%7D%2C%7B%22name%22%3A%22mDataProp_6%22%2C%22value%22%3A%22kscjView%22%7D%2C%7B%22name%22%3A%22iSortCol_0%22%2C%22value%22%3A5%7D%2C%7B%22name%22%3A%22sSortDir_0%22%2C%22value%22%3A%22desc%22%7D%2C%7B%22name%22%3A%22iSortingCols%22%2C%22value%22%3A1%7D%2C%7B%22name%22%3A%22bSortable_0%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_1%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_2%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_3%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_4%22%2C%22value%22%3Afalse%7D%2C%7B%22name%22%3A%22bSortable_5%22%2C%22value%22%3Atrue%7D%2C%7B%22name%22%3A%22bSortable_6%22%2C%22value%22%3Afalse%7D%5D');
+        //并不知道是个啥
+        $result = $client->request('post', '/b/cj/cjcx/xs/list',['form_params' => [
+            'aoData' => $json,
+        ]], ['allow_redirects' => false]);
+        $result = get_object_vars(json_decode($result->getBody()));
+        //return $result;
+        $object = $result["object"];
+        $aaData=get_object_vars($object)["aaData"];
+        $gradearray=array();
+        $count=1;
+        $gradearray['0']['0']='课程号';
+        $gradearray['0']['1']='课程名';
+        $gradearray['0']['2']='课序号';
+        $gradearray['0']['3']='学分';
+        $gradearray['0']['4']='授课教师';
+        $gradearray['0']['5']='课程属性';
+        $gradearray['0']['6']='考试时间';
+        $gradearray['0']['7']='考试成绩';
+        foreach($aaData as $item){
+            $gradearray[$count]=array();
+            $gradearray[$count]['0']=$item->kch;
+            $gradearray[$count]['1']=$item->kcm;
+            $gradearray[$count]['2']=$item->kxh;
+            $gradearray[$count]['3']=$item->xf;
+            $gradearray[$count]['4']=$item->jsm;
+            $gradearray[$count]['5']=$item->kcsx;
+            $gradearray[$count]['6']=$item->kssj;
+            $gradearray[$count]['7']=$item->kscjView;
+            $count++;
+        }
+//以上为本学期成绩查询
+
+        $result1 = $client->request('post', '/b/cj/cjcx/xs/bjgcx',['form_params' => [
+            'aoData' => $json,
+        ]], ['allow_redirects' => false]);
+        $result1 = get_object_vars(json_decode($result1->getBody()));
+        $object1=$result1["object"];
+        $aaData1=get_object_vars($object1)["aaData"];
+        $bjgarray=array();
+        $count1=1;
+        $bjgarray['0']['0']='课程号';
+        $bjgarray['0']['1']='课程名';
+        $bjgarray['0']['2']='课序号';
+        $bjgarray['0']['3']='学分';
+        $bjgarray['0']['4']='学年学期';
+        $bjgarray['0']['5']='考试时间';
+        $bjgarray['0']['6']='总成绩';
+        foreach($aaData1 as $item){
+            $bjgarray[$count]=array();
+            $bjgarray[$count]['0']=$item->kch;
+            $bjgarray[$count]['1']=$item->kcm;
+            $bjgarray[$count]['2']=$item->kxh;
+            $bjgarray[$count]['3']=$item->xf;
+            $bjgarray[$count]['4']=$item->xnxq;
+            $bjgarray[$count]['5']=$item->kssj;
+            $bjgarray[$count]['6']=$item->kscjView;
+            $count++;
+        }
+
+
+        $SearchOption = ['SearchOption' => 4,'gradearray'=>$gradearray,'bjgarray'=>$bjgarray];
         return view('search')->with($SearchOption);
     }
 }
