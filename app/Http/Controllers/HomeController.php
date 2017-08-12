@@ -77,12 +77,17 @@ class HomeController extends Controller
     public function update_avatar(Request $request)
     {
         if ($request->hasFile('avatar')) {
+            //获取头像文件
             $avatar = $request->file('avatar');
+            //生成文件名称   getClientOriginalExtension()得到图像的后缀名称
             $file_name = time() . '.' . $avatar->getClientOriginalExtension();
+            //修改头像文件的尺寸   并进行本地存储    注意需要先  use Intervention\Image\Facades\Image;
             Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $file_name));
+            //在数据库中保存文件的存储地址      数据库中只保存地址，不存储图像数据
             $user = Auth::user();
             $user->avatar = '/uploads/avatars/' . $file_name;
             $user->save();
+            //存储结束
         }
         return view('profile')->with(array('user' => Auth::user()));
     }
