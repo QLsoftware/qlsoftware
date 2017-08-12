@@ -57,4 +57,3 @@ Route::post('/fee/room', 'FeeController@fee_room');
 Route::post('/fee/room/water', 'FeeController@fee_room_water');Route::post('/fee/room/net', 'FeeController@fee_room_net');
 Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 //wc
-
