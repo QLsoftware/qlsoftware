@@ -42,7 +42,7 @@ class AuthController extends Controller
 
     /**
      * Get a validator for an incoming registration request.
-     *
+     *对输入的数据进行验证
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
@@ -57,7 +57,7 @@ class AuthController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     *
+     *在此处  添加身份选项
      * @param  array  $data
      * @return User
      */
@@ -67,6 +67,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+           // 'identify' => $data['identify'];
         ]);
     }
 }
