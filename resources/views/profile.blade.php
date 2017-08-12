@@ -12,6 +12,7 @@
                     {{ csrf_field() }}
                     <div class="input-group">
                         <span class="input-group-addon">上传图片</span>
+                        <!--只需要将输入的内容类型‘type’，定义为file即可；name为键   选中的文件为键值-->
                         <input class="form-control" type="file" name="avatar"></div>
                     <div class="form-group">
                         <input type="submit" class="pull-right btn btn-sm btn-primary">
