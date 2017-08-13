@@ -3,7 +3,5 @@
 /storage/logs
 /tests
 /bootstrap
-/config
 /storage
-/vendor
 .env
