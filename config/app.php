@@ -162,7 +162,13 @@ return [
         DevDojo\Chatter\ChatterServiceProvider::class,
 
 //图片上出传使用
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+
+
+
+
+//        laravel-admin
+    Encore\Admin\Providers\AdminServiceProvider::class,
     ],
 
     /*

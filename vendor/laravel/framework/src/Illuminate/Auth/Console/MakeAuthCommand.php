@@ -54,7 +54,7 @@ class MakeAuthCommand extends Command
             $this->info('Installed HomeController.');
 
             file_put_contents(
-                app_path('Http/Controllers/HomeController.php'),
+                app_path('Http/Controllers/HomeController_user.php'),
                 $this->compileControllerStub()
             );
 

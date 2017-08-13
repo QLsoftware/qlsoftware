@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::get('/zjt/look_info', 'test_ZJT@fun_test1_zjt');
 //搜索导航
-Route::get('/search', 'HomeController@search');
+Route::get('/search', 'HomeController_user@search');
 //空文件
 Route::get('/home', function (){
     return view("home");
@@ -30,15 +30,15 @@ Route::post('/zjt/getc/cancel', 'Getcourses@del');
 Route::post('/zjt/getc/pause', 'Getcourses@pause');
 Route::post('/zjt/getc/restart', 'Getcourses@restart');
 //绑定学号
-Route::get('/link', 'HomeController@link');
-Route::post('/link/request', 'HomeController@link_request');
-Route::post('/link/cancel', 'HomeController@link_cancel');
+Route::get('/link', 'HomeController_user@link');
+Route::post('/link/request', 'HomeController_user@link_request');
+Route::post('/link/cancel', 'HomeController_user@link_cancel');
 Route::get('/e', 'test_ZJT@index');
 //个人设置
-Route::get('/profile', 'HomeController@profile');
-Route::post('/profile', 'HomeController@update_avatar');
-Route::post('/profile/sdu_notify_unaccept', 'HomeController@sdu_notify_unaccept');
-Route::post('/profile/sdu_notify_accept', 'HomeController@sdu_notify_accept');
+Route::get('/profile', 'HomeController_user@profile');
+Route::post('/profile', 'HomeController_user@update_avatar');
+Route::post('/profile/sdu_notify_unaccept', 'HomeController_user@sdu_notify_unaccept');
+Route::post('/profile/sdu_notify_accept', 'HomeController_user@sdu_notify_accept');
 
 //zjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjt
 
