@@ -78,14 +78,14 @@ class Article_recordedController extends Controller
             $grid->data('日期');
             $grid->href('链接');
             $grid->from('来源');
-        });
-        $grid->filter(function ($filter) {
+            $grid->filter(function($filter){
+                $filter->between('data', '日期查询')->datetime();
+                $filter->like('title', '标题模糊查询');
+            });
+            $grid->disableCreation();
 
-            // 设置data字段的范围查询
-            $filter->between('data', '日期查询')->datetime();
         });
-        // 如果过滤器太多，可以使用弹出模态框来显示过滤器.
-        //$filter->useModal();
+
 
     }
 
