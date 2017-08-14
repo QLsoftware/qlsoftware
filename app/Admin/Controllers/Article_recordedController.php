@@ -81,6 +81,7 @@ class Article_recordedController extends Controller
             $grid->filter(function($filter){
                 $filter->between('data', '日期查询')->datetime();
                 $filter->like('title', '标题模糊查询');
+                $filter->is('from', '来源');
             });
             $grid->disableCreation();
 
