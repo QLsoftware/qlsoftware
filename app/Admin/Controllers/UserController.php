@@ -41,8 +41,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('用户');
+            $content->description('用户列表');
 
             $content->body($this->form()->edit($id));
         });

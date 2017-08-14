@@ -24,8 +24,8 @@ class jobsController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('任务列表');
+            $content->description('');
 
             $content->body($this->grid());
         });

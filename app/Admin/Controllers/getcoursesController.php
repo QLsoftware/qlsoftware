@@ -41,8 +41,8 @@ class getcoursesController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('抢课列表');
+            $content->description('任务清单');
 
             $content->body($this->form()->edit($id));
         });
@@ -74,8 +74,8 @@ class getcoursesController extends Controller
         return Admin::grid(zjtcourses::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->user()->name('用户名');
-            $grid->user()->j_username('学号');
+            $grid->User()->name('用户名');
+            $grid->User()->j_username('学号');
             $grid->kch('课程号');
             $grid->kxh('课序号');
             $grid->name('课程名称');

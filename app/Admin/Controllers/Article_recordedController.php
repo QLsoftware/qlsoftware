@@ -24,8 +24,8 @@ class Article_recordedController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('已收录的通知');
+            $content->description('来自青春山大、学生在线、本科教育');
 
             $content->body($this->grid());
         });
