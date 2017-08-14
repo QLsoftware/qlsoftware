@@ -76,8 +76,8 @@ class jobsController extends Controller
             $grid->id('ID')->sortable();
             $grid->queue('所属队列');
             $grid->reserved('尝试次数');
-            $grid->created_at();
-
+            $grid->created_at('创建日期');
+            $grid->disableCreation();
         });
     }
 
@@ -90,10 +90,7 @@ class jobsController extends Controller
     {
         return Admin::form(jobs::class, function (Form $form) {
 
-            $form->display('id', 'ID');
-
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->disableSubmit();
         });
     }
 }
