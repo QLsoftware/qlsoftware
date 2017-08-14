@@ -73,14 +73,16 @@ class getcoursesController extends Controller
     {
         return Admin::grid(zjtcourses::class, function (Grid $grid) {
 
-            $grid->id('index')->sortable();
-            $grid->column('id','编号');
+            $grid->index('编号')->sortable();
+            $grid->column('id','账号编号');
             $grid->kch('课程号');
             $grid->kxh('课序号');
             $grid->name('课程名称');
             $grid->times('尝试次数');
             $grid->info('备注');
-
+            $grid->filter(function($filter){
+                $filter->is('id ','账号编号');
+            });
 //            $grid->created_at('创建日期');
 //            $grid->updated_at('最近执行时间');
         });
