@@ -14,6 +14,7 @@ Route::group([
     $router->resource('data/users', UserController::class);
     $router->resource('data/studentonline', Article_recordedController::class);
     $router->resource('data/jobs', jobsController::class);
+    $router->resource('data/getc', getcoursesController::class);
 });
 
 
