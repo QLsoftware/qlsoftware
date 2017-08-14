@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\User;
+use App\getcourse;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class UserController extends Controller
+class getcoursesController extends Controller
 {
     use ModelForm;
 
@@ -71,20 +71,13 @@ class UserController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(User::class, function (Grid $grid) {
+        return Admin::grid(getcourse::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->column('name');
-            $grid->email('邮箱');
-            $grid->column('是否绑定学号')->display(function (){
-               if($this->j_password==null||$this->j_password=='')
-                   return '未绑定';
-               else
-                   return $this->j_username;
-            });
-            $grid->created_at('注册日期');
-            $grid->updated_at('最近活动日期');
-            $grid->disableCreation();
+            $grid->user()->name('用户名');
+            $grid->user()->j_username('学号');
+            $grid->created_at('创建日期');
+            $grid->updated_at('最近执行时间');
         });
     }
 
@@ -95,7 +88,7 @@ class UserController extends Controller
      */
     protected function form()
     {
-        return Admin::form(User::class, function (Form $form) {
+        return Admin::form(getcourse::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
