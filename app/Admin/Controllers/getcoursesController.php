@@ -74,7 +74,7 @@ class getcoursesController extends Controller
         return Admin::grid(zjtcourses::class, function (Grid $grid) {
 
             $grid->id('index')->sortable();
-            $grid->column('id');
+            $grid->column('id','编号');
             $grid->kch('课程号');
             $grid->kxh('课序号');
             $grid->name('课程名称');
