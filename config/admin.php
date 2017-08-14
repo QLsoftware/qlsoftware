@@ -53,7 +53,7 @@ return [
             'file'   => 'file',
         ],
 
-        'host' => 'http://localhost:9000/upload/',
+        'host' => 'http://do.zjtao.me/upload/',
     ],
 
     /*
@@ -114,7 +114,7 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout'  => ['sidebar-mini'],
+    'layout'  => ['layout-boxed'],
 
     /*
      * Version displayed in footer.
