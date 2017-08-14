@@ -77,13 +77,14 @@ class UserController extends Controller
             $grid->column('name');
             $grid->email('邮箱');
             $grid->column('是否绑定学号')->display(function (){
-               if($this->j_password!=null)
+               if($this->j_password==null||$this->j_password=='')
                    return '未绑定';
                else
                    return $this->j_username;
             });
-            $grid->created_at();
-            $grid->updated_at();
+            $grid->created_at('注册日期');
+            $grid->updated_at('最近活动日期');
+            $grid->disableActions();
         });
     }
 
