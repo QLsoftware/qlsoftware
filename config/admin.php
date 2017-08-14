@@ -46,10 +46,10 @@ return [
      */
     'upload'  => [
 
-        'disk' => 'admin',
+        'disk' => 'public',
 
         'directory'  => [
-            'image'  => 'image',
+            'image'  => 'upload/image',
             'file'   => 'file',
         ],
 
@@ -114,7 +114,7 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout'  => ['layout-boxed'],
+    'layout'  => ['sidebar-mini'],
 
     /*
      * Version displayed in footer.
