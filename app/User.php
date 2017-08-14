@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
     public function getcourse()
     {
-        $this->hasMany(getcourse::class);
+        $this->hasMany(zjtcourses::class);
     }
 
 

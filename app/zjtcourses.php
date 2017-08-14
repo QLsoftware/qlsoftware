@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Log;
 class zjtcourses extends Model
 {
     //
+    protected $table = 'getcourses';
+
+    public function user(){
+        $this->belongsTo(User::class);
+    }
+
     public function getnew($id, $kch, $kxh, $name)
     {
         $detect = DB::table("getcourses")->where(['id' => $id, 'kch' => $kch, 'kxh' => $kxh])->first();
