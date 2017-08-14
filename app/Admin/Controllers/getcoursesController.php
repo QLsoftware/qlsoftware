@@ -71,7 +71,7 @@ class getcoursesController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(getcourse::class, function (Grid $grid) {
+        return Admin::grid(zjtcourses::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
             $grid->user()->name('用户名');
@@ -94,7 +94,7 @@ class getcoursesController extends Controller
      */
     protected function form()
     {
-        return Admin::form(getcourse::class, function (Form $form) {
+        return Admin::form(zjtcourses::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
