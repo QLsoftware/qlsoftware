@@ -78,6 +78,7 @@ class jobsController extends Controller
             $grid->reserved('尝试次数');
             $grid->created_at('创建日期');
             $grid->disableCreation();
+            $grid->disableActions();
         });
     }
 

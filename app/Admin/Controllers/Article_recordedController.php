@@ -84,7 +84,7 @@ class Article_recordedController extends Controller
                 $filter->is('from', '来源');
             });
             $grid->disableCreation();
-
+            $grid->disableActions();
         });
 
 
