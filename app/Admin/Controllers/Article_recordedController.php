@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\User;
+use App\article_recorded;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class UserController extends Controller
+class Article_recordedController extends Controller
 {
     use ModelForm;
 
@@ -71,15 +71,22 @@ class UserController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(User::class, function (Grid $grid) {
+        return Admin::grid(article_recorded::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->column('name');
-
-
-            $grid->created_at();
-            $grid->updated_at();
+            $grid->column('title');
+            $grid->data('日期');
+            $grid->href('链接');
+            $grid->from('来源');
         });
+        $grid->filter(function ($filter) {
+
+            // 设置data字段的范围查询
+            $filter->between('data', '日期查询')->datetime();
+        });
+        // 如果过滤器太多，可以使用弹出模态框来显示过滤器.
+        $filter->useModal();
+
     }
 
     /**
@@ -89,7 +96,7 @@ class UserController extends Controller
      */
     protected function form()
     {
-        return Admin::form(User::class, function (Form $form) {
+        return Admin::form(article_recorded::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
