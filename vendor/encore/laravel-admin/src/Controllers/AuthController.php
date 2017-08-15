@@ -36,10 +36,10 @@ class AuthController extends Controller
      */
     public function postLogin(Request $request)
     {
-        $credentials = $request->only(['username', 'password']);
+        $credentials = $request->only(['email', 'password']);
 
         $validator = Validator::make($credentials, [
-            'username' => 'required', 'password' => 'required',
+            'email' => 'required', 'password' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -52,7 +52,7 @@ class AuthController extends Controller
             return redirect()->intended(config('admin.prefix'));
         }
 
-        return Redirect::back()->withInput()->withErrors(['username' => $this->getFailedLoginMessage()]);
+        return Redirect::back()->withInput()->withErrors(['email' => $this->getFailedLoginMessage()]);
     }
 
     /**
@@ -100,7 +100,7 @@ class AuthController extends Controller
     protected function settingForm()
     {
         return Administrator::form(function (Form $form) {
-            $form->display('username', trans('admin::lang.username'));
+            $form->display('email', trans('admin::lang.email'));
             $form->text('name', trans('admin::lang.name'))->rules('required');
             $form->image('avatar', trans('admin::lang.avatar'));
             $form->password('password', trans('admin::lang.password'))->rules('confirmed|required');
