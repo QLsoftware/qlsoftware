@@ -165,10 +165,11 @@ return [
         Intervention\Image\ImageServiceProvider::class,
 
 
-
-
 //        laravel-admin
-    Encore\Admin\Providers\AdminServiceProvider::class,
+        Encore\Admin\Providers\AdminServiceProvider::class,
+
+//        debug
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
