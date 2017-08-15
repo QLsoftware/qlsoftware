@@ -220,6 +220,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Htmldom' => Yangqi\Htmldom\HtmldomServiceProvider::class,
         'Image' => Intervention\Image\Facades\Image::class,
+//        谷歌分析
         'Analytics' => Ipunkt\LaravelAnalytics\AnalyticsFacade::class,
     ],
 
