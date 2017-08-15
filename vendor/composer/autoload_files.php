@@ -12,7 +12,6 @@ return array(
     'bd9634f2d41831496de0d3dfe4c94881' => $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
     '2c102faa651ef8ea5874edb585946bce' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
     'a0edc8309cc5e1d60e3047b5df6b7052' => $vendorDir . '/guzzlehttp/psr7/src/functions_include.php',
-    'f18cc91337d49233e5754e93f3ed9ec3' => $vendorDir . '/laravelcollective/html/src/helpers.php',
     'e7223560d890eab89cda23685e711e2c' => $vendorDir . '/psy/psysh/src/Psy/functions.php',
     '5255c38a0faeba867671b61dfda6d864' => $vendorDir . '/paragonie/random_compat/lib/random.php',
     '2cffec82183ee1cea088009cef9a6fc3' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
@@ -20,7 +19,6 @@ return array(
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
     'c964ee0ededf28c96ebd9db5099ef910' => $vendorDir . '/guzzlehttp/promises/src/functions_include.php',
     '5236d8dd5c74f7c67fa5cedfeeaccc96' => $vendorDir . '/luketowers/purifier/src/helpers.php',
-    '0c3c22e27afa83be19b4c938f4c6e9ea' => $vendorDir . '/spatie/laravel-backup/src/Helpers/functions.php',
     '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     '4e8671d7be9056dcd04ddd9e8e15f9cc' => $vendorDir . '/encore/laravel-admin/src/helpers.php',
 );
