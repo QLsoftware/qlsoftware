@@ -49,11 +49,11 @@ return [
         'disk' => 'admin',
 
         'directory'  => [
-            'image'  => 'image',
+            'image'  => 'uploads/avatars',
             'file'   => 'file',
         ],
 
-        'host' => 'http://do.zjtao.me/uploads/',
+        'host' => 'http://do.zjtao.me/',
     ],
 
     /*

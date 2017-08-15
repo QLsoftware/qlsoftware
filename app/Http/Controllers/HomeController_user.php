@@ -85,7 +85,7 @@ class HomeController_user extends Controller
             Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $file_name));
             //在数据库中保存文件的存储地址      数据库中只保存地址，不存储图像数据
             $user = Auth::user();
-            $user->avatar = '/uploads/avatars/' . $file_name;
+            $user->avatar = 'avatars/' . $file_name;
             $user->save();
             //存储结束
         }
