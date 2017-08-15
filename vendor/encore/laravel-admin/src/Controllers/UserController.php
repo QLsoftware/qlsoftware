@@ -68,7 +68,7 @@ class UserController extends Controller
     {
         return Administrator::grid(function (Grid $grid) {
             $grid->id('ID')->sortable();
-            $grid->username(trans('admin::lang.username'));
+            $grid->email(trans('admin::lang.email'));
             $grid->name(trans('admin::lang.name'));
             $grid->roles(trans('admin::lang.roles'))->pluck('name')->label();
             $grid->created_at(trans('admin::lang.created_at'));
@@ -99,8 +99,8 @@ class UserController extends Controller
     {
         return Administrator::form(function (Form $form) {
             $form->display('id', 'ID');
-
-            $form->text('username', trans('admin::lang.username'))->rules('required');
+            //zjt   修改以适应
+            $form->text('email', trans('admin::lang.email'))->rules(['required', 'email']);
             $form->text('name', trans('admin::lang.name'))->rules('required');
             $form->image('avatar', trans('admin::lang.avatar'));
             $form->password('password', trans('admin::lang.password'))->rules('required|confirmed');
