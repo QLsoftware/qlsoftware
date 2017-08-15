@@ -1,7 +1,4 @@
 .gitignore
 /.idea
 /storage/logs
-/tests
-/bootstrap
-/storage
 .env
