@@ -27,7 +27,7 @@
         }
     </style>
     @yield('css')
-    {!! Analytics::render() !!}
+    {{--{!! Analytics::render() !!}--}}
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default navbar-static-top">

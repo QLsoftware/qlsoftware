@@ -33,7 +33,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     {{--植入谷歌分析--}}
-    {!! Analytics::render() !!}
+    {{--{!! Analytics::render() !!}--}}
 </head>
 
 <body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}">
