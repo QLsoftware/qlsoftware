@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="zhsd@do.qingfengpiao.cn">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
     <root id="1"/>
     <schema id="2" parent="1" name="zhsd">
       <Current>1</Current>
@@ -77,7 +77,6 @@
       <DataType>timestamp|0</DataType>
     </column>
     <key id="40" parent="9" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -124,7 +123,6 @@
       <ColNames>user_id</ColNames>
     </index>
     <key id="50" parent="10" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -157,7 +155,6 @@
       <Unique>1</Unique>
     </index>
     <key id="57" parent="11" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -260,7 +257,6 @@ user_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="80" parent="15" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -332,7 +328,6 @@ permission_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="96" parent="17" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -372,7 +367,6 @@ permission_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="105" parent="18" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -420,7 +414,6 @@ permission_id</ColNames>
       <DataType>timestamp|0</DataType>
     </column>
     <key id="115" parent="19" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -493,7 +486,6 @@ permission_id</ColNames>
       <ColNames>user_id</ColNames>
     </index>
     <key id="130" parent="20" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -506,16 +498,16 @@ permission_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>chatter_categories</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <foreign-key id="133" parent="20" name="chatter_discussion_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <column id="134" parent="21" name="id">
       <Position>1</Position>
@@ -565,7 +557,6 @@ permission_id</ColNames>
       <ColNames>user_id</ColNames>
     </index>
     <key id="144" parent="21" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -574,16 +565,16 @@ permission_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>chatter_discussion</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <foreign-key id="146" parent="21" name="chatter_post_user_id_foreign">
       <ColNames>user_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <column id="147" parent="22" name="user_id">
       <Position>1</Position>
@@ -602,7 +593,6 @@ permission_id</ColNames>
       <ColNames>user_id</ColNames>
     </index>
     <key id="151" parent="22" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 discussion_id</ColNames>
       <Primary>1</Primary>
@@ -612,14 +602,14 @@ discussion_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <foreign-key id="153" parent="22" name="chatter_user_discussion_discussion_id_foreign">
       <ColNames>discussion_id</ColNames>
       <RefSchemaName>zhsd</RefSchemaName>
       <RefTableName>chatter_discussion</RefTableName>
       <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
+      <OnDelete>delete</OnDelete>
     </foreign-key>
     <column id="154" parent="23" name="id">
       <Position>1</Position>
@@ -649,7 +639,6 @@ discussion_id</ColNames>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="159" parent="23" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -694,7 +683,6 @@ discussion_id</ColNames>
       <ColNames>id</ColNames>
     </index>
     <key id="169" parent="24" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>index</ColNames>
       <Primary>1</Primary>
     </key>
@@ -739,7 +727,6 @@ discussion_id</ColNames>
       <DataType>timestamp|0</DataType>
     </column>
     <key id="178" parent="25" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -789,7 +776,6 @@ reserved
 reserved_at</ColNames>
     </index>
     <key id="188" parent="26" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -893,7 +879,6 @@ reserved_at</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="210" parent="29" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>re_id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -915,7 +900,6 @@ reserved_at</ColNames>
       <DataType>varchar(2)|0</DataType>
     </column>
     <key id="215" parent="30" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>idtest_ZJT</ColNames>
       <Primary>1</Primary>
     </key>
@@ -983,7 +967,6 @@ reserved_at</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="229" parent="31" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
