@@ -14,11 +14,11 @@ trait AdminPermission
     public function getAvatarAttribute($avatar)
     {//zj修改来适应
         if ($avatar) {
-//            return rtrim(config('admin.upload.host'), '/').'/'.trim($avatar, '/');
-            return $avatar;
+            return rtrim(config('admin.upload.host'), '/').'/'.trim($avatar, '/');
+//            return $avatar;
         }
 
-        return asset('/uploads/avatars/default.jpg');
+        return asset('avatars/default.jpg');
     }
 
     /**
