@@ -53,7 +53,7 @@ return [
             'file'   => 'file',
         ],
 
-        'host' => 'http://do.zjtao.me/upload/',
+        'host' => 'http://do.zjtao.me/uploads/',
     ],
 
     /*
