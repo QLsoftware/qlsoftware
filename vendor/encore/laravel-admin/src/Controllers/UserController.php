@@ -100,7 +100,7 @@ class UserController extends Controller
         return Administrator::form(function (Form $form) {
             $form->display('id', 'ID');
             //zjt   修改以适应
-            $form->text('email', trans('admin::lang.email'))->rules(['required', 'email']);
+            $form->text('email', trans('admin::lang.email'))->rules('required');
             $form->text('name', trans('admin::lang.name'))->rules('required');
             $form->image('avatar', trans('admin::lang.avatar'));
             $form->password('password', trans('admin::lang.password'))->rules('required|confirmed');
