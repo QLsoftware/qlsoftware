@@ -1,4 +1,7 @@
 .gitignore
 /.idea
 /storage/logs
+/storage/debugbar
+/public/upload
+/public/uploads
 .env
