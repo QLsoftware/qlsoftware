@@ -12,12 +12,13 @@ trait AdminPermission
      * @return string
      */
     public function getAvatarAttribute($avatar)
-    {
+    {//zj修改来适应
         if ($avatar) {
-            return rtrim(config('admin.upload.host'), '/').'/'.trim($avatar, '/');
+//            return rtrim(config('admin.upload.host'), '/').'/'.trim($avatar, '/');
+            return $avatar;
         }
 
-        return asset('/packages/admin/AdminLTE/dist/img/user2-160x160.jpg');
+        return asset('/uploads/avatars/default.jpg');
     }
 
     /**
