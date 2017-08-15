@@ -12,12 +12,12 @@ class ComposerStaticInit6ceaebaed1bf5f66d31fadf54adefdf9
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '5236d8dd5c74f7c67fa5cedfeeaccc96' => __DIR__ . '/..' . '/luketowers/purifier/src/helpers.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -339,6 +339,13 @@ class ComposerStaticInit6ceaebaed1bf5f66d31fadf54adefdf9
             'JakubOnderka\\PhpConsoleColor' => 
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+            ),
+        ),
+        'I' => 
+        array (
+            'Ipunkt\\LaravelAnalytics\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src',
             ),
         ),
         'H' => 
@@ -2261,6 +2268,17 @@ class ComposerStaticInit6ceaebaed1bf5f66d31fadf54adefdf9
         'Intervention\\Image\\Point' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Point.php',
         'Intervention\\Image\\Response' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Response.php',
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
+        'Ipunkt\\LaravelAnalytics\\AnalyticsFacade' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/AnalyticsFacade.php',
+        'Ipunkt\\LaravelAnalytics\\AnalyticsServiceProvider' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/AnalyticsServiceProvider.php',
+        'Ipunkt\\LaravelAnalytics\\Contracts\\AnalyticsProviderInterface' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Contracts/AnalyticsProviderInterface.php',
+        'Ipunkt\\LaravelAnalytics\\Contracts\\TrackingBagInterface' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Contracts/TrackingBagInterface.php',
+        'Ipunkt\\LaravelAnalytics\\Data\\Campaign' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Data/Campaign.php',
+        'Ipunkt\\LaravelAnalytics\\Data\\Event' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Data/Event.php',
+        'Ipunkt\\LaravelAnalytics\\Data\\Renderer\\CampaignRenderer' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Data/Renderer/CampaignRenderer.php',
+        'Ipunkt\\LaravelAnalytics\\Data\\Renderer\\Renderer' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Data/Renderer/Renderer.php',
+        'Ipunkt\\LaravelAnalytics\\Providers\\GoogleAnalytics' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Providers/GoogleAnalytics.php',
+        'Ipunkt\\LaravelAnalytics\\Providers\\NoAnalytics' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/Providers/NoAnalytics.php',
+        'Ipunkt\\LaravelAnalytics\\TrackingBag' => __DIR__ . '/..' . '/ipunkt/laravel-analytics/src/Ipunkt/LaravelAnalytics/TrackingBag.php',
         'IssueTableSeeder' => __DIR__ . '/../..' . '/database/seeds/IssueTableSeeder.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
