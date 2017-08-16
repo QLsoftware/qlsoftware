@@ -48,10 +48,13 @@ class User extends Authenticatable
         if (baseapi::testj_username($re->j_username, base64_decode($re->j_password)))
             DB::table('users')->where('id', $id)->update(['j_password' => null]);
     }
+
     public function getcourse()
     {
         $this->hasMany(zjtcourses::class);
     }
+
+    /**反馈用户角色的比例 TODO */
 
 
 
