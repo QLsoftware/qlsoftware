@@ -813,8 +813,9 @@ reserved_at</ColNames>
     </index>
     <column id="196" parent="29" name="re_id">
       <Position>1</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="197" parent="29" name="re_name">
       <Position>2</Position>

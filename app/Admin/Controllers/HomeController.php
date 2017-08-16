@@ -2,7 +2,9 @@
 
 namespace App\Admin\Controllers;
 
+use App\chatter;
 use App\Http\Controllers\Controller;
+use App\User;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
@@ -27,17 +29,34 @@ class HomeController extends Controller
 
             $content->header('控制面板');
             $content->description('');
-
+            /**最上方的4行*/
             $content->row(function ($row) {
-                $row->column(3, new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024'));
-                $row->column(3, new InfoBox('New Orders', 'shopping-cart', 'green', '/admin/orders', '150%'));
-                $row->column(3, new InfoBox('Articles', 'book', 'yellow', '/admin/articles', '2786'));
-                $row->column(3, new InfoBox('Documents', 'file', 'red', '/admin/files', '698726'));
+//                __construct($name, $icon, $color, $link, $info)
+                $row->column(3, new InfoBox('用户总数', 'users', 'aqua', '', User::getusers_num()));
+                $row->column(3, new InfoBox('论坛话题总数', 'book', 'green', '', chatter::getdiscussion_num()));
+                $row->column(3, new InfoBox('报修的申请数量', 'fix', 'yellow', '', 'TODO'));
+                $row->column(3, new InfoBox('总访问量', 'file', 'red', '/admin/files', 'TODO'));
             });
 
             $content->row(function (Row $row) {
-
+                /**展示讨论最多的话题*/
                 $row->column(6, function (Column $column) {
+                    $tab = new Tab();
+                    $pie = new Pie(chatter::getchatter_bili());
+                    $tab->add('讨论最多的话题', $pie);
+                    $column->append($tab);
+                });
+                $row->column(6, function (Column $column) {
+
+                    $polarArea = new PolarArea(chatter::getchategories_bili());
+                    $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
+                });
+
+            });
+
+
+            $content->row(function (Row $row) {
+                /*$row->column(6, function (Column $column) {
 
                     $tab = new Tab();
 
@@ -60,10 +79,10 @@ class HomeController extends Controller
                     $bar = new Bar(
                         ["January", "February", "March", "April", "May", "June", "July"],
                         [
-                            ['First', [40,56,67,23,10,45,78]],
-                            ['Second', [93,23,12,23,75,21,88]],
-                            ['Third', [33,82,34,56,87,12,56]],
-                            ['Forth', [34,25,67,12,48,91,16]],
+                            ['First', [40, 56, 67, 23, 10, 45, 78]],
+                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
+                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
+                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
                         ]
                     );
                     $collapse->add('Bar', $bar);
@@ -79,24 +98,8 @@ class HomeController extends Controller
                         ['Navigator', 100],
                     ]);
                     $column->append((new Box('Doughnut', $doughnut))->removable()->collapsable()->style('info'));
-                });
+                });*/
 
-                $row->column(6, function (Column $column) {
-
-                    $column->append(new Box('Radar', new Radar()));
-
-                    $polarArea = new PolarArea([
-                        ['Red', 300],
-                        ['Blue', 450],
-                        ['Green', 700],
-                        ['Yellow', 280],
-                        ['Black', 425],
-                        ['Gray', 1000],
-                    ]);
-                    $column->append((new Box('Polar Area', $polarArea))->removable()->collapsable());
-
-                    $column->append((new Box('Line', new Line()))->removable()->collapsable()->style('danger'));
-                });
 
             });
 

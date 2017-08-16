@@ -56,6 +56,11 @@ class User extends Authenticatable
 
     /**反馈用户角色的比例 TODO */
 
+    public static function getusers_num()
+    {
+        return DB::table('users')->count();
+    }
+
 
 
 }
