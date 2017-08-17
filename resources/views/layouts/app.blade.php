@@ -20,6 +20,7 @@
     <style>
         body {
             font-family: 'Lato';
+            background-image: url("/img/花瓣.jpeg");
         }
 
         .fa-btn {
@@ -29,8 +30,8 @@
     @yield('css')
     {{--{!! Analytics::render() !!}--}}
 </head>
-<body id="app-layout">
-<nav class="navbar navbar-default navbar-static-top">
+    <body id="app-layout" style="box-shadow: #0077aa">
+<nav class="navbar">
     <div class="container">
         <div class="navbar-header">
 
