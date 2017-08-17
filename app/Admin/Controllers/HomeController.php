@@ -25,6 +25,18 @@ class HomeController extends Controller
 {
     public function index()
     {
+
+
+
+
+
+
+
+
+
+
+
+
         return Admin::content(function (Content $content) {
 
             $content->header('控制面板');
