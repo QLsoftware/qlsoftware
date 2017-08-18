@@ -54,7 +54,76 @@
                     </td>
                 </tr>
                 @endif
-            </table>
+
+                @if(Auth::user()->j_password){{--当前已绑定--}}
+                <tr class="success">
+                    <td>绑定本科教育的学号</td>
+                    <td>已绑定，{{Auth::user()->j_username}}</td>
+                    {{--TODO --}}
+                    <td>
+                        <form action="{{ url('/link/cancel')}}" method="post">
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-sm btn-danger">解绑</button>
         </div>
+        </form>
+        </td>
+        </tr>
+        @elseif(!Auth::user()->j_password&&Auth::user()->j_username){{--失效--}}
+        <tr class="alert-error">
+            <td>绑定本科教育的学号</td>
+            <td>密码失效</td>
+            <td>
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
+
+            </td>
+        </tr>
+        @else
+            <tr class="alert-danger">
+                <td>绑定本科教育的学号</td>
+                <td>未绑定</td>
+                <td>
+                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
+
+                </td>
+            </tr>
+            @endif
+
+
+            </table>
+
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="link" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                请绑定
+                            </h4>
+                        </div>
+
+                        <form action="{{ url('/link/request')}}" method="post">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="exampleInputName2">学号:</label>
+                                <input type="text" class="form-control" name="j_username" placeholder="学号">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="j_password"
+                                       placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-default">绑定</button>
+                        </form>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+
+
+    </div>
     </div>
 @endsection
