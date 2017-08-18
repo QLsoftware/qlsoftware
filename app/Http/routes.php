@@ -43,13 +43,15 @@ Route::post('/profile/sdu_notify_accept', 'HomeController_user@sdu_notify_accept
 //zjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjt
 
 //fcq
-Route::get('/search', 'SearchController@search');
-Route::post('/search/course', 'SearchController@search_course');
-Route::post('/search/room', 'SearchController@search_room');
-Route::post('/search/car', 'SearchController@search_car');
-Route::post('/search/grade', 'SearchController@search_grade');
+//Route::get('/search', 'SearchController@search');
+Route::get('/search/course', 'SearchController@search_course');
+//Route::post('/search/room', 'SearchController@search_room');
+//Route::post('/search/car', 'SearchController@search_car');
+Route::get('/search/grade', 'SearchController@search_grade');
+Route::get('/evaluate', 'Evaluate@evaluate');
+Route::get('/evaluate/jump', 'Evaluate@jump');
+Route::get('/evaluate/yijian', 'Evaluate@yijian');
 //fcq
-
 //wc
 Route::get('/fee', 'FeeController@fee');
 Route::post('/fee/card', 'FeeController@fee_card');

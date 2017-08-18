@@ -11,33 +11,18 @@
                 <div class="panel-heading">查询</div>
                 <div class="panel-body">
                     <div class="row">
-                        @if($SearchOption == 0)
-                            @if(Auth::user()["j_username"]==null)
-                                <h4>貌似你还没有绑定你的学号哦</h4>
-                                <form action="{{ url('/link')}}" method="get">
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-default">去绑定</button>
-                                </form>
 
-                            @else
-                                <form action="{{ url('/search/course')}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-default">课表查询</button>
-                                </form>
-                                <form action="{{ url('/search/room')}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-default">自习室查询</button>
-                                </form>
-                                <form action="{{ url('/search/car')}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-default">校车查询</button>
-                                </form>
-                                <form action="{{ url('/search/grade')}}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-default">绩点查询</button>
-                                </form>
-                            @endif
-                        @elseif($SearchOption == 1)
+
+
+
+                        @if($SearchOption == 1)
+                                    @if(Auth::user()["j_username"]==null)
+                                        <h4>貌似你还没有绑定你的学号哦</h4>
+                                        <form action="{{ url('/link')}}" method="get">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-default">去绑定</button>
+                                        </form>
+                                    @else
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <div class="container">
@@ -49,7 +34,8 @@
                                             学生 <span
                                                 class="label label-default">{{Auth::user()["j_username"]}}</span> 的课表：</div>
                                         <div class="col-xs-6 col-sm-2" >
-                                    <button type="submit" class="btn btn-default">返回</button></div></h3>
+                                    {{--<button type="submit" class="btn btn-default">返回</button>--}}
+                                        </div> </h3>
                                 </form>
                                 </div></div></div>
                                 <div class="panel-body">
@@ -83,12 +69,95 @@
                                 </div>
                             </div>
                                 </div></div>
+                                @endif
+                        {{--@elseif($SearchOption == 2)--}}
+                            {{--<h2>自习室查询界面</h2>--}}
+                            {{--<!DOCTYPE html>--}}
+                            {{--<html>--}}
+                            {{--<head>--}}
+                                {{--<meta charset="utf-8">--}}
+                                {{--<title>Bootstrap 实例 - 选择框</title>--}}
+                                {{--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+                                {{--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>--}}
+                                {{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+                            {{--</head>--}}
+                            {{--<body>--}}
+                            {{--<form action="{{ url('/search/roomrequest')}}" method="post">--}}
+                            {{--<form role="form">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="name">选择列表</label>--}}
+                                    {{--<select class="form-control">--}}
+                                        {{--<option>1</option>--}}
+                                        {{--<option>2</option>--}}
+                                        {{--<option>3</option>--}}
+                                        {{--<option>4</option>--}}
+                                        {{--<option>5</option>--}}
+                                    {{--</select>--}}
 
-                        @elseif($SearchOption == 2)
-                            <h2>自习室查询界面</h2>
-                        @elseif($SearchOption== 3)
-                            <h3>校车查询界面</h3>
+                                {{--</div>--}}
+                            {{--</form>--}}
+
+                                {{--{{ csrf_field() }}--}}
+                                {{--<button type="submit" class="btn btn-default">查询</button>--}}
+                            {{--</form>--}}
+                            {{--</body>--}}
+                            {{--</html>--}}
+
+                        {{--@elseif($SearchOption== 3)--}}
+                            {{--<h3>校车查询界面</h3>--}}
+                            {{--<!DOCTYPE html>--}}
+                            {{--<html>--}}
+                            {{--<head>--}}
+                                {{--<meta charset="utf-8">--}}
+                                {{--<title>Bootstrap 实例 - 选择框</title>--}}
+                                {{--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+                                {{--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>--}}
+                                {{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+                            {{--</head>--}}
+                            {{--<body>--}}
+                            {{--<form action="{{ url('/search/carrequest')}}" method="post">--}}
+                            {{--<form role="form">--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="name">从：</label>--}}
+                                    {{--<select type="text" class="form-control" name="qidian">--}}
+                                        {{--<option>中心校区</option>--}}
+                                        {{--<option>洪家楼校区</option>--}}
+                                        {{--<option>软件园校区</option>--}}
+                                        {{--<option>趵突泉校区</option>--}}
+                                        {{--<option>兴隆山校区</option>--}}
+                                        {{--<option>千佛山校区</option>--}}
+                                    {{--</select>--}}
+                                    {{--<label for="name">到：</label>--}}
+                                    {{--<select class="form-control" name="zhongdian">--}}
+                                        {{--<option>中心校区</option>--}}
+                                        {{--<option>洪家楼校区</option>--}}
+                                        {{--<option>软件园校区</option>--}}
+                                        {{--<option>趵突泉校区</option>--}}
+                                        {{--<option>兴隆山校区</option>--}}
+                                        {{--<option>千佛山校区</option>--}}
+                                    {{--</select>--}}
+                                    {{--<label for="name">时间：</label>--}}
+                                    {{--<select class="form-control" name="zhou">--}}
+                                        {{--<option>工作日</option>--}}
+                                        {{--<option>非工作日</option>--}}
+                                    {{--</select>--}}
+
+                                {{--</div>--}}
+                            {{--</form>--}}
+
+                                {{--{{ csrf_field() }}--}}
+                                {{--<button type="submit" class="btn btn-default">查询</button>--}}
+                            {{--</form>--}}
+                            {{--</body>--}}
+                            {{--</html>--}}
                         @elseif($SearchOption == 4)
+                                @if(Auth::user()["j_username"]==null)
+                                    <h4>貌似你还没有绑定你的学号哦</h4>
+                                    <form action="{{ url('/link')}}" method="get">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-default">去绑定</button>
+                                    </form>
+                                @else
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div class="container">
@@ -100,7 +169,7 @@
                                                                 学生 <span
                                                                         class="label label-default">{{Auth::user()["j_username"]}}</span> 成绩查询：</div>
                                                             <div class="col-xs-6 col-sm-2" >
-                                                                <button type="submit" class="btn btn-default">返回</button></div></h3>
+                                                                {{--<button type="submit" class="btn btn-default">返回</button>--}}</div></h3>
                                                     </form>
                                                 </div></div></div>
                                         <div class="panel-body">
@@ -134,6 +203,7 @@
                                             </div>
 
                                         </div></div>
+                                    @endif
                         @endif
 
                     </div>
