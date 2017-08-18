@@ -50,8 +50,8 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($e instanceof usernamefailed) {
-//            删除密码
-            return redirect('/link');
+//            删除密码  TODO
+            return redirect('/profile');
         }
         return parent::render($request, $e);
     }

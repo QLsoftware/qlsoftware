@@ -39,8 +39,7 @@ class HomeController_user extends Controller
     {
         $account = new User();
         $account->deletej_username(Auth::user()['id']);
-        $where = ['where' => -2];
-        return view('link')->with($where);
+        return redirect('/profile');
     }
 
     /**  1==成功绑定   -2==删除账号信息   -1==账号密码不匹配   0==未绑定   -3==网络故障
@@ -49,11 +48,18 @@ class HomeController_user extends Controller
 
     public function link_request(Request $request)
     {
+
+        //单纯进行存储
+        $account = new User();
+        $account->savej_username(Auth::user()['id'], $request['j_username'], $request['j_password']);
+        return redirect('profile');
+
+
         //认证
-        $client = baseapi::testj_username($request['j_username'], $request['j_password']);
+//        $client = baseapi::testj_username($request['j_username'], $request['j_password']);
 //  添加cookie  第一步认证，第二步抓取数据   若认证失败，则会出现/f/login的地址，并报错
 
-        if ($client == -1) {
+        /*if ($client == -1) {
             $where = ['where' => -1];
             return view('link')->with($where);
         } elseif ($client == 1) {
@@ -64,12 +70,28 @@ class HomeController_user extends Controller
         } else {
             $where = ['where' => -3];
             return view('link')->with($where);
-        }
+        }*/
     }
 
 //    个人设置
     public function profile()
     {
+        //判断密码
+        /*  1==成功绑定   -2==删除账号信息   -1==账号密码不匹配   0==未绑定   -3==网络故障
+         * 请求验证学生账号和密码
+         */
+        if (Auth::user()['j_username']) {
+            $client = baseapi::testj_username(Auth::user()['j_username'], base64_decode(Auth::user()['j_password']));
+            if ($client == -1) {
+                Auth::user()['j_password'] = null;
+                Auth::user()->save();
+            } elseif ($client == 1) {
+                //正确不处理
+            } else {
+                ;
+            }
+        }
+
         return view('profile')->with(array('user' => Auth::user()));
     }
 
