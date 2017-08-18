@@ -29,11 +29,11 @@ class SearchController extends Controller
     }
 
     // $SearchOption    0 查询      1 课程查询      2 自习室查询      3 校车查询        4 绩点查询
-    public function search()
-    {
-        $SearchOption = ['SearchOption' => 0];
-        return view('search')->with($SearchOption);
-    }
+//    public function search()
+//    {
+//        $SearchOption = ['SearchOption' => 0];
+//        return view('search')->with($SearchOption);
+//    }
 
     public function search_course()
     {
@@ -115,17 +115,22 @@ class SearchController extends Controller
         return view('search')->with($SearchOption);
     }
 
-    public function search_room()
-    {
-        $SearchOption = ['SearchOption' => 2];
-        return view('search')->with($SearchOption);
-    }
+//    public function search_room()
+//    {
+//        $SearchOption = ['SearchOption' => 2];
+//        return view('search')->with($SearchOption);
+//    }
 
-    public function search_car()
-    {
-        $SearchOption = ['SearchOption' => 3];
-        return view('search')->with($SearchOption);
-    }
+//    public function search_car()
+//    {
+//        //echo date('md');
+//        if(date('m')>10||(date('m')==10&&date('d')>=8)||date('m')<4||(date('m')==4&&date('d')<=30))
+//            $html=new Htmldom('http://202.194.192.251/main.htm');
+//        else
+//            $html=new Htmldom('http://202.194.192.251/2.html');
+//        $SearchOption = ['SearchOption' => 3];
+//        return view('search')->with($SearchOption);
+//    }
 
     public function search_grade()
     {

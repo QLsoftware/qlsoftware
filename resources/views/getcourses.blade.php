@@ -141,7 +141,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputName2">课程号:</label>
-                    <input type="text" class="form-control" name="kch">
+                    <input class="form-control" name="kch">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">课序号:</label>

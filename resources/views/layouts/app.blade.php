@@ -54,7 +54,18 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="    {{ url('/link') }}">绑定</a></li>
-                <li><a href="  {{ url('/search') }}">查询</a></li>
+                <li>
+                <div class="dropdown">
+                    <button type="label" class="well well-sm" id="dropdownMenu1" data-toggle="dropdown">查询
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                        <li><a href="  {{ url('/search/course') }}">课程查询</a></li>
+                        <li><a href="  {{ url('/search/grade') }}">成绩查询</a></li>
+                    </ul>
+                </div></li>
+                <li><a href="{{ url('/evaluate') }}">教师评价</a></li>
                 <li><a href="  {{ url('/fee') }}">缴费</a></li>
                 <li><a href="  {{ url('/book') }}">图书馆</a></li>
                 <li><a href="  {{ url('/fix') }}">报修</a></li>
