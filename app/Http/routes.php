@@ -50,7 +50,7 @@ Route::get('/search/course', 'SearchController@search_course');
 Route::get('/search/grade', 'SearchController@search_grade');
 Route::get('/evaluate', 'Evaluate@evaluate');
 Route::get('/evaluate/jump', 'Evaluate@jump');
-Route::get('/evaluate/yijian', 'Evaluate@yijian');
+Route::post('/evaluate/yijian', 'Evaluate@yijian');
 //fcq
 //wc
 Route::get('/fee', 'FeeController@fee');

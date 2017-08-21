@@ -31,7 +31,14 @@
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 {{--                                                        <li><a href="  {{ url('202.194.15.39') }}">进入问卷</a></li>--}}
                                                         <li><a href="  {{ url('http://bkjws.sdu.edu.cn/f/pg/xs/jrwq?xnxq='.$option_1['3'].'&kch='.$option_1['0'].'&jsh='.$option_1['4']) }}">进入问卷</a></li>
-                                                        <li><a href="  {{ url('/evaluate/yijian') }}">一键好评</a></li>
+{{--                                                        <li><a href="  {{ url('/evaluate/yijian') }}"  xnxq="{{$option_1;['3']}}" kch="{{$option_1['0']}}" jsh="{{$option_1['4']}}">一键好评</a></li>--}}
+                                                        <li><form action="{{ url('/evaluate/yijian')}}" method="post">
+                                                                {{ csrf_field() }}
+                                                                <input type="hidden" name="xnxq" value={{$option_1['3']}}>
+                                                                <input type="hidden" name="kch" value={{$option_1['0']}}>
+                                                                <input type="hidden" name="jsh" value={{$option_1['4']}}>
+                                                                <button type="submit" class="btn btn-default">一键好评</button>
+                                                            </form></li>
                                                     </ul>
                                                 </div></th>
                                     </tr>
