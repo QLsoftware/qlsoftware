@@ -49,8 +49,9 @@ Route::get('/search/course', 'SearchController@search_course');
 //Route::post('/search/car', 'SearchController@search_car');
 Route::get('/search/grade', 'SearchController@search_grade');
 Route::get('/evaluate', 'Evaluate@evaluate');
-Route::get('/evaluate/jump', 'Evaluate@jump');
+Route::post('/evaluate/jump', 'Evaluate@jump');
 Route::post('/evaluate/yijian', 'Evaluate@yijian');
+Route::post('/evaluate/tijiao', 'Evaluate@tijiao');
 //fcq
 //wc
 Route::get('/fee', 'FeeController@fee');

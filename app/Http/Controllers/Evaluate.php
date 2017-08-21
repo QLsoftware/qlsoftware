@@ -50,11 +50,13 @@ class Evaluate extends Controller
         }
 
 
-        $option=['option'=>$evaarray];
+        $option=['option'=>$evaarray,'where'=>1];
         return view('evaluate')->with($option);
     }
-    public function jump(){
-        return redirect("http://bkjws.sdu.edu.cn/f/pg/xs/jrwq?xnxq=2016-2017-2&kch=sd01330170&jsh=200799013534");
+    public function jump(Request $request){
+        $option=['where'=>2,'xnxq'=>$request["xnxq"],'kch'=>$request["kch"],'jsh'=>$request["jsh"]];
+        return view('evaluate')->with($option);
+        
     }
     public function yijian(Request $request){
         $client=baseapi::ConnectToBkjs(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
@@ -163,4 +165,112 @@ class Evaluate extends Controller
         ]], ['allow_redirects' => true]);
         return redirect('/evaluate');
     }
+    public function tijiao(Request $request){
+        $client=baseapi::ConnectToBkjs(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
+
+        if(!$client) return null;
+        //并不知道是个啥
+
+        //并不知道是个啥
+        $nf=substr($request["xnxq"],strlen($request["xnxq"])-1,1);
+        if($nf==1)
+            $nf1=substr($request["xnxq"],0,4);
+        else
+            $nf1=substr($request["xnxq"],5,4);
+        $result = $client->request('post', '/b/pg/xs/add',['form_params' => [
+            'xnxq' => $request["xnxq"],'kch'=>$request["kch"],'jsh'=>$request["jsh"],
+            'wjid'=>'1',
+            'wjmc'=>'山东大学课堂教学评价('.$nf1.')',
+            'zbid'=>'36',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_0'=>$request["zbda_0"],
+            'zbid'=>'37',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_1'=>$request["zbda_1"],
+            'zbid'=>'38',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_2'=>$request["zbda_2"],
+            'zbid'=>'39',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_3'=>$request["zbda_3"],
+            'zbid'=>'40',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_4'=>$request["zbda_4"],
+            'zbid'=>'41',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_5'=>$request["zbda_5"],
+            'zbid'=>'42',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_6'=>$request["zbda_6"],
+            'zbid'=>'43',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_7'=>$request["zbda_7"],
+            'zbid'=>'44',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_8'=>$request["zbda_8"],
+            'zbid'=>'45',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_9'=>$request["zbda_9"],
+            'zbid'=>'46',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_10'=>$request["zbda_10"],
+            'zbid'=>'47',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_11'=>$request["zbda_11"],
+            'zbid'=>'48',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_12'=>$request["zbda_12"],
+            'zbid'=>'49',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_13'=>$request["zbda_13"],
+            'zbid'=>'50',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_14'=>$request["zbda_14"],
+            'zbid'=>'52',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_15'=>$request["zbda_15"],
+            'zbid'=>'53',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_16'=>$request["zbda_16"],
+            'zbid'=>'54',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_17'=>$request["zbda_17"],
+            'zbid'=>'55',
+            'zblx'=>'选择',
+            'sfbt'=>'',
+            'zbda_18'=>$request["zbda_18"],
+            'zbid'=>'51',
+            'zblx'=>'主观选择',
+            'sfbt'=>'',
+            'zbda_19'=>$request["zbda_19"],
+            'zbid'=>'56',
+            'zblx'=>'主观选择',
+            'sfbt'=>'',
+            'zbda_20'=>$request["zbda_20"],
+            'zbid'=>'57',
+            'zblx'=>'主观',
+            'sfbt'=>'是',
+            'zbda_21'=>$request["zbda_21"]
+        ]], ['allow_redirects' => false]);
+        return redirect('/evaluate');
+    }
+
 }
