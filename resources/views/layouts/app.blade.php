@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="    {{ url('/link') }}">绑定</a></li>
+                {{--<li><a href="    {{ url('/link') }}">绑定</a></li>--}}
                 <li>
                 <div class="dropdown">
                     <button type="label" class="well well-sm" id="dropdownMenu1" data-toggle="dropdown">查询
