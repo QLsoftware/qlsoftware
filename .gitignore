@@ -3,5 +3,5 @@
 /storage/debugbar
 /public/upload
 /public/uploads
-！public/uploads/p_avatars
+!public/uploads/p_avatars
 .env
