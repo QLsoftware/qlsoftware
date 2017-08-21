@@ -49,16 +49,19 @@ Route::get('/search/course', 'SearchController@search_course');
 //Route::post('/search/car', 'SearchController@search_car');
 Route::get('/search/grade', 'SearchController@search_grade');
 Route::get('/evaluate', 'Evaluate@evaluate');
-Route::get('/evaluate/jump', 'Evaluate@jump');
-Route::get('/evaluate/yijian', 'Evaluate@yijian');
+Route::post('/evaluate/jump', 'Evaluate@jump');
+Route::post('/evaluate/yijian', 'Evaluate@yijian');
+Route::post('/evaluate/tijiao', 'Evaluate@tijiao');
 //fcq
 //wc
 Route::get('/fee', 'FeeController@fee');
 Route::post('/fee/card', 'FeeController@fee_card');
 Route::post('/fee/room', 'FeeController@fee_room');
-Route::post('/fee/room/water', 'FeeController@fee_room_water');Route::post('/fee/room/net', 'FeeController@fee_room_net');
+Route::post('/fee/room/water', 'FeeController@fee_room_water');
+Route::post('/fee/room/net', 'FeeController@fee_room_net');
 Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 //wc
+
 
 //qy
 Route::group(['prefix'=>'/repairman'],function(){
@@ -68,3 +71,14 @@ Route::group(['prefix'=>'/repairman'],function(){
     Route::get('/delete/{id}','RepairmanController@delete');
 });
 //qy
+
+
+//wc fix
+Route::get('/fix', 'FixController@fix');
+Route::post('/fix/text', 'FixController@text');
+//Route::post('/fix/avatar', 'FixController@fix_avatar');
+//Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
+//wc fix
+
+
+
