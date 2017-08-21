@@ -59,3 +59,12 @@ Route::post('/fee/room', 'FeeController@fee_room');
 Route::post('/fee/room/water', 'FeeController@fee_room_water');Route::post('/fee/room/net', 'FeeController@fee_room_net');
 Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 //wc
+
+//qy
+Route::group(['prefix'=>'/repairman'],function(){
+    // Route::get('/','RepairmanController@getRepairList');
+    Route::get('/index','RepairmanController@index');
+    Route::get('/update/{id}','RepairmanController@updateState');
+    Route::get('/delete/{id}','RepairmanController@delete');
+});
+//qy
