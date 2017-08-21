@@ -54,6 +54,17 @@ Route::post('/search/grade', 'SearchController@search_grade');
 Route::get('/fee', 'FeeController@fee');
 Route::post('/fee/card', 'FeeController@fee_card');
 Route::post('/fee/room', 'FeeController@fee_room');
-Route::post('/fee/room/water', 'FeeController@fee_room_water');Route::post('/fee/room/net', 'FeeController@fee_room_net');
+Route::post('/fee/room/water', 'FeeController@fee_room_water');
+Route::post('/fee/room/net', 'FeeController@fee_room_net');
 Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 //wc
+
+
+//wc fix
+Route::get('/fix', 'FixController@fix');
+Route::post('/fix/text', 'FixController@text');
+//Route::post('/fix/avatar', 'FixController@fix_avatar');
+//Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
+//wc fix
+
+
