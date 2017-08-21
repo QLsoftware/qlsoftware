@@ -1,7 +1,7 @@
-.gitignore
 /.idea
 /storage/logs
 /storage/debugbar
 /public/upload
 /public/uploads
+！public/uploads/p_avatars
 .env
