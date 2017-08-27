@@ -18,10 +18,6 @@
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
-        body {
-            font-family: 'Lato';
-            background-image: url("/img/花瓣.jpeg");
-        }
 
         .fa-btn {
             margin-right: 6px;
@@ -36,13 +32,13 @@
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+            {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
+                    {{--data-target="#app-navbar-collapse">--}}
+                {{--<span class="sr-only">Toggle Navigation</span>--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+            {{--</button>--}}
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -51,6 +47,8 @@
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
+
+            {{--重写功能区--}}
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 {{--<li><a href="    {{ url('/link') }}">绑定</a></li>--}}

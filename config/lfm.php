@@ -78,7 +78,7 @@ return [
     'alphanumeric_directory' => false,
 
     // If true, the uploading file's size will be verified for over than max_image_size/max_file_size.
-    'should_validate_size' => true,
+    'should_validate_size' => false,
 
     'max_image_size' => 500000000,
     'max_file_size' =>  500000000,
