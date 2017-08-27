@@ -48,29 +48,10 @@ class HomeController_user extends Controller
 
     public function link_request(Request $request)
     {
-
         //单纯进行存储
         $account = new User();
         $account->savej_username(Auth::user()['id'], $request['j_username'], $request['j_password']);
         return redirect('profile');
-
-
-        //认证
-//        $client = baseapi::testj_username($request['j_username'], $request['j_password']);
-//  添加cookie  第一步认证，第二步抓取数据   若认证失败，则会出现/f/login的地址，并报错
-
-        /*if ($client == -1) {
-            $where = ['where' => -1];
-            return view('link')->with($where);
-        } elseif ($client == 1) {
-            $account = new User();
-            $account->savej_username(Auth::user()['id'], $request['j_username'], $request['j_password']);
-            $where = ['where' => 1, 'j_u' => $request['j_username']];
-            return view('link')->with($where);
-        } else {
-            $where = ['where' => -3];
-            return view('link')->with($where);
-        }*/
     }
 
 //    个人设置
@@ -88,7 +69,7 @@ class HomeController_user extends Controller
             } elseif ($client == 1) {
                 //正确不处理
             } else {
-                ;
+                ;//TODO
             }
         }
 

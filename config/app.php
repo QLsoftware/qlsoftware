@@ -173,6 +173,12 @@ return [
 
 //        google分析
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
+
+//        微信认证
+//        Overtrue\LaravelWechat\ServiceProvider::class,
+
+    //文件共享
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
     ],
 
     /*

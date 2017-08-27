@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\chatter;
 use App\Http\Controllers\Controller;
+use App\repair;
 use App\User;
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Column;
@@ -25,18 +26,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-
-
-
-
-
-
-
-
-
-
-
         return Admin::content(function (Content $content) {
 
             $content->header('控制面板');
@@ -50,6 +39,7 @@ class HomeController extends Controller
                 $row->column(3, new InfoBox('总访问量', 'file', 'red', '/admin/files', 'TODO'));
             });
 
+            //话题讨论
             $content->row(function (Row $row) {
                 /**展示讨论最多的话题*/
                 $row->column(6, function (Column $column) {
@@ -66,9 +56,49 @@ class HomeController extends Controller
 
             });
 
-
             $content->row(function (Row $row) {
-                /*$row->column(6, function (Column $column) {
+
+                $row->column(6, function (Column $column) {
+                    $tab = new Tab();
+                    $pie = new Doughnut(repair::getrekind());
+                    $tab->add('楼房请求数量', $pie);
+                    $column->append($tab);
+                });
+
+                $row->column(6, function (Column $column) {
+
+                    $polarArea = new PolarArea(repair::getrekind());
+                    $column->append((new Box('楼房请求数量', $polarArea))->removable()->collapsable());
+                });
+
+            });
+            $content->row(function (Row $row) {
+
+                $row->column(6, function (Column $column) {
+                    $tab = new Tab();
+                    $pie = new Bar(
+                        ["January", "February", "March", "April", "May", "June", "July"],
+                        [
+                            ['First', [40, 56, 67, 23, 10, 45, 78]],
+                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
+                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
+                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
+                        ]
+                    );
+                    $tab->add('楼房请求数量', $pie);
+                    $column->append($tab);
+                });
+
+                $row->column(6, function (Column $column) {
+
+                    $polarArea = new PolarArea(repair::getrekind());
+                    $column->append((new Box('楼房请求数量', $polarArea))->removable()->collapsable());
+                });
+
+            });
+
+          /*  $content->row(function (Row $row) {
+                $row->column(6, function (Column $column) {
 
                     $tab = new Tab();
 
@@ -110,7 +140,7 @@ class HomeController extends Controller
                         ['Navigator', 100],
                     ]);
                     $column->append((new Box('Doughnut', $doughnut))->removable()->collapsable()->style('info'));
-                });*/
+                });
 
 
             });
@@ -125,6 +155,13 @@ class HomeController extends Controller
             ];
 
             $content->row((new Box('Table', new Table($headers, $rows)))->style('info')->solid());
+            $rader = new Radar();
+
+            $content->row($rader);*/
+
+
+
+
         });
     }
 }

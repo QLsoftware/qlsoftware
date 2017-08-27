@@ -29,6 +29,5 @@ class RepairmanController extends Controller
     {
         repair::destroy($id);
         return redirect()->back();
-
     }
 }
