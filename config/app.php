@@ -177,8 +177,11 @@ return [
 //        微信认证
 //        Overtrue\LaravelWechat\ServiceProvider::class,
 
-    //文件共享
+        //文件共享
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+
+// 博客
+        Serverfireteam\Blog\BlogServiceProvider::class,
     ],
 
     /*
@@ -188,7 +191,7 @@ return [
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | the aliases are "lazy" loaded so they don't hinder performance .
     |
     */
 
