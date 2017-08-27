@@ -70,3 +70,4 @@ return [
     'resize-new-width' => 'Breite:',
     'locale-bootbox' => 'de',
 ];
+
