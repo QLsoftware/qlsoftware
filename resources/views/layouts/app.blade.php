@@ -71,6 +71,7 @@
                 <li><a href="  {{ url('/fix') }}">报修</a></li>
                 <li><a href="{{ url('/zjt/getc') }}">抢课</a></li>
                 <li><a href="{{ url('/forums') }}">闲谈</a></li>
+                <li><a href="{{ url('/pan') }}">网盘</a></li>
                 <li><a href=" {{ url('/repairman/index')}}">维修人员入口</a></li>
             </ul>
 
