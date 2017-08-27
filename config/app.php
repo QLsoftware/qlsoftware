@@ -180,8 +180,6 @@ return [
         //文件共享
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
 
-// 博客
-        Serverfireteam\Blog\BlogServiceProvider::class,
     ],
 
     /*
