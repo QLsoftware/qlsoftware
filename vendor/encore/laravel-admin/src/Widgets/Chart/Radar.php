@@ -51,4 +51,6 @@ class Radar extends Chart
 })();
 EOT;
     }
+
+
 }
