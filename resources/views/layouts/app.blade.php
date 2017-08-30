@@ -2,45 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智慧山大</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"
-          integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    <meta name="description"
+          content="Dragonfruit is one of the free HTML5 Templates from templatemo. It is a parallax layout with jQuery slider, events, and timeline."/>
+    <meta name="author" content="templatemo">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="./favicon.png"/>
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Camera -->
+    <link href="css/camera.css" rel="stylesheet">
+    <!-- Template  -->
+    <link href="css/templatemo_style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
     @yield('css')
-    {{--{!! Analytics::render() !!}--}}
 </head>
-    <body id="app-layout" style="box-shadow: #0077aa">
+<body>
+
+
+
+
+
+@yield('content')
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+<script src="js/unslider.min.js"></script>
+
+<script src="js/templatemo_script.js"></script>
+</body>
+</html>
+
+
+<body id="app-layout" style="box-shadow: #0077aa">
 <nav class="navbar">
     <div class="container">
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
-            {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
-                    {{--data-target="#app-navbar-collapse">--}}
-                {{--<span class="sr-only">Toggle Navigation</span>--}}
-                {{--<span class="icon-bar"></span>--}}
-                {{--<span class="icon-bar"></span>--}}
-                {{--<span class="icon-bar"></span>--}}
-            {{--</button>--}}
+        {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
+        {{--data-target="#app-navbar-collapse">--}}
+        {{--<span class="sr-only">Toggle Navigation</span>--}}
+        {{--<span class="icon-bar"></span>--}}
+        {{--<span class="icon-bar"></span>--}}
+        {{--<span class="icon-bar"></span>--}}
+        {{--</button>--}}
 
-            <!-- Branding Image -->
+        <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
                 智慧山大
             </a>
@@ -48,21 +67,22 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-            {{--重写功能区--}}
-            <!-- Left Side Of Navbar -->
+        {{--重写功能区--}}
+        <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 {{--<li><a href="    {{ url('/link') }}">绑定</a></li>--}}
                 <li>
-                <div class="dropdown">
-                    <button type="label" class="well well-sm" id="dropdownMenu1" data-toggle="dropdown">查询
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <div class="dropdown">
+                        <button type="label" class="well well-sm" id="dropdownMenu1" data-toggle="dropdown">查询
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 
-                        <li><a href="  {{ url('/search/course') }}">课程查询</a></li>
-                        <li><a href="  {{ url('/search/grade') }}">成绩查询</a></li>
-                    </ul>
-                </div></li>
+                            <li><a href="  {{ url('/search/course') }}">课程查询</a></li>
+                            <li><a href="  {{ url('/search/grade') }}">成绩查询</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li><a href="{{ url('/evaluate') }}">教师评价</a></li>
                 <li><a href="  {{ url('/fee') }}">缴费</a></li>
                 <li><a href="  {{ url('/book') }}">图书馆</a></li>
@@ -101,15 +121,3 @@
 </nav>
 @yield('content')
 
-
-<!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
-        integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
-{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-@yield('js')
-</body>
-</html>
