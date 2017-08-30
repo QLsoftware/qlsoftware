@@ -45,10 +45,10 @@
     <div id="templatemo_banner_menu">
         <div class="container-fluid">
             <div class="col-xs-4 templatemo_logo">
-                <a rel="nofollow" href="http://www.cssmoban.com/preview/templatemo_411_dragonfruit">
-                    <img src="images/templatemo_logo.jpg" id="logo_img" alt="dragonfruit free html5 template" />
+                {{--<a rel="nofollow" href="http://www.cssmoban.com/preview/templatemo_411_dragonfruit">--}}
+                    {{--<img src="images/templatemo_logo.jpg" id="logo_img" alt="dragonfruit free html5 template" />--}}
                     <h1 id="logo_text">智慧<span>山大</span></h1>
-                </a>
+                {{--</a>--}}
             </div>
             <div class="col-sm-8 hidden-xs">
                 <ul class="nav nav-justified">
