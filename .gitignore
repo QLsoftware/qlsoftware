@@ -4,4 +4,5 @@
 /public/upload
 /public/uploads
 !public/uploads/p_avatars
+/public/files
 .env
