@@ -289,13 +289,44 @@
             </div>
         </div>
     </div>
-    {{--联系我们--}}
+    {{--联系我们  更改成权限控制--}}
     <div id="templatemo_contact" class="container_wapper">
         <div class="container-fluid">
-            <h1>Contact</h1>
-            <div class="col-xs-12">
+            <h1>进入智慧山大</h1>
+            {{--<div class="col-xs-12">
                 <div id="templatemo_contact_map"></div>
-            </div>
+            </div>--}}
+            {{--左边四列--}}
+            <form action="{{ url('/login') }}" method="post" role="form" class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>用户登录</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Name</p>
+                        <input type="text" name="name" id="name" placeholder="Your Name"/>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Email</p>
+                        <input type="text" name="email" id="email" placeholder="Your Email"/>
+                    </div>
+                    <div class="col-md-12">
+                        <p>Subject</p>
+                        <input type="text" name="subject" id="subject" placeholder="Subject"/>
+                    </div>
+                    <div class="col-md-12">
+                        <p>Message</p>
+                        <textarea name="message" id="message" placeholder="Write your message here..."></textarea>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-offset-6">
+                        <button type="submit">Send</button>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <button type="reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+
             <div class="col-md-4">
                 <h2>Contact Info.</h2>
                 <p>Sed viverra nunc magna, quis placerat augue pellentesque quis. Sed nec pellentesque dolor. Aenean in
@@ -322,35 +353,6 @@
                     </li>
                 </ul>
             </div>
-            <form action="#" method="post" class="col-md-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Send Enquiry</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Name</p>
-                        <input type="text" name="name" id="name" placeholder="Your Name"/>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Email</p>
-                        <input type="text" name="email" id="email" placeholder="Your Email"/>
-                    </div>
-                    <div class="col-md-12">
-                        <p>Subject</p>
-                        <input type="text" name="subject" id="subject" placeholder="Subject"/>
-                    </div>
-                    <div class="col-md-12">
-                        <p>Message</p>
-                        <textarea name="message" id="message" placeholder="Write your message here..."></textarea>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-offset-6">
-                        <button type="submit">Send</button>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <button type="reset">Reset</button>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
     {{--页脚--}}
