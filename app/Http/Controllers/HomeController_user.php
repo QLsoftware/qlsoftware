@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
 use Intervention\Image\Facades\Image;
+use App\article_recorded;
 
 /**
  * Class HomeController
@@ -25,6 +26,11 @@ class HomeController_user extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        return view('welcome')->with(article_recorded::getlatest());
     }
 
 //   view("link")用户绑定 0 == 没有变量   1 == 绑定成功

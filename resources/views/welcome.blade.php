@@ -113,14 +113,26 @@
 
                         <!-- 滚动图片 -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="elevator/images/about-03.jpg" class="img-responsive" alt="">
+                            <div class=" active item menu-item light-orange">
+                                {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
+                                @foreach($a1 as $a)
+                                    <a href={{$a->href}}> {{$a->title.'  '.$a->data}}</a>
+                                @endforeach
+                                {{--</a>--}}
                             </div>
-                            <div class="item">
-                                <img src="elevator/images/about-02.jpg" class="img-responsive" alt="">
+                            <div class="item menu-item green">
+                                {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
+                                @foreach($a2 as $a)
+                                    <a href={{$a->href}}> {{$a->title.'  '.$a->data}}</a>
+                                @endforeach
+                                {{--</a>--}}
                             </div>
-                            <div class="item">
-                                <img src="elevator/images/about-01.jpg" class="img-responsive" alt="">
+                            <div class="item menu-item red">
+                                {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
+                                @foreach($a3 as $a)
+                                    <a href={{$a->href}}> {{$a->title.'  '.$a->data}}</a>
+                                @endforeach
+                                {{--</a>--}}
                             </div>
 
                         </div>
@@ -128,6 +140,7 @@
                     </div>
                 </div>
                 <!-- Start Carousel Section -->
+
 
                 <div class="row">
                     <div class="col-md-6">

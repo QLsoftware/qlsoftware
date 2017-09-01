@@ -13,9 +13,7 @@
 //zjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjtzjt
 Route::auth();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController_user@index');
 Route::get('/zjt/look_info', 'test_ZJT@fun_test1_zjt');
 //搜索导航
 Route::get('/search', 'HomeController_user@search');

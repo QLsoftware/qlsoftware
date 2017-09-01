@@ -40,7 +40,7 @@ class SearchController extends Controller
 
         $client = baseapi::ConnectToBkjs(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
         /*zjt：需要判断是否获得了对象*/
-        if (!$client) return;
+        if (!$client) return redirect('/profile');
         $result = $client->request('post', '/f/xk/xs/bxqkb', ['allow_redirects' => false]);
         //return (string)$result->getBody();
         $result = (string)$result->getBody();//(string)$result->getBody();
