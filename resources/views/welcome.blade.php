@@ -1,365 +1,1351 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
 
-    {{--轮播--}}
-    <div class="banner" id="templatemo_banner_slide">
-        <ul>
-            <li class="templatemo_banner_slide_01">
-                <div class="slide_caption">
-                    <h1>Responsive Design</h1>
-                    <p>Aenean diam libero, venenatis eu risus eu, tincidunt porttitor orci. Nulla consequat mi et lectus
-                        vehicula condimentum. Nulla ullamcorper dolor vehicula dolor interdum, eget fermentum ligula
-                        bibendum.</p>
-                </div>
-            </li>
-            <li class="templatemo_banner_slide_02">
-                <div class="slide_caption">
-                    <h1>Free HTML5 Template</h1>
-                    <p>Nulla in nibh arcu. Donec quam neque, porta at pellentesque at, imperdiet ut velit. Pellentesque
-                        luctus ac nunc et hendrerit. Aliquam eu scelerisque eros. Vestibulum scelerisque mi nec augue
-                        condimentum rhoncus.</p>
-                </div>
-            </li>
-            <li class="templatemo_banner_slide_03">
-                <div class="slide_caption">
-                    <h1>Mobile Ready</h1>
-                    <p>Cras fermentum convallis elementum. Praesent sit amet auctor erat, vitae auctor dolor. Sed
-                        viverra nunc magna, quis placerat augue pellentesque quis. Sed nec pellentesque dolor. Aenean in
-                        lectus enim. Phasellus eu egestas libero. Vivamus ultrices ligula a dapibus lobortis.</p>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    {{--<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>--}}
+    <title>智慧山大</title>
 
-    {{--关于我们组织--}}
-    <div id="templatemo_about" class="container_wapper">
-        <div class="container-fluid">
-            <h1>About Our Organization</h1>
-            <div class="col-sm-6 col-md-3 about_icon">
-                <div class="imgwap mission"><i class="fa fa-rocket"></i></div>
-                <h2>Revenues</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et.</p>
-            </div>
-            <div class="col-sm-6 col-md-3 about_icon">
-                <div class="imgwap product"><i class="fa fa-cubes"></i></div>
-                <h2>Opportunities</h2>
-                <p>Tempor incididunt ut labore et dolore magna.</p>
-            </div>
-            <div class="col-sm-6 col-md-3 about_icon">
-                <div class="imgwap testimonial"><i class="fa fa-bar-chart-o"></i></div>
-                <h2>Growth</h2>
-                <p>Dolore magna aliqua. Ut enim ad minim veniam.</p>
-            </div>
-            <div class="col-sm-6 col-md-3 about_icon">
-                <div class="imgwap statistic"><i class="fa fa-comments"></i></div>
-                <h2>Social Media</h2>
-                <p>Aliqua. Ut enim ad minim veniam, quis nostrud aliqua.</p>
-            </div>
-            <div class="clearfix testimonial_top_bottom_spacer"></div>
-            <div class="col-xs-1 pre_next_wap" id="prev_testimonial">
-                <a href="#"><span class="glyphicon glyphicon-chevron-left pre_next"></span></a>
-            </div>
+    <!-- Bootstrap Core CSS -->
+    <link href="elevator/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-            <div id="testimonial_text_wap" class="col-xs-9 col-sm-10">
-                <div class="testimonial_text">
-                    <div class="col-sm-3">
-                        <img src="images/templatemo_member_01.jpg" class="img-responsive"
-                             alt="Business Development Manager"/>
-                    </div>
-                    <div class="col-sm-9">
-                        <h2>Tracy Mya</h2>
-                        <h3>Business Development Manager</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                </div><!--.testimonial_text-->
-                <div class="testimonial_text">
-                    <div class="col-sm-3">
-                        <img src="images/templatemo_member_02.jpg" class="img-responsive"
-                             alt="Chief Public Relation Officer"/>
-                    </div>
-                    <div class="col-sm-9">
-                        <h2>Mary Kas</h2>
-                        <h3>Chief Public Relation Officer</h3>
-                        <p>Fusce et orci mollis, congue lorem vitae, semper erat. Curabitur quis pellentesque nisl, at
-                            adipiscing libero. Integer at sem dui. Fusce posuere aliquet dolor, at viverra odio accumsan
-                            sed. Sed pharetra vel risus a convallis. Maecenas in adipiscing libero, id molestie odio.
-                            Phasellus id pharetra mauris, sit amet varius velit. Aliquam non dapibus libero.</p>
-                    </div>
-                </div><!--.testimonial_text-->
-                <div class="testimonial_text">
-                    <div class="col-sm-3">
-                        <img src="images/templatemo_member_03.jpg" class="img-responsive" alt="Marketing Executive"/>
-                    </div>
-                    <div class="col-sm-9">
-                        <h2>Julia Pan</h2>
-                        <h3>Marketing Executive</h3>
-                        <p>Maecenas nec rhoncus orci. Morbi tempus ut leo ac varius. Cras convallis sagittis dignissim.
-                            Aenean diam libero, venenatis eu risus eu, tincidunt porttitor orci. Nulla consequat mi et
-                            lectus vehicula condimentum. Nulla ullamcorper dolor vehicula dolor interdum, eget fermentum
-                            ligula bibendum. Sed vel dolor libero.</p>
-                    </div>
-                </div><!--.testimonial_text-->
-                <div class="testimonial_text">
-                    <div class="col-sm-3">
-                        <img src="images/templatemo_member_04.jpg" class="img-responsive"
-                             alt="Chief Executive Officer"/>
-                    </div>
-                    <div class="col-sm-9">
-                        <h2>Linda Von</h2>
-                        <h3>Chief Executive Officer</h3>
-                        <p>Donec lacinia erat quis venenatis varius. Suspendisse non turpis vitae libero interdum
-                            lacinia. Nulla in nibh arcu. Donec quam neque, porta at pellentesque at, imperdiet ut velit.
-                            Pellentesque luctus ac nunc et hendrerit. Aliquam eu scelerisque eros. Vestibulum
-                            scelerisque mi nec augue condimentum rhoncus.</p>
-                    </div>
-                </div><!--.testimonial_text-->        </div><!--#testimonial_text_wap-->
-            <div class="col-xs-1 pre_next_wap" id="next_testimonial">
-                <a href="#"><span class="glyphicon glyphicon-chevron-right pre_next"></span></a>
-            </div>
-            <div class="clearfix testimonial_top_bottom_spacer"></div>
-        </div>
-    </div><!--templatemo_about-->
-    {{--事件--}}
-    <div id="templatemo_events" class="container_wapper">
-        <div class="container-fluid">
-            <h1>Events</h1>
-            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-                <div class="event_box_wap event_animate_left">
-                    <div class="event_box_img">
-                        <img src="images/templatemo_event_01.jpg" class="img-responsive" alt="Web Design Trends"/>
-                    </div>
-                    <div class="event_box_caption">
-                        <h1>Web Design Trends</h1>
-                        <p><span class="glyphicon glyphicon-map-marker"></span> New Hotel, Bangkok, Thailand &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-time"></span> 4:00 PM to 8:00 PM</p>
-                        <p>Quisque feugiat dapibus lectus ut consectetur. Donec et ante vitae leo cursus hendrerit vitae
-                            ac mauris. Suspendisse dictum pretium urna quis rutrum. Nullam tincidunt dolor ut leo
-                            malesuada, eget volutpat turpis porttitor.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-                <div class="event_box_wap event_animate_right">
-                    <div class="event_box_img">
-                        <img src="images/templatemo_event_02.jpg" class="img-responsive" alt="Free Bootstrap Seminar"/>
-                    </div>
-                    <div class="event_box_caption">
-                        <h1>Free Bootstrap Seminar</h1>
-                        <p><span class="glyphicon glyphicon-map-marker"></span> Digital Hall, Yangon, Myanmar &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-time"></span> 10:30 AM to 3:30 PM </p>
-                        <p>Vestibulum dapibus dolor porttitor urna pretium euismod. Aliquam lobortis enim at lacinia
-                            mollis. Curabitur eget sem eros. Duis pulvinar rhoncus lectus, ac hendrerit enim pharetra
-                            et.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-                <div class="event_box_wap event_animate_left">
-                    <div class="event_box_img">
-                        <img src="images/templatemo_event_03.jpg" class="img-responsive" alt=""/>
-                    </div>
-                    <div class="event_box_caption">
-                        <h1>Mobile Designs</h1>
-                        <p><span class="glyphicon glyphicon-map-marker"></span> Old Town Center, Mandalay, Myanmar
-                            &nbsp;&nbsp; <span class="glyphicon glyphicon-time"></span> 3:30 PM to 6:30 PM </p>
-                        <p>Etiam ac ante gravida, pellentesque odio non, facilisis dui. Suspendisse vestibulum justo
-                            quis sapien sodales, in pellentesque erat congue.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-                <div class="event_box_wap event_animate_right">
-                    <div class="event_box_img">
-                        <img src="images/templatemo_event_04.jpg" class="img-responsive" alt=""/>
-                    </div>
-                    <div class="event_box_caption">
-                        <h1>Happy Startups</h1>
-                        <p><span class="glyphicon glyphicon-map-marker"></span> New Hat, Lashio, Myanmar &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-time"></span> 2:15 PM to 5:15 PM </p>
-                        <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc rutrum urna eget augue
-                            placerat sodales. Mauris ut dapibus nisi, eget fringilla lectus.</p>
-                    </div>
+    <!-- Font Awesome CSS -->
+    <link href="elevator/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="elevator/css/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="elevator/css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+    <!-- Template js -->
+    <script src="elevator/js/jquery-2.1.1.min.js"></script>
+    <script src="elevator/bootstrap/js/bootstrap.min.js"></script>
+    <script src="elevator/js/jquery.appear.js"></script>
+    <script src="elevator/js/contact_me.js"></script>
+    <script src="elevator/js/jqBootstrapValidation.js"></script>
+    <script src="elevator/js/modernizr.custom.js"></script>
+    <script src="elevator/js/script.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Start Logo Section -->
+<section id="logo-section" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo text-center">
+                    <h1>智慧山大</h1>
+                    <span>为你的校园生活添加便捷</span>
                 </div>
             </div>
         </div>
     </div>
-    {{--时间轴--}}
-    <div id="templatemo_timeline" class="container_wapper">
-        <h1>Timeline</h1>
-        <div class="container-fluid">
-            <div class="time_line_wap">
-                <div class="time_line_caption">10 days ago</div>
-                <div class="time_line_paragraph">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">George</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Web Design</a>, <a href="#">Responsive</a>
-                        &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">3 comments</a>
-                    </p>
-                    <p>Aliquam adipiscing nibh sem, vitae aliquet ipsum rutrum nec. Nulla nec fermentum libero. Duis
-                        quis fermentum libero. Nunc facilisis ultrices fringilla. Nullam sed ligula ac libero venenatis
-                        pellentesque vitae nec mauris.</p>
+</section>
+<!-- End Logo Section -->
+
+
+<!-- Start Main Body Section -->
+<div class="mainbody-section text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <!--登录-->
+                <div class="menu-item blue">
+                    @if (Auth::guest())
+                        <a href="{{ url('/login') }}" data-toggle="modal">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <p>登录</p>
+                        </a>
+                    @else
+                        <a href="{{ url('/profile') }}" data-toggle="modal">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            <p>{{ Auth::user()->name }}的设置</p>
+                        </a>
+                    @endif
                 </div>
-            </div>
-            <div class="time_line_wap">
-                <div class="time_line_caption">2 weeks ago</div>
-                <div class="time_line_paragraph">
-                    <h1>Excepteur sint occaecat cupidatat</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">Kyor Kyor</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">HTML5</a>, <a href="#">Mobile</a>
-                        &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">2 comments</a>
-                    </p>
-                    <p>Vestibulum pellentesque leo mi, non adipiscing odio tristique in. Aliquam suscipit magna nisi,
-                        non dapibus purus cursus in. Sed vitae quam bibendum mauris vehicula pretium. Curabitur ac
-                        ornare magna. Vestibulum dapibus dolor porttitor urna pretium euismod. Aliquam lobortis enim at
-                        lacinia mollis.</p>
+                <!--课程查询-->
+                <div class="menu-item green">
+                    <a href="{{ url('/search/course') }}" data-toggle="modal">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <p>课程查询</p>
+                    </a>
                 </div>
-            </div>
-            <div class="time_line_wap">
-                <div class="time_line_caption">one month ago</div>
-                <div class="time_line_paragraph">
-                    <h1>Doloremque laudantium</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">Cooker</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Web Design</a>, <a
-                                href="#">CSS3</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">3 comments</a>
-                    </p>
-                    <p>Fusce feugiat sem dolor. Curabitur a consectetur quam. Maecenas ut purus rutrum, bibendum eros
-                        eu, suscipit diam. Praesent semper bibendum gravida. Praesent eget leo ac arcu aliquet
-                        pellentesque sit amet at tortor. Cras sagittis nec tellus nec imperdiet.</p>
+                <!--成绩查询-->
+                <div class="menu-item light-red">
+                    <a href="{{ url('/search/grade') }}" data-toggle="modal">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <p>成绩查询</p>
+                    </a>
                 </div>
+
             </div>
-            <div class="time_line_wap">
-                <div class="time_line_caption">15 May 2084</div>
-                <div class="time_line_paragraph">
-                    <h1>Neque porro quisquam</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">Brain</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">HTML5</a>, <a
-                                href="#">Animation</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">6 comments</a>
-                    </p>
-                    <p>Ut varius nibh adipiscing sagittis lobortis. Sed imperdiet risus enim, sit amet tempus nisi
-                        lobortis a. Etiam in gravida leo, non interdum sapien. Sed mi odio, pharetra at tellus ac,
-                        adipiscing pulvinar dolor. Nulla quis suscipit urna. Integer congue non nunc a luctus.</p>
+
+            <div class="col-md-6">
+
+                <!-- Start Carousel Section -->
+                <div class="home-slider">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
+                         style="padding-bottom: 30px;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- 滚动图片 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="elevator/images/about-03.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="elevator/images/about-02.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="elevator/images/about-01.jpg" class="img-responsive" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class="time_line_wap">
-                <div class="time_line_caption">20 April 2084</div>
-                <div class="time_line_paragraph">
-                    <h1>Sed do eiusmod tempor</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">John West</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">3D Effect</a>, <a
-                                href="#">CSS3</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">4 comments</a>
-                    </p>
-                    <p>Maecenas in ipsum pulvinar, dapibus leo ut, adipiscing neque. Phasellus tincidunt arcu eleifend
-                        placerat posuere. Nullam nec eros in leo facilisis blandit id in neque. Proin varius, neque in
-                        eleifend porta, neque arcu dapibus risus, vel congue ante nibh varius nisi.</p>
-                </div>
-            </div>
-            <div class="time_line_wap">
-                <div class="time_line_caption">5 April 2084</div>
-                <div class="time_line_paragraph">
-                    <h1>Ut enim ad minim veniam</h1>
-                    <p>
-                        <span class="glyphicon glyphicon-user"></span> <a href="#">Moon Plus</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-bookmark"></span> <a href="#">Web Design</a>, <a href="#">Responsive</a>
-                        &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-edit"></span> <a href="#">5 comments</a>
-                    </p>
-                    <p>Duis lacinia leo erat, eu tincidunt mauris congue ut. Ut auctor turpis a sapien commodo, ac
-                        ultrices dui vehicula. Etiam in tristique felis. Sed eleifend turpis sed purus venenatis
-                        fringilla. <br><br> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                        cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                        turpis egestas. Suspendisse vel sollicitudin eros, vel vulputate leo.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{--联系我们  更改成权限控制--}}
-    <div id="templatemo_contact" class="container_wapper">
-        <div class="container-fluid">
-            <h1>进入智慧山大</h1>
-            {{--<div class="col-xs-12">
-                <div id="templatemo_contact_map"></div>
-            </div>--}}
-            {{--左边四列--}}
-            <form action="{{ url('/login') }}" method="post" role="form" class="col-md-8">
+                <!-- Start Carousel Section -->
+
                 <div class="row">
-                    <div class="col-md-12">
-                        <h2>用户登录</h2>
-                    </div>
                     <div class="col-md-6">
-                        <p>Name</p>
-                        <input type="text" name="name" id="name" placeholder="Your Name"/>
+                        <div class="menu-item color responsive">
+                            <a href="{{ url('/pan') }}" data-toggle="modal">
+                                <i class="glyphicon glyphicon-file"></i>
+                                <p>网盘</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p>Email</p>
-                        <input type="text" name="email" id="email" placeholder="Your Email"/>
-                    </div>
-                    <div class="col-md-12">
-                        <p>Subject</p>
-                        <input type="text" name="subject" id="subject" placeholder="Subject"/>
-                    </div>
-                    <div class="col-md-12">
-                        <p>Message</p>
-                        <textarea name="message" id="message" placeholder="Write your message here..."></textarea>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-offset-6">
-                        <button type="submit">Send</button>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <button type="reset">Reset</button>
-                    </div>
-                </div>
-            </form>
 
-            <div class="col-md-4">
-                <h2>Contact Info.</h2>
-                <p>Sed viverra nunc magna, quis placerat augue pellentesque quis. Sed nec pellentesque dolor. Aenean in
-                    lectus enim. Phasellus eu egestas libero. Vivamus ultrices ligula a dapibus lobortis.</p>
-                <br>
-                <p><strong>Email:</strong> info@company.com<br/><strong>Phone:</strong> 010-020-0340<br/><strong>Website:</strong>
-                    www.company.com<br/><strong>Address:</strong> 123 Thamine Street, Digital Estate, Yangon 10620,
-                    Myanmar</p>
-                <ul class="list-inline social-link">
-                    <li>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </li>
-                </ul>
+                    <div class="col-md-6">
+                        <div class="menu-item light-orange responsive-2">
+                            <a href="{{ url('/evaluate') }}" data-toggle="modal">
+                                <i class="glyphicon glyphicon-thumbs-up"></i>
+                                <p>教师评价</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--第三列   报修抢课  闲谈-->
+            <div class="col-md-3">
+
+                <div class="menu-item light-red">
+                    <a href="{{ url('/fix') }}" data-toggle="modal">
+                        <i class="glyphicon glyphicon-wrench"></i>
+                        <p>报修</p>
+                    </a>
+                </div>
+
+                <div class="menu-item color">
+                    <a href="{{ url('/zjt/getc') }}" data-toggle="modal">
+                        <i class="glyphicon glyphicon-hdd"></i>
+                        <p>自动选课</p>
+                    </a>
+                </div>
+                <div class="menu-item blue">
+                    <a href="{{ url('/forums') }}" data-toggle="modal">
+                        <i class="glyphicon glyphicon-fire"></i>
+                        <p>闲谈</p>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
-    {{--页脚--}}
-    <div id="templatemo_footer">
-        <div>
-            <p>Copyright &copy; 2017 智慧山大</p>
+</div>
+<!-- End Main Body Section -->
+
+<!-- Start Copyright Section -->
+<div class="copyright text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div>Copyright &copy; 2017 <a href="{{ url('/admin') }}">智慧山大</a> <a
+                            href=" {{ url('/repairman/index')}}">维修人员入口</a></div>
+            </div>
         </div>
     </div>
+</div>
+<!-- End Copyright Section -->
 
-@endsection
+
+<!-- Start Feature Section -->
+<div class="section-modal modal fade" id="feature-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Our Awesome Feature</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-magic"></i>
+                        <div class="feature-content">
+                            <h4>Web Design</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-gift"></i>
+                        <div class="feature-content">
+                            <h4>Graphics Design</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-wordpress"></i>
+                        <div class="feature-content">
+                            <h4>Wordpress Theme</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-plug"></i>
+                        <div class="feature-content">
+                            <h4>Wordpress Plugin</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-joomla"></i>
+                        <div class="feature-content">
+                            <h4>Joomla Template</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-cube"></i>
+                        <div class="feature-content">
+                            <h4>Joomla Extension</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-css3"></i>
+                        <div class="feature-content">
+                            <h4>HTML 5 & CSS3</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <i class="fa fa-android"></i>
+                        <div class="feature-content">
+                            <h4>Android Apps</h4>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-3 -->
+            </div><!-- /.row -->
+        </div>
+
+    </div>
+</div>
+<!-- End Feature Section -->
+
+
+<!-- Start Portfolio Section -->
+<div class="section-modal modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Our Portfolio</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/1.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/2.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/3.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/4.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/5.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/6.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/7.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/8.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/9.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/10.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/11.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="elevator/images/portfolio/12.png" class="img-responsive" alt="...">
+                        <div class="portfolio-details text-center">
+                            <h4>Project Name</h4>
+                            <a href="#"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.row -->
+        </div>
+
+    </div>
+</div>
+<!-- End Portfolio Section -->
+
+
+<!-- Start About Us Section -->
+<div class="section-modal modal fade" id="about-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>About Us</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about-text">
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                            Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+                            Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
+                            word in classical literature, discovered the undoubtable source. At vero eos et accusamus et
+                            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                            quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. It has
+                            roots in a piece of classical Latin literature from 45 BC</p>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <ul>
+                                    <li><i class="fa fa-check-square"></i>Sed ut perspiciatis unde omnis iste natus</li>
+                                    <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
+                                    <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
+                                    <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul>
+                                    <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
+                                    <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
+                                    <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
+                                    <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul>
+                                    <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
+                                    <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
+                                    <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
+                                    <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
+                                </ul>
+                            </div>
+                        </div><!-- /.row -->
+                    </div>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="skill-shortcode">
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Web Design</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-percentage="60">
+                                    <span class="progress-bar-span">60%</span>
+                                    <span class="sr-only">60% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>HTML & CSS</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-percentage="95">
+                                    <span class="progress-bar-span">95%</span>
+                                    <span class="sr-only">95% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Wordpress</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-percentage="80">
+                                    <span class="progress-bar-span">80%</span>
+                                    <span class="sr-only">80% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Joomla</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-percentage="100">
+                                    <span class="progress-bar-span">100%</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Extension</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-percentage="70">
+                                    <span class="progress-bar-span">70%</span>
+                                    <span class="sr-only">70% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-tab">
+
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li class="active"><a href="#tab-1" role="tab" data-toggle="tab">Our Mission</a></li>
+                            <li><a href="#tab-2" role="tab" data-toggle="tab">Our Vission</a></li>
+                            <li><a href="#tab-3" role="tab" data-toggle="tab">Company History</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane active" id="tab-1">
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                    occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                    mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                                    expedita distinctio.</p>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                    occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                    mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                                    expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint occaecati cupiditate non provident.</p>
+                            </div>
+
+
+                            <div class="tab-pane" id="tab-2">
+                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
+                                    minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
+                                    dolor repellendus.</p>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                    occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                    mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                                    expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint occaecati cupiditate non provident.</p>
+                            </div>
+
+
+                            <div class="tab-pane" id="tab-3">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+                                    qui ratione voluptatem sequi nesciunt.</p>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                    occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                    mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                                    expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint occaecati cupiditate non provident.</p>
+                            </div>
+
+                        </div><!-- /.tab-content -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End About Us Section -->
+
+
+<!-- Start Service Section -->
+<div class="section-modal modal fade" id="service-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Our Services</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-magic pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">Web Design</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-css3 pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">HTML5 & CSS3</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-wordpress pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">Wordpress Theme</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-plug pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">Wordpress Plugin</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-joomla pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">Joomla Template</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="feature-2">
+                        <div class="media">
+                            <i class="fa fa-cube pull-left"></i>
+                            <div class="media-body">
+                                <h4 class="media-heading">Joomla Extension</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-4 -->
+
+            </div><!-- /.row -->
+        </div>
+
+        <div class="pricing-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table">
+                            <div class="plan-name">
+                                <h3>Free</h3>
+                            </div>
+                            <div class="plan-price">
+                                <div class="price-value">$49<span>.00</span></div>
+                                <div class="interval">per month</div>
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li>40 GB Storage</li>
+                                    <li>40GB Transfer</li>
+                                    <li>10 Domains</li>
+                                    <li>20 Projects</li>
+                                    <li>Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="plan-signup">
+                                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table">
+                            <div class="plan-name">
+                                <h3>Standard</h3>
+                            </div>
+                            <div class="plan-price">
+                                <div class="price-value">$49<span>.00</span></div>
+                                <div class="interval">per month</div>
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li>40 GB Storage</li>
+                                    <li>40GB Transfer</li>
+                                    <li>10 Domains</li>
+                                    <li>20 Projects</li>
+                                    <li>Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="plan-signup">
+                                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table">
+                            <div class="plan-name">
+                                <h3>Premium</h3>
+                            </div>
+                            <div class="plan-price">
+                                <div class="price-value">$49<span>.00</span></div>
+                                <div class="interval">per month</div>
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li>40 GB Storage</li>
+                                    <li>40GB Transfer</li>
+                                    <li>10 Domains</li>
+                                    <li>20 Projects</li>
+                                    <li>Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="plan-signup">
+                                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="pricing-table">
+                            <div class="plan-name">
+                                <h3>Professional</h3>
+                            </div>
+                            <div class="plan-price">
+                                <div class="price-value">$49<span>.00</span></div>
+                                <div class="interval">per month</div>
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li>40 GB Storage</li>
+                                    <li>40GB Transfer</li>
+                                    <li>10 Domains</li>
+                                    <li>20 Projects</li>
+                                    <li>Free installation</li>
+                                </ul>
+                            </div>
+                            <div class="plan-signup">
+                                <a href="#" class="btn-system btn-small">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Service Section -->
+
+
+<!-- Start Team Member Section -->
+<div class="section-modal modal fade" id="team-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Our Expert Team</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/manage-1.png" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/manage-2.png" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/manage-3.png" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/manage-4.png" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/team-1.jpg" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/team-2.jpg" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/team-3.jpg" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-member">
+                        <img src="elevator/images/team/team-4.jpg" class="img-responsive" alt="">
+                        <div class="team-details">
+                            <h4>John Doe</h4>
+                            <div class="designation">Senior Web Developer</div>
+                            <ul style="text-align: center;">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.row -->
+        </div>
+
+    </div>
+</div>
+<!-- End Team Member Section -->
+
+
+<!-- Start Latest News Section -->
+<div class="section-modal modal fade" id="news-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Exclusive News</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="latest-post">
+                        <img src="elevator/images/blog-01.jpg" class="img-responsive" alt="">
+                        <h4><a href="#">Standard Post with Image</a></h4>
+                        <div class="post-details">
+                            <ul>
+                                <li><i class="fa fa-user"></i> Auther : iThemesLab</li>
+                                <li><i class="fa fa-calendar"></i> 07 Aug, 2014</li>
+                                <li><i class="fa fa-tag"></i> Music</li>
+                            </ul>
+                        </div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Sed ut
+                            perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                            aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+                            dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="latest-post">
+                        <img src="elevator/images/blog-02.jpg" class="img-responsive" alt="">
+                        <h4><a href="#">Standard Post with Image</a></h4>
+                        <div class="post-details">
+                            <ul>
+                                <li><i class="fa fa-user"></i> Auther : iThemesLab</li>
+                                <li><i class="fa fa-calendar"></i> 07 Aug, 2014</li>
+                                <li><i class="fa fa-tag"></i> Music</li>
+                            </ul>
+                        </div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Sed ut
+                            perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                            aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+                            dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="latest-post">
+                        <img src="elevator/images/blog-03.jpg" class="img-responsive" alt="">
+                        <h4><a href="#">Standard Post with Image</a></h4>
+                        <div class="post-details">
+                            <ul>
+                                <li><i class="fa fa-user"></i> Auther : iThemesLab</li>
+                                <li><i class="fa fa-calendar"></i> 07 Aug, 2014</li>
+                                <li><i class="fa fa-tag"></i> Music</li>
+                            </ul>
+                        </div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Sed ut
+                            perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                            aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+                            dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="latest-post">
+                        <img src="elevator/images/blog-04.jpg" class="img-responsive" alt="">
+                        <h4><a href="#">Standard Post with Image</a></h4>
+                        <div class="post-details">
+                            <ul>
+                                <li><i class="fa fa-user"></i> Auther : iThemesLab</li>
+                                <li><i class="fa fa-calendar"></i> 07 Aug, 2014</li>
+                                <li><i class="fa fa-tag"></i> Music</li>
+                            </ul>
+                        </div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                            consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Sed ut
+                            perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                            aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                            quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+                            dolorem eum fugiat quo voluptas nulla pariatur.</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Latest News Section -->
+
+
+<!-- Start Contact Section -->
+<div class="section-modal modal fade contact" id="contact-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Contact With Us</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="footer-contact-info">
+                        <h4>Contact info</h4>
+                        <ul>
+                            <li><strong>E-mail :</strong> your-email@mail.com</li>
+                            <li><strong>Phone :</strong> +8801-6778776</li>
+                            <li><strong>Mobile :</strong> +8801-45565378</li>
+                            <li><strong>Web :</strong> yourdomain.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-social text-center">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-contact-info">
+                        <h4>Working Hours</h4>
+                        <ul>
+                            <li><strong>Mon-Wed :</strong> 9 am to 5 pm</li>
+                            <li><strong>Thurs-Fri :</strong> 12 pm to 10 pm</li>
+                            <li><strong>Sat :</strong> 9 am to 3 pm</li>
+                            <li><strong>Sunday :</strong> Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!--/.row -->
+            <div class="row" style="padding-top: 80px;">
+                <div class="col-md-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required
+                                           data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email"
+                                           required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
+                                           required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required
+                                              data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Contact Section -->
+
+
+<!-- Start Testimonial Section -->
+<div class="section-modal modal fade contact" id="testimonial-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center">
+                    <h3>Client's Speech About Us</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <img src="elevator/images/team/manage-1.png" class="img-responsive" alt="...">
+                        <h4>John Doe</h4>
+                        <div class="speech">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <img src="elevator/images/team/manage-2.png" class="img-responsive" alt="...">
+                        <h4>John Doe</h4>
+                        <div class="speech">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <img src="elevator/images/team/manage-3.png" class="img-responsive" alt="...">
+                        <h4>John Doe</h4>
+                        <div class="speech">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="testimonial">
+                        <img src="elevator/images/team/manage-4.png" class="img-responsive" alt="...">
+                        <h4>John Doe</h4>
+                        <div class="speech">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!--/.row -->
+
+        </div>
+
+    </div>
+</div>
+<!-- End Testimonial Section -->
+
+</body>
+
+</html>
