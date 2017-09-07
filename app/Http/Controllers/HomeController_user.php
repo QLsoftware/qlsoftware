@@ -94,7 +94,7 @@ class HomeController_user extends Controller
             //生成文件名称   getClientOriginalExtension()得到图像的后缀名称
             $file_name = time() . '.' . $avatar->getClientOriginalExtension();
             //修改头像文件的尺寸   并进行本地存储    注意需要先  use Intervention\Image\Facades\Image;
-            Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $file_name));
+            Image::make($avatar)->resize(300, 300)->save('/uploads/avatars/' . $file_name);
             //在数据库中保存文件的存储地址      数据库中只保存地址，不存储图像数据
             $user = Auth::user();
             $user->avatar = 'avatars/' . $file_name;
