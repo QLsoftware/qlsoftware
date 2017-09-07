@@ -156,7 +156,7 @@
 		        				@if( (substr(Auth::user()->{$db_field}, 0, 7) == 'http://') || (substr(Auth::user()->{$db_field}, 0, 8) == 'https://') )
 		        					<img src="{{ Auth::user()->{$db_field}  }}">
 		        				@else
-		        					<img src="{{ Config::get('chatter.user.relative_url_to_image_assets') . Auth::user()->{$db_field}  }}">
+		        					<img src="{{ Config::get('chatter.user.relative_url_to_image_assets').'/' . Auth::user()->{$db_field}  }}">
 		        				@endif
 
 		        			@else

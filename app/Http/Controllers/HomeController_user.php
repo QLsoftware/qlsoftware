@@ -56,8 +56,10 @@ class HomeController_user extends Controller
     {
         //单纯进行存储
         $account = new User();
-        $account->savej_username(Auth::user()['id'], $request['j_username'], $request['j_password']);
-        return redirect('profile');
+        $account->savej_username(Auth::user()['id'], $request['j_username'], md5($request['j_password']));
+//        $client = baseapi::testj_username(Auth::user()['j_username'], base64_decode(Auth::user()['j_password']));
+//        return $request['j_password'].Auth::user()['j_username'] . '<br>' . base64_decode(Auth::user()['j_password']) . '<br>' . $client . '<br>' . md5($request['j_password']).'<br>'.base64_decode(base64_encode(md5('DREAM041')));
+        return redirect('/profile');
     }
 
 //    个人设置
@@ -69,6 +71,7 @@ class HomeController_user extends Controller
          */
         if (Auth::user()['j_username']) {
             $client = baseapi::testj_username(Auth::user()['j_username'], base64_decode(Auth::user()['j_password']));
+//            return Auth::user()['j_username'] . '<br>' . base64_decode(Auth::user()['j_password']) . '<br>' . $client;
             if ($client == -1) {
                 Auth::user()['j_password'] = null;
                 Auth::user()->save();
@@ -78,7 +81,7 @@ class HomeController_user extends Controller
                 ;//TODO
             }
         }
-
+//        return Auth::user();
         return view('profile')->with(array('user' => Auth::user()));
     }
 

@@ -44,7 +44,7 @@ class baseapi extends Controller
         }
         if ((string)$result->getBody() == '"success"')
             return $client;
-        elseif ((string)$result->getBody() == '"用户名或密码错误!"'){
+        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"'){
 //            TODO 添加异常
             return null;}
         else {
@@ -82,10 +82,10 @@ class baseapi extends Controller
         }
         if ((string)$result->getBody() == '"success"')
             return 1;
-        elseif ((string)$result->getBody() == '"用户名或密码错误!"')
+        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')
             return -1;
         else {
-            return 0;
+            return $result->getBody();
         }
 
     }

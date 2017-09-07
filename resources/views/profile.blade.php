@@ -64,29 +64,28 @@
                         <form action="{{ url('/link/cancel')}}" method="post">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-sm btn-danger">解绑</button>
-        </div>
-        </form>
-        </td>
-        </tr>
-        @elseif(!Auth::user()->j_password&&Auth::user()->j_username){{--失效--}}
-        <tr class="alert-error">
-            <td>绑定本科教育的学号</td>
-            <td>密码失效</td>
-            <td>
-                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
+                        </form>
+                    </td>
+                </tr>
+                @elseif(!Auth::user()->j_password&&Auth::user()->j_username){{--失效--}}
+                <tr class="alert-error">
+                    <td>绑定本科教育的学号</td>
+                    <td>密码失效</td>
+                    <td>
+                        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
 
-            </td>
-        </tr>
-        @else
-            <tr class="alert-danger">
-                <td>绑定本科教育的学号</td>
-                <td>未绑定</td>
-                <td>
-                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
+                    </td>
+                </tr>
+                @else
+                    <tr class="alert-danger">
+                        <td>绑定本科教育的学号</td>
+                        <td>未绑定</td>
+                        <td>
+                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#link">重新绑定</button>
 
-                </td>
-            </tr>
-            @endif
+                        </td>
+                    </tr>
+                @endif
 
 
             </table>
@@ -124,6 +123,6 @@
             </div>
 
 
-    </div>
+        </div>
     </div>
 @endsection

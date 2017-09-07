@@ -42,27 +42,57 @@ class test_ZJT extends Controller
     }
 
 
-
     public function index()
     {
-
-        $re = DB::select('select title , count(*) as num from chatter_post nature join chatter_discussion group by chatter_discussion_id ;');
-        $result = [];
-        $i = 0;
-        $text_other = '其他';
-        $count_other = 0;
-        foreach ($re as $r) {
-            if ($i > 8) {
-                $count_other += $r->num;
-                continue;
-            }
-            $result[$i] = [$r->title, $r->num];
-            $i++;
+        echo 'ceshi       <br>';
+        $jar = new \GuzzleHttp\Cookie\CookieJar();
+        $mima = md5('DREAM0418');
+        $client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => 'http://bkjws.sdu.edu.cn',
+            // You can set any number of default request options.
+            'timeout' => 2.0,
+            //参数
+            'form_params' => [
+                'j_username' => '201500130051',
+                'j_password' => $mima,
+            ],
+            'cookies' => $jar,
+        ]);
+        $result = null;
+        try {
+            $result = $client->request('post', '/b/ajaxLogin');
+        } catch (\Exception $exception) {
+            return null;
         }
-        if ($count_other > 0)
-            $result[$i] = [$text_other, $count_other];
-        return $result;
+        $result = $client->request('post', '/b/');
+        return $result->getBody();
+//        if ((string)$result->getBody() == '"success"')
+//            return 1;
+//        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')
+//            return -1;
+//        else {
+//            return $result->getBody();
+//        }
 
+
+//        $re = DB::select('select title , count(*) as num from chatter_post nature join chatter_discussion group by chatter_discussion_id ;');
+//        $result = [];
+//        $i = 0;
+//        $text_other = '其他';
+//        $count_other = 0;
+//        foreach ($re as $r) {
+//            if ($i > 8) {
+//                $count_other += $r->num;
+//                continue;
+//            }
+//            $result[$i] = [$r->title, $r->num];
+//            $i++;
+//        }
+//        if ($count_other > 0)
+//            $result[$i] = [$text_other, $count_other];
+//        return $result;
+//
 
 //        Mail::raw('这是一封测试邮件', function ($message) {
 //            $to = '851207685@qq.com';
