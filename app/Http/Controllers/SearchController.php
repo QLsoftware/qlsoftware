@@ -103,7 +103,7 @@ class SearchController extends Controller
         $CourseArray['6']['0']='第六节';
         $CourseArray['7']['0']='第七节';
         for($i=1;$i<$count;$i++){
-            $CourseArray[$coursearray[$i]['9']][$coursearray[$i]['10']]=$coursearray[$i]['2'].' ('.$coursearray[$i]['5'].')-'.$coursearray[$i]['7'];
+            $CourseArray[$coursearray[$i]['10']][$coursearray[$i]['9']]=$coursearray[$i]['2'].' ('.$coursearray[$i]['5'].')-'.$coursearray[$i]['7'];
         }
        // return $CourseArray;
 //echo $CourseArray['1']['1'];
