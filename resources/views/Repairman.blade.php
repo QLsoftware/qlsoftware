@@ -18,6 +18,8 @@
             @php($i = 0)
             @foreach($repairData as $data)
                 @php($i++)
+                @php($detail = 'detail'.$i)
+                @php($detail_ = '#detail'.$i)
                 <tr>
                     <td>{{$data->re_id}}</td>
                     <td>{{$data->re_date}}</td>
@@ -29,11 +31,11 @@
                         </a>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-lg" style="font-size: 12px;"
-                                data-toggle="modal" data-target='#detail' .{{$i}}>
+                                data-toggle="modal" data-target={{$detail_}}>
                             详情
                         </button>
 
-                        <div class="modal fade" id='detail' .{{$i}}>
+                        <div class="modal fade" id={{$detail}}>
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
