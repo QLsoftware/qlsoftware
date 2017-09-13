@@ -62,7 +62,7 @@ Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 
 
 //qy
-Route::group(['prefix'=>'/admin/repairman'],function(){
+Route::group(['prefix'=>'/repairman'],function(){
     // Route::get('/','RepairmanController@getRepairList');
     Route::get('/index','RepairmanController@index');
     Route::get('/update/{id}','RepairmanController@updateState');
