@@ -132,7 +132,7 @@ class SearchController extends Controller
 //        return view('search')->with($SearchOption);
 //    }
 
-    public function search_grade()
+    public function search_grade(Request $request)
     {
         //$gradearray=baseapi::S_Grade_Inter(Auth::user()["j_username"], base64_decode(Auth::user()["j_password"]));
         //return $gradearray['0']['0'];
@@ -150,6 +150,28 @@ class SearchController extends Controller
         //return $result;
         $object = $result["object"];
         $aaData=get_object_vars($object)["aaData"];
+        $aaData_1=get_object_vars($object)["aaData"];
+        $count_year=0;
+        $xnxqarray=array();
+        foreach ($aaData_1 as $item) {
+            if($count_year==0){
+                $xnxqarray['0']=$item->xnxq;
+                $count_year++;
+            }
+            else{
+                $yorn=true;
+                for($i=0;$i<$count_year;$i++){
+                    if($item->xnxq==$xnxqarray[$i]){
+                        $yorn=false;
+                        break;
+                    }
+                }
+                if($yorn){
+                    $xnxqarray[$count_year]=$item->xnxq;
+                    $count_year++;
+                }
+            }
+        }
         $gradearray=array();
         $count=1;
         $gradearray['0']['0']='课程号';
@@ -161,16 +183,18 @@ class SearchController extends Controller
         $gradearray['0']['6']='考试时间';
         $gradearray['0']['7']='考试成绩';
         foreach($aaData as $item){
-            $gradearray[$count]=array();
-            $gradearray[$count]['0']=$item->kch;
-            $gradearray[$count]['1']=$item->kcm;
-            $gradearray[$count]['2']=$item->kxh;
-            $gradearray[$count]['3']=$item->xf;
-            $gradearray[$count]['4']=$item->xnxq;
-            $gradearray[$count]['5']=$item->kcsx;
-            $gradearray[$count]['6']=$item->kssj;
-            $gradearray[$count]['7']=$item->kscjView;
-            $count++;
+            if($request==null||$request->xnxq=='全部'||$request->xnxq==$item->xnxq){
+                $gradearray[$count]=array();
+                $gradearray[$count]['0']=$item->kch;
+                $gradearray[$count]['1']=$item->kcm;
+                $gradearray[$count]['2']=$item->kxh;
+                $gradearray[$count]['3']=$item->xf;
+                $gradearray[$count]['4']=$item->xnxq;
+                $gradearray[$count]['5']=$item->kcsx;
+                $gradearray[$count]['6']=$item->kssj;
+                $gradearray[$count]['7']=$item->kscjView;
+                $count++;
+            }
         }
 //以上为本学期成绩查询
 
@@ -202,7 +226,7 @@ class SearchController extends Controller
         }
 
 
-        $SearchOption = ['SearchOption' => 4,'gradearray'=>$gradearray,'bjgarray'=>$bjgarray];
+        $SearchOption = ['SearchOption' => 4,'gradearray'=>$gradearray,'bjgarray'=>$bjgarray,'xnxqarray'=>$xnxqarray];
         return view('search')->with($SearchOption);
     }
 }

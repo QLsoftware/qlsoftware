@@ -173,8 +173,26 @@
                                                 </div></div></div>
                                         <div class="panel-body">
                                             <div class="panel panel-default">
-                                                <div class="panel-heading"><h4>本学期成绩</h4></div>
+                                                <div class="panel-heading"><h4>成绩</h4></div>
                                                 <div class="panel-body">
+                                                    <form action="{{ url('/search/grade')}}" method="get">
+                                                    <form role="form">
+                                                    <div class="form-group">
+                                                    <label for="name">请选择学年学期：</label>
+                                                    <select type="text" class="form-control" name="xnxq">
+                                                    <option>全部</option>
+                                                    @foreach($xnxqarray as $item)
+                                                            <option>{{$item}}</option>
+                                                     @endforeach
+                                                    </select>
+
+                                                     <button type="submit" class="btn btn-default">查询</button>
+                                                    </div>
+                                                    </form>
+
+                                                    {{ csrf_field() }}
+
+                                                    </form>
                                                     <table class="table table-bordered">
                                                         @foreach($gradearray as $gradearray_1)
                                                             <tr>
