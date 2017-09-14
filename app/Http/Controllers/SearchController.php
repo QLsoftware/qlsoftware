@@ -140,9 +140,10 @@ class SearchController extends Controller
 
         if(!$client) return null;
         //并不知道是个啥
-        $aoDate = '[{"name":"sEcho","value":1},{"name":"iColumns","value":8},{"name":"sColumns","value":""},{"name":"iDisplayStart","value":0},{"name":"iDisplayLength","value":-1},{"name":"mDataProp_0","value":"function"},{"name":"mDataProp_1","value":"kch"},{"name":"mDataProp_2","value":"kcm"},{"name":"mDataProp_3","value":"kxh"},{"name":"mDataProp_4","value":"xf"},{"name":"mDataProp_5","value":"kssj"},{"name":"mDataProp_6","value":"kscjView"},{"name":"mDataProp_7","value":"kcsx"},{"name":"iSortingCols","value":0},{"name":"bSortable_0","value":false},{"name":"bSortable_1","value":false},{"name":"bSortable_2","value":false},{"name":"bSortable_3","value":false},{"name":"bSortable_4","value":false},{"name":"bSortable_5","value":false},{"name":"bSortable_6","value":false},{"name":"bSortable_7","value":false}]';
+        $aoDate = '[{"name":"sEcho","value":4},{"name":"iColumns","value":10},{"name":"sColumns","value":""},{"name":"iDisplayStart","value":0},{"name":"iDisplayLength","value":-1},{"name":"mDataProp_0","value":"xnxq"},{"name":"mDataProp_1","value":"kch"},{"name":"mDataProp_2","value":"kcm"},{"name":"mDataProp_3","value":"kxh"},{"name":"mDataProp_4","value":"xf"},{"name":"mDataProp_5","value":"kssj"},{"name":"mDataProp_6","value":"kscjView"},{"name":"mDataProp_7","value":"wfzjd"},{"name":"mDataProp_8","value":"wfzdj"},{"name":"mDataProp_9","value":"kcsx"},{"name":"iSortCol_0","value":5},{"name":"sSortDir_0","value":"desc"},{"name":"iSortingCols","value":1},{"name":"bSortable_0","value":false},{"name":"bSortable_1","value":false},{"name":"bSortable_2","value":false},{"name":"bSortable_3","value":false},{"name":"bSortable_4","value":false},{"name":"bSortable_5","value":true},{"name":"bSortable_6","value":false},{"name":"bSortable_7","value":false},{"name":"bSortable_8","value":false},
+        {"name":"bSortable_9","value":false}]';
         //并不知道是个啥
-        $result = $client->request('post', '/b/cj/cjcx/xs/list',['form_params' => [
+        $result = $client->request('post', '/b/cj/cjcx/xs/lscx',['form_params' => [
             'aoData' => $aoDate,
         ]], ['allow_redirects' => false]);
         $result = get_object_vars(json_decode($result->getBody()));
@@ -155,7 +156,7 @@ class SearchController extends Controller
         $gradearray['0']['1']='课程名';
         $gradearray['0']['2']='课序号';
         $gradearray['0']['3']='学分';
-        $gradearray['0']['4']='授课教师';
+        $gradearray['0']['4']='学年学期';
         $gradearray['0']['5']='课程属性';
         $gradearray['0']['6']='考试时间';
         $gradearray['0']['7']='考试成绩';
@@ -165,7 +166,7 @@ class SearchController extends Controller
             $gradearray[$count]['1']=$item->kcm;
             $gradearray[$count]['2']=$item->kxh;
             $gradearray[$count]['3']=$item->xf;
-            $gradearray[$count]['4']=$item->jsm;
+            $gradearray[$count]['4']=$item->xnxq;
             $gradearray[$count]['5']=$item->kcsx;
             $gradearray[$count]['6']=$item->kssj;
             $gradearray[$count]['7']=$item->kscjView;
