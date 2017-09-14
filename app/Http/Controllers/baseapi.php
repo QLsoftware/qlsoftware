@@ -42,6 +42,7 @@ class baseapi extends Controller
         } catch (\Exception $exception) {
             return null;
         }
+        return (string)$result->getBody();
         if ((string)$result->getBody() == '"success"')
             return $client;
         elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"'){
