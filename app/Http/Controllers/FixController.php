@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\repair;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
@@ -27,10 +28,23 @@ class FixController extends Controller
         $this->middleware('auth');
     }
 
-//   // $SearchOption    0 提交报修界面
+//    $SearchOption    0 提交报修界面
     public function fix()
     {   $SearchOption=['SearchOption' => 0];
         return view("fix")->with($SearchOption);;
+    }
+
+    public function fix_history()
+    {   $SearchOption=['SearchOption' => 1];$repairData = repair::paginate(4);
+        return view("fix",['repairData'=>$repairData])->with($SearchOption);
+
+    }
+
+    public function fix_evaluate(Request $request)
+    {
+
+        $studenonline = new studenonline();
+        $studenonline->addevaluate('123',$request['eva']);
     }
 
     public function text(Request $request)
@@ -57,7 +71,6 @@ class FixController extends Controller
             //在数据库中保存文件的存储地址      数据库中只保存地址，不存储图像数据
             $f_avatars = 'uploads/p_avatars/' . $file_name; //生成图片文件
             //echo  $f_avatars;
-
             //存储结束
         }
 

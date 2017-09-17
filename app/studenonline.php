@@ -53,5 +53,15 @@ class studenonline extends Model
         DB::table('r_avatars')->insert(['re_id' => $re_id,'re_avatars' => $re_avatars]);
 
     }
+    public function addevaluate($re_id,$re_evaluate)
+    {
+        echo $re_evaluate;
+        echo $re_id;
+//        $re = repair::find($re_id);
+//        $re->re_state = $re_evaluate;
+//        $re ->save();
+//        return redirect()->back();
 
+
+    }
 }

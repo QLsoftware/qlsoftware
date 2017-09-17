@@ -74,6 +74,8 @@ Route::group(['prefix'=>'/repairman'],function(){
 //wc fix
 Route::get('/fix', 'FixController@fix');
 Route::post('/fix/text', 'FixController@text');
+Route::get('/fix/history', 'FixController@fix_history'); //这里用post不行
+Route::post('/fix/evaluate', 'FixController@fix_evaluate'); //提交评价
 //Route::post('/fix/avatar', 'FixController@fix_avatar');
 //Route::post('/fee/card/pay', 'FeeController@fee_card_pay');
 //wc fix
