@@ -57,10 +57,10 @@ class studenonline extends Model
     {
         echo $re_evaluate;
         echo $re_id;
-//        $re = repair::find($re_id);
-//        $re->re_state = $re_evaluate;
-//        $re ->save();
-//        return redirect()->back();
+        $re = repair::find($re_id);
+        $re->re_state = $re_evaluate;
+        $re ->save();
+        return redirect()->back();
 
 
     }

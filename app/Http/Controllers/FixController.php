@@ -42,9 +42,14 @@ class FixController extends Controller
 
     public function fix_evaluate(Request $request)
     {
-
-        $studenonline = new studenonline();
-        $studenonline->addevaluate('123',$request['eva']);
+        $re = repair::find($request['id']);
+        $re->re_evaluate = $request['eva'];
+        $re ->save();
+        echo "<script language=javascript>alert('您的评价已提交，感谢您对我们工作的支持');history.back();</script>";
+         //return redirect()->back();
+        //$studenonline = new studenonline();
+        //$studenonline->addevaluate($request['id'],$request['eva']);
+       // echo '<script language="JavaScript">;alert("您的评价已提交，感谢您对我们工作的支持";location.href="www.jbxue.com";</script>;';
     }
 
     public function text(Request $request)

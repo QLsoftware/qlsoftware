@@ -155,8 +155,7 @@
                                                     </b>
                                                 </ul></div>
 
-                                            <form  action="{{ url('/fix/evaluate')}}" method="post">
-                                                {{ csrf_field() }}
+
                                                 <h2> <div class="panel panel-default" style="width: 80%; margin: 0 auto" >
                                                         <!-- Default panel contents -->
                                                         <div class="panel-heading" >Panel heading</div>
@@ -172,12 +171,14 @@
                                                             </tr>
                                                         @php($i = 0)
                                                             @foreach($repairData as $data)
+                                                            <form  action="{{ url('/fix/evaluate')}}" method="post">{{--这里必须把表单放在foreach内，否则指向最后一个--}}
+                                                                    {{ csrf_field() }}
                                                                 @php($i++)
                                                                     @php($detail = 'detail'.$i)
                                                                         @php($detail_ = '#detail'.$i)
                                                                             @php($details = 'details'.$i)    <!-- 这个用于评价-->
                                                                                 @php($details_ = '#details'.$i)
-                                                                                    @php($id = $data->re_id)
+                                                                                    {{--@php($id = '#id'.$i)--}}
                                                                                         @if(Auth::user()->j_username==$data->re_xh)
                                                                                             <tr>
                                                                                                 <td>{{$data->re_id}}</td>
@@ -242,12 +243,13 @@
                                                                                                                                     <option value="非常差">非常差</option>
                                                                                                                                 </select></li>
 
+                                                                                                                            <input type="hidden" name="id" value={{$data->re_id}}>
 
                                                                                                                             <p class="list-group-item-text">评价: {{$data->re_evaluate}}</p>
                                                                                                                         </div></div>
                                                                                                                     <div class="modal-footer">
                                                                                                                         <button type="submit" class="input" style="font-size:15px; font-family:'微软雅黑'; cursor:pointer;">提交</button>
-                                                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">GET</button>
+                                                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal" >GET</button>
 
                                                                                                                     </div>
                                                                                                                 </div>
@@ -256,7 +258,7 @@
 
                                                                                                     @endif
 
-
+                                            </form>
 
 
                                                                                                 </td>
@@ -268,7 +270,7 @@
                                                     <div style="text-align: center; margin: 0 auto">
                                                         {{ $repairData->render() }}
                                                     </div></h2>
-                                            </form>
+
 
                                         @elseif($SearchOption == 2)
                                             <h2>....</h2>
