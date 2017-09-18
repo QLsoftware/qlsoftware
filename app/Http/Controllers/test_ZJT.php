@@ -27,7 +27,7 @@ use App\Http\Requests;
 class test_ZJT extends Controller
 {
 
-    protected $index = 10;
+    protected $index = 1;
 
     protected $email = '851207685@qq.com';
     protected $title = '关于2014级本科生因暑期夏令营申请缓考科目补考时间的通知';
@@ -47,146 +47,65 @@ class test_ZJT extends Controller
     {
 
 
-        return DB::table('repair')->where(['re_evaluate' => '好'],['re_xq'=>'中心校区'])->count();
-//        echo 'ceshi       <br>';
-//        $jar = new \GuzzleHttp\Cookie\CookieJar();
-//        $mima = md5('DREAM0418');
-//        $client = new Client([
-//            // Base URI is used with relative requests
-//            'base_uri' => 'http://bkjws.sdu.edu.cn',
-//            // You can set any number of default request options.
-//            'timeout' => 2.0,
-//            //参数
-//            'form_params' => [
-//                'j_username' => '201500130051',
-//                'j_password' => $mima,
-//            ],
-//            'cookies' => $jar,
-//        ]);
-//        $result = null;
-//        try {
-//            $result = $client->request('post', '/b/ajaxLogin');
-//        } catch (\Exception $exception) {
-//            return null;
-//        }
-//        $result = $client->request('post', '/b/');
-//        return $result->getBody();
-//        if ((string)$result->getBody() == '"success"')
-//            return 1;
-//        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')
-//            return -1;
-//        else {
-//            return $result->getBody();
-//        }
+        //        检查任务状态
+        echo 'start' . $this->index;
+        $zjtcourses = new zjtcourses();
+//        若任务已经被删除，挂起
+        $con = $zjtcourses->getatask($this->index);
+        if ($con['re_c'] == null) {
+            echo 'empty';
+            return;
+        }
+//        若任务不是处于正在抢课或者认证状态  挂起
+        if (head($con['re_c'])->status == 0 || head($con['re_c'])->status == 4) ; else {
+            echo 'status =' . head($con['re_c'])->status;
+            return;
+        }
+//        验证学号密码。
+        $client = baseapi::ConnectToxuanke(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password));
+        if ($client == null) {
+//            查询系统是否开放
+            if (baseapi::testxuanke() == false) {
+                sleep(10);
+                dispatch(new GetC($this->index));
+                Log::info('系统未开放');
+                return;
+            }
+//            若选课系统开放了，还是没有认证成功，则考虑是不是用户的张哈和密码有问题  直接throw这样一个异常，便可以了
+//            异常会核实账号和密码是否有问题，若有问题会将密码删除
+            throw new usernamefailed(head($con['re_u'])->id);
 
+//            单独判断密码是否有误，若有误，将选课任务设为异常，挂起
+            if (baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password) == -1))
+                DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => '密码失效']);
+        } else {
+//            成功进入到了选课系统
+            DB::table('getcourses')->where('index', $this->index)->increment('times');
+            if (head($con['re_c'])->status == 4) {
+                DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);
+//                TODO 检索课程名称
+            }
+//          请求选课
+            $result = $client->request('post', 'http://bkjwxk.sdu.edu.cn/b/xk/xs/add/' . head($con['re_c'])->kch . '/' . head($con['re_c'])->kxh, ['allow_redirects' => false]);
+//            TODO 结果分析   由于网站未开放，代码正确性有待确认
+            $result = get_object_vars(json_decode($result->getBody()));
+            $msg = $result['msg'];
 
-//        $re = DB::select('select title , count(*) as num from chatter_post nature join chatter_discussion group by chatter_discussion_id ;');
-//        $result = [];
-//        $i = 0;
-//        $text_other = '其他';
-//        $count_other = 0;
-//        foreach ($re as $r) {
-//            if ($i > 8) {
-//                $count_other += $r->num;
-//                continue;
-//            }
-//            $result[$i] = [$r->title, $r->num];
-//            $i++;
-//        }
-//        if ($count_other > 0)
-//            $result[$i] = [$text_other, $count_other];
-//        return $result;
-//
-
-//        Mail::raw('这是一封测试邮件', function ($message) {
-//            $to = '851207685@qq.com';
-//            $message ->to($to)->subject('测试邮件');
-//        });
-//        $re = DB::table('users')->where(['sdu_notify' => true])->get();
-//        return $re;
-//       echo urlencode('解释  我是谁  ');
-//        $re = DB::select('select count(*) as num from article_recorded');
-//        echo head($re)->num;
-//        $hrefs = DB::table('article_recorded')->get();
-//        foreach ($hrefs as $href) {
-//            dispatch(new curl($href->href));
-//        }
-
-
-        /**
-         * //        echo base64_decode(Auth::user()['j_password']);
-         * //        $jar = new \GuzzleHttp\Cookie\CookieJar();
-         * //        $client = new Client([
-         * //            // Base URI is used with relative requests
-         * //            'base_uri' => 'http://bkjwxk.sdu.edu.cn',
-         * //            // You can set any number of default request options.
-         * //            'timeout' => 2.0,
-         * //            //参数
-         * //            'form_params' => [
-         * //                'j_username' => 201500130051,
-         * //                'j_password' => 'Dream0418',
-         * //            ],
-         * //            'cookies' => $jar,
-         * //        ]);
-         * //        $result = null;
-         * //        try {
-         * //            $result = $client->request('post', '/b/ajaxLogin');
-         * //        } catch (\Exception $exception) {
-         * //            echo 'failed';
-         * //            return null;
-         * //        }
-         * **/
-
-        /**
-         * //        throw new usernamefailed(1);
-         * //        $flag = Mail::send('email.notification', ['name' => $this->name, 'link' => $this->link, 'from' => $this->from, 'title' => $this->title,'1'],
-         * //            function ($message) {
-         * //                $message->to($this->email)->subject('智慧山大通知邮件');
-         * //            });
-         * //        if ($flag) {
-         * //            echo $this->email . '发送成功<br>';
-         * //        } else {
-         * //            echo $this->email . '发送失败<br>';
-         * //        }
-         **/
-        /**
-         * //        dispatch(new \App\Jobs\Sendemail('851207685@qq.com', '关于2014级本科生因暑期夏令营申请缓考科目补考时间的通知', 'Jingtao', 'http://www.bkjx.sdu.edu.cn/info/1010/25308.htm', '本科教育'));
-         * //        $studenonline = new studenonline();
-         * ////            $html = new Htmldom('https://online.sdu.edu.cn/news/list-8-' . $i . '.html');
-         * //        for ($i = 285; $i <= 295; $i++) {
-         * //            $html = new Htmldom('http://www.bkjx.sdu.edu.cn/index/gztz/' . $i . '.htm');
-         * //            foreach ($html->find('a') as $elment) {
-         * //                if ($a = $elment->target == '_blank' && $elment->innertext() != '旧版回顾' && $elment->innertext() != '后台管理' && $elment->innertext() != '博达软件') {
-         * //                    echo $elment->title . '<br>';
-         * //                    echo $elment->innertext() . '<br>';
-         * //                    $b = $elment->parent()->next_sibling();
-         * //                    echo substr($elment->parent()->next_sibling()->plaintext, 1, 10) . '<br>';
-         * //                    if (strstr($elment->href, ':'))
-         * //                        $studenonline->addarecord($elment->title, substr($elment->parent()->next_sibling()->plaintext, 1, 10), $elment->href, '本科教育');
-         * //                    else
-         * //                        $studenonline->addarecord($elment->title, substr($elment->parent()->next_sibling()->plaintext, 1, 10), 'http://www.bkjx.sdu.edu.cn/' . substr($elment->href, 3), '本科教育');
-         * //                }
-         * //            }
-         * ////        $count = 0;
-         * ////        foreach ($html->find('ul') as $ele) {
-         * ////            if ($count++ <= 2)
-         * //                continue;
-         * //            foreach ($ele->find('li') as $element) {
-         * //                if ($element->firstChild()->href == null)
-         * //                    continue;
-         * //                $str = str_replace("\t", "", $element->plaintext);
-         * //                $str = str_replace(" ", "", $str);
-         * //                $a = substr($str, 0, strlen($str) - 12);
-         * //                $b = substr($str, -11, -1);
-         * //                if (strstr($element->firstChild()->href, ':'))
-         * //                    $studenonline->addarecord(substr($str, 0, strlen($str) - 12), substr($str, -11, -1), $element->firstChild()->href, '青春山大');
-         * //                $studenonline->addarecord(substr($str, 0, strlen($str) - 12), substr($str, -11, -1), 'http://www.youth.sdu.edu.cn/news/' . $element->firstChild()->href, '青春山大');
-         * //            }
-         * //        }
-         * //            $html->clear();
-         * //        }
-         **/
+            if (substr($msg, -3, -1) == $this->selected) {
+                DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
+                dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
+            }
+            if (substr($msg, -8) == $this->full) {
+                dispatch(new GetC($this->index));
+            }
+            if (substr($msg, -3) == $this->failed) {
+//              TODO 不知所措
+                DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => $msg]);
+                dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, -2))->onQueue('email'));
+            }
+        }
     }
+
 
 
     //Guzzle使用实例   具体教程：http://guzzle-cn.readthedocs.io/zh_CN/latest/
