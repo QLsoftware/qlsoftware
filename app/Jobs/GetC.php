@@ -97,7 +97,6 @@ class GetC extends Job implements ShouldQueue
             $msg = $result['msg'];
 //            课程[数值计算]已选!
 //            [数值计算]选课成功!
-            return 'asdasdasdasd'.mb_substr($msg, -12,-6) . 'asd';
             if (mb_substr($msg, -3, -1) == $this->selected || mb_substr($msg, -3, -1) == $this->succ) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
                 dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
