@@ -27,9 +27,9 @@ class GetC extends Job implements ShouldQueue
 //
     protected $index;
     protected $selected = '已选';
+    protected $succ = '成功';
     protected $failed = '失败';
-    protected $full = '已满!<br/>';
-
+    protected $full = '上课人数已满';
     /**
      * GetC constructor.
      * @param $index
@@ -50,8 +50,8 @@ class GetC extends Job implements ShouldQueue
      **/
     public function handle()
     {
-//        检查任务状态
-        echo 'start' . $this->index;
+        //        检查任务状态
+        echo 'start' .' '. $this->index;
         $zjtcourses = new zjtcourses();
 //        若任务已经被删除，挂起
         $con = $zjtcourses->getatask($this->index);
@@ -72,6 +72,7 @@ class GetC extends Job implements ShouldQueue
                 sleep(10);
                 dispatch(new GetC($this->index));
                 Log::info('系统未开放');
+                echo '未进入';
                 return;
             }
 //            若选课系统开放了，还是没有认证成功，则考虑是不是用户的张哈和密码有问题  直接throw这样一个异常，便可以了
@@ -82,7 +83,8 @@ class GetC extends Job implements ShouldQueue
             if (baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password) == -1))
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => '密码失效']);
         } else {
-//            echo('成功进入到了选课系统');
+//            成功进入到了选课系统
+            echo '已进入';
             DB::table('getcourses')->where('index', $this->index)->increment('times');
             if (head($con['re_c'])->status == 4) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);
@@ -93,12 +95,14 @@ class GetC extends Job implements ShouldQueue
 //            TODO 结果分析   由于网站未开放，代码正确性有待确认
             $result = get_object_vars(json_decode($result->getBody()));
             $msg = $result['msg'];
-
-            if (substr($msg, -3, -1) == $this->selected) {
+//            课程[数值计算]已选!
+//            [数值计算]选课成功!
+            return 'asdasdasdasd'.mb_substr($msg, -12,-6) . 'asd';
+            if (mb_substr($msg, -3, -1) == $this->selected || mb_substr($msg, -3, -1) == $this->succ) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
                 dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
             }
-            if (substr($msg, -8) == $this->full) {
+            if (mb_substr($msg, -12,-6) == $this->full) {
                 dispatch(new GetC($this->index));
             }
             if (substr($msg, -3) == $this->failed) {
@@ -108,4 +112,6 @@ class GetC extends Job implements ShouldQueue
             }
         }
     }
+
+
 }
