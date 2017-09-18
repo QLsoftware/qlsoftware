@@ -82,11 +82,14 @@ class baseapi extends Controller
         }
         if ((string)$result->getBody() == '"success"')
             return 1;
-        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')
-            return -1;
+        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"'){
+//            TODO 添加异常
+            return -1;}
         else {
-            return $result->getBody();
+            echo (string)$result->getBody() ;
+            return 0;
         }
+
 
     }
 

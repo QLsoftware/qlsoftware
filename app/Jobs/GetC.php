@@ -83,11 +83,12 @@ class GetC extends Job implements ShouldQueue
 //            单独判断密码是否有误，若有误，将选课任务设为异常，挂起
             if (baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password) == -1))
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => '密码失效']);
+                dispatch(new GetC($this->index));
         } else {
 //            成功进入到了选课系统
             echo '已进入';
             DB::table('getcourses')->where('index', $this->index)->increment('times');
-            if (head($con['re_c'])->status == 4) {
+            if (head($con['re_c'])->status == 4 || head($con['re_c'])->status ==-2) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);
 //                TODO 检索课程名称
             }

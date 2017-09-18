@@ -27,7 +27,7 @@ use App\Http\Requests;
 class test_ZJT extends Controller
 {
 
-    protected $index = 6;
+    protected $index = 9;
 
     protected $email = '851207685@qq.com';
     protected $title = '关于2014级本科生因暑期夏令营申请缓考科目补考时间的通知';
@@ -51,7 +51,6 @@ class test_ZJT extends Controller
     public function index()
     {
 
-
         //        检查任务状态
         echo 'start' .' '. $this->index;
         $zjtcourses = new zjtcourses();
@@ -61,6 +60,8 @@ class test_ZJT extends Controller
             echo 'empty';
             return;
         }
+
+        return baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password));
 //        若任务不是处于正在抢课或者认证状态  挂起
         if (head($con['re_c'])->status == 0 || head($con['re_c'])->status == 4) ; else {
             echo 'status =' . head($con['re_c'])->status;
