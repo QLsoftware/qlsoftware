@@ -61,7 +61,7 @@ class GetC extends Job implements ShouldQueue
             return;
         }
 //        若任务不是处于正在抢课或者认证状态  挂起
-        if (head($con['re_c'])->status == 0 || head($con['re_c'])->status == 4) ; else {
+        if (head($con['re_c'])->status == 0 || head($con['re_c'])->status == 4 || head($con['re_c'])->status == -2) ; else {
             echo 'status =' . head($con['re_c'])->status;
             return;
         }
