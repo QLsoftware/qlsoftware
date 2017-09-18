@@ -112,7 +112,7 @@
                         </ol>
 
                         <!-- 滚动图片 -->
-                        <div class="">
+                        <div class="carousel-inner">
                             <div class=" active item menu-item light-orange">
                                 {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
                                 @foreach($a1 as $a)
