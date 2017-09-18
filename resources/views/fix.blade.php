@@ -20,7 +20,7 @@
                                 <!-- 报修表单 -->
                                 <div class="down1" id="J_xinxi" style="display:block">
                                     <div class="left">
-                                        <form class="form-inline" role="form" enctype="multipart/form-data" action="{{ url('/fix/text')}}}"
+                                        <form class="form-inline" role="form" enctype="multipart/form-data" action="{{ url('/fix/text')}}"
                                               method="post">
                                             {{ csrf_field() }}
                                             <div class="form-group">

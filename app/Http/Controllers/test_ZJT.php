@@ -34,6 +34,9 @@ class test_ZJT extends Controller
     protected $name = 'Jingtao';
     protected $link = 'http://www.bkjx.sdu.edu.cn/info/1010/25308.htm';
     protected $from = '本科教育';
+    protected $selected = '已选';
+    protected $failed = '失败';
+    protected $full = '已满!<br/>';
 
 
     //添加中间件，进行
@@ -48,7 +51,7 @@ class test_ZJT extends Controller
 
 
         //        检查任务状态
-        echo 'start' . $this->index;
+        echo 'start' .' '. $this->index;
         $zjtcourses = new zjtcourses();
 //        若任务已经被删除，挂起
         $con = $zjtcourses->getatask($this->index);
@@ -92,6 +95,7 @@ class test_ZJT extends Controller
             $msg = $result['msg'];
 
             if (substr($msg, -3, -1) == $this->selected) {
+                return '已选';
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
                 dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
             }
