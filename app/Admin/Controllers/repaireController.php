@@ -9,6 +9,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 use App\repair;
+use Illuminate\Support\Facades\Auth;
 
 class repaireController extends Controller
 {
