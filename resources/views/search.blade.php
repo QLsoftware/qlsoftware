@@ -216,24 +216,27 @@
                                                     @endforeach
                                                 </table>
                                             </div>
+
                                         </div>
-                                        {{$bjgarray}}
-                                        @if($bjgarray!=null)
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading"><h4>不及格成绩</h4></div>
-                                            <div class="panel-body">
-                                                <table class="table table-bordered">
-                                                    @foreach($bjgarray as $bjgarray_1)
-                                                        <tr>
-                                                            @foreach($bjgarray_1 as $bjgarray_2)
-                                                                <th>{{$bjgarray_2}}</th>
-                                                            @endforeach
-                                                        </tr>
-                                                    @endforeach
-                                                </table>
+
+
+                                            @if($bjgshifou)
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"><h4>不及格成绩</h4></div>
+                                                <div class="panel-body">
+                                                    <table class="table table-bordered">
+                                                        @foreach($bjgarray as $bjgarray_1)
+                                                            <tr>
+                                                                @foreach($bjgarray_1 as $bjgarray_2)
+                                                                    <th>{{$bjgarray_2}}</th>
+                                                                @endforeach
+                                                            </tr>
+                                                        @endforeach
+                                                    </table>
+                                                </div>
                                             </div>
-                                        </div>
-                                        @endif
+                                            @endif
+
 
                                     </div>
                                 </div>

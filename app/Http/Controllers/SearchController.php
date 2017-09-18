@@ -183,7 +183,8 @@ class SearchController extends Controller
         $gradearray['0']['6']='考试时间';
         $gradearray['0']['7']='考试成绩';
         foreach($aaData as $item){
-            if($request==null||$request->xnxq=='全部'||$request->xnxq==$item->xnxq){
+            if($request->xnxq==null||$request->xnxq=='全部'||$request->xnxq==$item->xnxq){
+
                 $gradearray[$count]=array();
                 $gradearray[$count]['0']=$item->kch;
                 $gradearray[$count]['1']=$item->kcm;
@@ -214,19 +215,22 @@ class SearchController extends Controller
         $bjgarray['0']['5']='考试时间';
         $bjgarray['0']['6']='总成绩';
         foreach($aaData1 as $item){
-            $bjgarray[$count]=array();
-            $bjgarray[$count]['0']=$item->kch;
-            $bjgarray[$count]['1']=$item->kcm;
-            $bjgarray[$count]['2']=$item->kxh;
-            $bjgarray[$count]['3']=$item->xf;
-            $bjgarray[$count]['4']=$item->xnxq;
-            $bjgarray[$count]['5']=$item->kssj;
-            $bjgarray[$count]['6']=$item->kscjView;
-            $count++;
+            $bjgarray[$count1]=array();
+            $bjgarray[$count1]['0']=$item->kch;
+            $bjgarray[$count1]['1']=$item->kcm;
+            $bjgarray[$count1]['2']=$item->kxh;
+            $bjgarray[$count1]['3']=$item->xf;
+            $bjgarray[$count1]['4']=$item->xnxq;
+            $bjgarray[$count1]['5']=$item->kssj;
+            $bjgarray[$count1]['6']=$item->kscjView;
+            $count1++;
+        }
+        $bjgshifou=true;
+        if($count1<=1){
+            $bjgshifou=false;
         }
 
-
-        $SearchOption = ['SearchOption' => 4,'gradearray'=>$gradearray,'bjgarray'=>$bjgarray,'xnxqarray'=>$xnxqarray];
+        $SearchOption = ['SearchOption' => 4,'gradearray'=>$gradearray,'bjgarray'=>$bjgarray,'xnxqarray'=>$xnxqarray,'bjgshifou'=>$bjgshifou];
         return view('search')->with($SearchOption);
     }
 }
