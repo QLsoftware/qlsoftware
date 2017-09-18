@@ -66,6 +66,7 @@ class FixController extends Controller
 //        $kind = $request['kind'];
         $f_avatars = '';//若没有图片则为空；
         if ($request->hasFile('avatar')) {
+            //echo "<script language=javascript>alert({{$f_avatars}});</script>";
             //获取头像文件
             $avatar = $request->file('avatar');
             //生成文件名称   getClientOriginalExtension()得到图像的后缀名称
@@ -80,9 +81,9 @@ class FixController extends Controller
 
 
         $studenonline = new studenonline();
-        $studenonline->addarecord_repair( Auth::user()->j_username, $request['name'], $request['phone'], $request['xq'], date("Y-m-d H:i:s", time()), $request['kind'], $request['lfh'], $request['room'], $request['remarks'], '待处理');
-        $id = $studenonline->id_max();
-        $studenonline->addarecord_avatars($id,$f_avatars);//存入报修照片
+        $studenonline->addarecord_repair( Auth::user()->j_username, $request['name'], $request['phone'], $request['xq'], date("Y-m-d H:i:s", time()), $request['kind'], $request['lfh'], $request['room'], $request['remarks'], '待处理',$f_avatars);
+        //$id = $studenonline->id_max();
+        //$studenonline->addarecord_avatars($id,$f_avatars);//存入报修照片
         echo "<script language=javascript>alert('您的保修请求，我们会安排工作人员进行处理');history.back();</script>";
     }
 

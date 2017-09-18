@@ -36,10 +36,10 @@ class studenonline extends Model
         dispatch(new \App\Jobs\curl($href));
     }
 
-    public function addarecord_repair($re_xh,$re_name,$re_phone,$re_xq,$re_date,$re_kind,$re_lfh,$re_mph,$re_remarks,$re_state)
+    public function addarecord_repair($re_xh,$re_name,$re_phone,$re_xq,$re_date,$re_kind,$re_lfh,$re_mph,$re_remarks,$re_state,$re_avatars)
     {
         //if (DB::table('repair')->where(['re_id' => $re_id])->first()) return;
-        DB::table('repair')->insert(['re_xh' => $re_xh,'re_name' => $re_name,'re_phone'=>$re_phone,'re_xq'=>$re_xq,'re_date'=>$re_date,'re_kind'=>$re_kind,'re_lfh'=>$re_lfh,'re_mph'=>$re_mph,'re_remarks'=>$re_remarks,'re_state'=>$re_state]);
+        DB::table('repair')->insert(['re_xh' => $re_xh,'re_name' => $re_name,'re_phone'=>$re_phone,'re_xq'=>$re_xq,'re_date'=>$re_date,'re_kind'=>$re_kind,'re_lfh'=>$re_lfh,'re_mph'=>$re_mph,'re_remarks'=>$re_remarks,'re_state'=>$re_state,'re_avatars'=>$re_avatars]);
 
     }
     public function id_max()   //调取最大id号
