@@ -80,7 +80,7 @@ class FixController extends Controller
 
 
         $studenonline = new studenonline();
-        $studenonline->addarecord_repair( $request['xh'], $request['name'], $request['phone'], $request['xq'], date("Y-m-d H:i:s", time()), $request['kind'], $request['lfh'], $request['room'], $request['remarks'], '待处理');
+        $studenonline->addarecord_repair( Auth::user()->j_username, $request['name'], $request['phone'], $request['xq'], date("Y-m-d H:i:s", time()), $request['kind'], $request['lfh'], $request['room'], $request['remarks'], '待处理');
         $id = $studenonline->id_max();
         $studenonline->addarecord_avatars($id,$f_avatars);//存入报修照片
         echo '您的保修请求已经提交成功！请等待工作人员的处理';

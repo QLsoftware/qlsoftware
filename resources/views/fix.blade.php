@@ -114,7 +114,7 @@
                                                         <option value="--其他--">--其他--</option>
                                                     </select></li>
 
-                                                <li><b>学号：</b></li><li><input name="xh" id="xh" class="select" /></li>
+                                                {{--<li><b>学号：</b></li><li><input name="xh" id="xh" class="select" /></li>--}}
                                                 <li><b>姓名：</b></li><li><input name="name" id="name" class="select" /></li>
                                                 <li><b>联系电话：</b></li><li><input name="phone" id="phone" class="select" value="手机号" onfocus="if(this.value=='手机号') this.value='';this.style.color='#333'; return true;" onblur="if(this.value=='') this.value='手机号'; this.style.color='#999'; return true;" style="color: rgb(153, 153, 153); "/></li>
                                                 <div class="right" style="list-style-type:none;">
