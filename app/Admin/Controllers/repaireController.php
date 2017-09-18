@@ -141,8 +141,6 @@ class repaireController extends Controller
 
             $form->display('re_date','提交日期');
             $form->checkbox('re_state', '状态')->value(['已处理', '未处理']);
-
-
             $form->display('re_feedback','反馈');
             $form->display('re_evaluate','评级');
 
