@@ -81,6 +81,10 @@ class repaireController extends Controller
             });
             $grid->re_phone('联系方式');
             $grid->re_date('报修时间');
+            $grid->re_remarks('问题描述');
+            $grid->re_feedback('申请者评价');
+
+
 
 
 
