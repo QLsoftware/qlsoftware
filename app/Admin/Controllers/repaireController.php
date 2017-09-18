@@ -136,7 +136,7 @@ class repaireController extends Controller
             $form->display('re_kind','报修种类');
 
             $form->display('re_remarks','描述');
-            $form->image('re_avatars', trans('admin::lang.avatar'));
+            $form->image('re_avatars', '图片');
 
 
             $form->display('re_date','提交日期');
