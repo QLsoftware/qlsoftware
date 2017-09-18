@@ -53,17 +53,7 @@ class FixController extends Controller
 
     public function text(Request $request)
     {
-//         echo $request['remarks'];
-//         echo time();
-//         echo date("Y-m-d H:i:s", time()) ; //当前时间的格式化
-//        $xq = $request['xq'];
-//        $xh = $request['xh'];
-//        $name = $request['name'];
-//        $phone = $request['phone'];
-//        $lfh = $request['lfh'];
-//        $mph = $request['room'];
-//        $phone = $request['phone'];
-//        $kind = $request['kind'];
+
         $f_avatars = '';//若没有图片则为空；
         if ($request->hasFile('avatar')) {
             //获取头像文件

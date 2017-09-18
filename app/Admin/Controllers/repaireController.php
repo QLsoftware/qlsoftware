@@ -23,7 +23,7 @@ class repaireController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('维修人员列表');
+            $content->header('维修申请');
             $content->description();
 
             $content->body($this->grid());
@@ -72,10 +72,36 @@ class repaireController extends Controller
     {
         return Admin::grid(repair::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->re_id('编号');
+            $grid->column('地点')->display(function () {
+                return $this->re_xq . ' ' . $this->re_lfh . ' ' . $this->re_mph;
+            });
+            $grid->column('学生信息')->display(function () {
+                return $this->re_name . ' ' . $this->re_xh ;
+            });
+            $grid->re_phone('联系方式');
+            $grid->re_date('报修时间');
 
-            $grid->created_at();
-            $grid->updated_at();
+
+
+//            是否已经处理
+            $states = [
+                '已处理'  => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
+                '待处理' => ['value' => '待处理', 'text' => '已处理', 'color' => 'danger'],
+            ];
+            $grid->status()->switch($states);
+
+//          禁用创建菜单
+            $grid->disableCreation();
+
+
+
+
+
+            $grid->actions(function ($actions) {
+                $actions->disableDelete();
+                $actions->disableEdit();
+            });
         });
     }
 
