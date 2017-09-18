@@ -103,7 +103,7 @@
                 <!-- Start Carousel Section -->
                 <div class="home-slider">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
-                         {{--style="padding-bottom: 30px;"--}}>
+                         style="padding-bottom: 40px;">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -112,7 +112,7 @@
                         </ol>
 
                         <!-- 滚动图片 -->
-                        <div class="carousel-inner">
+                        <div class="">
                             <div class=" active item menu-item light-orange">
                                 {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
                                 @foreach($a1 as $a)
