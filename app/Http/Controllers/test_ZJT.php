@@ -38,7 +38,7 @@ class test_ZJT extends Controller
     protected $succ = '成功';
     protected $failed = '失败';
     protected $full = '上课人数已满';
-    pro
+    protected $fre = '访问频率过快了,休息一下吧 :)';
 
 
     //添加中间件，进行
