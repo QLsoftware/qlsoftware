@@ -122,7 +122,7 @@ class baseapi extends Controller
         elseif ((string)$result->getBody() == '"用户名或密码错误!"')
             return null;
         else {
-            echo '未判断';
+            echo '连接教务:'.(string)$result->getBody() ;
             return null;
         }
 
