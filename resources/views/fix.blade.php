@@ -222,7 +222,7 @@
                                                                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                                                                                         <h4 class="modal-title" id="myModalLabel">评价</h4>
                                                                                                                     </div>
-                                                                                                                    <div class="panel panel-default">
+                                                                                                                    <div class="panel panel-success">
                                                                                                                         <div class="list-group-item active">
                                                                                                                             <h4 class="list-group-item-heading">评价信息</h4>
 
