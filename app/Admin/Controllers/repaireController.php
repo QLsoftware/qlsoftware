@@ -138,7 +138,6 @@ class repaireController extends Controller
             $form->display('re_remarks','描述');
             $form->image('re_avatars');
 
-
             $form->display('re_date','提交日期');
 
             $form->radio('re_state', '状态')->options(['已处理' => '已处理', '未处理'=> '未处理'])->stacked();

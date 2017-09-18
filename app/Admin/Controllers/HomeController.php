@@ -42,124 +42,112 @@ class HomeController extends Controller
             //话题讨论
             $content->row(function (Row $row) {
                 /**展示讨论最多的话题*/
-                $row->column(6, function (Column $column) {
+                $row->column(12, function (Column $column) {
                     $tab = new Tab();
                     $pie = new Pie(chatter::getchatter_bili());
                     $tab->add('讨论最多的话题', $pie);
                     $column->append($tab);
-                });
-                $row->column(6, function (Column $column) {
-
-                    $polarArea = new PolarArea(chatter::getchategories_bili());
-                    $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
                 });
 
             });
 
             $content->row(function (Row $row) {
 
-                $row->column(6, function (Column $column) {
+                $row->column(12, function (Column $column) {
                     $tab = new Tab();
                     $pie = new Doughnut(repair::getrekind());
                     $tab->add('楼房请求数量', $pie);
                     $column->append($tab);
                 });
 
-                $row->column(6, function (Column $column) {
-
-                    $polarArea = new PolarArea(repair::getrekind());
-                    $column->append((new Box('楼房请求数量', $polarArea))->removable()->collapsable());
-                });
-
             });
             $content->row(function (Row $row) {
-
-                $row->column(6, function (Column $column) {
-                    $tab = new Tab();
-                    $pie = new Bar(
-                        ["January", "February", "March", "April", "May", "June", "July"],
-                        [
-                            ['First', [40, 56, 67, 23, 10, 45, 78]],
-                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
-                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
-                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
-                        ]
-                    );
-                    $tab->add('楼房请求数量', $pie);
-                    $column->append($tab);
+                $row->column(12, function (Column $column) {
+                    $polarArea = new PolarArea(chatter::getchategories_bili());
+                    $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
                 });
-
-                $row->column(6, function (Column $column) {
-
-                    $polarArea = new PolarArea(repair::getrekind());
-                    $column->append((new Box('楼房请求数量', $polarArea))->removable()->collapsable());
-                });
-
             });
 
-          /*  $content->row(function (Row $row) {
-                $row->column(6, function (Column $column) {
+//            $content->row(function (Row $row) {
+//
+//                $row->column(6, function (Column $column) {
+//                    $tab = new Tab();
+//                    $pie = new Bar(
+//                        ["January", "February", "March", "April", "May", "June", "July"],
+//                        [
+//                            ['First', [40, 56, 67, 23, 10, 45, 78]],
+//                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
+//                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
+//                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
+//                        ]
+//                    );
+//                    $tab->add('楼房请求数量', $pie);
+//                    $column->append($tab);
+//                });
 
-                    $tab = new Tab();
+//            });
 
-                    $pie = new Pie([
-                        ['Stracke Ltd', 450], ['Halvorson PLC', 650], ['Dicki-Braun', 250], ['Russel-Blanda', 300],
-                        ['Emmerich-O\'Keefe', 400], ['Bauch Inc', 200], ['Leannon and Sons', 250], ['Gibson LLC', 250],
-                    ]);
+            /*  $content->row(function (Row $row) {
+                  $row->column(6, function (Column $column) {
 
-                    $tab->add('Pie', $pie);
-                    $tab->add('Table', new Table());
-                    $tab->add('Text', 'blablablabla....');
+                      $tab = new Tab();
 
-                    $tab->dropDown([['Orders', '/admin/orders'], ['administrators', '/admin/administrators']]);
-                    $tab->title('Tabs');
+                      $pie = new Pie([
+                          ['Stracke Ltd', 450], ['Halvorson PLC', 650], ['Dicki-Braun', 250], ['Russel-Blanda', 300],
+                          ['Emmerich-O\'Keefe', 400], ['Bauch Inc', 200], ['Leannon and Sons', 250], ['Gibson LLC', 250],
+                      ]);
 
-                    $column->append($tab);
+                      $tab->add('Pie', $pie);
+                      $tab->add('Table', new Table());
+                      $tab->add('Text', 'blablablabla....');
 
-                    $collapse = new Collapse();
+                      $tab->dropDown([['Orders', '/admin/orders'], ['administrators', '/admin/administrators']]);
+                      $tab->title('Tabs');
 
-                    $bar = new Bar(
-                        ["January", "February", "March", "April", "May", "June", "July"],
-                        [
-                            ['First', [40, 56, 67, 23, 10, 45, 78]],
-                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
-                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
-                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
-                        ]
-                    );
-                    $collapse->add('Bar', $bar);
-                    $collapse->add('Orders', new Table());
-                    $column->append($collapse);
+                      $column->append($tab);
 
-                    $doughnut = new Doughnut([
-                        ['Chrome', 700],
-                        ['IE', 500],
-                        ['FireFox', 400],
-                        ['Safari', 600],
-                        ['Opera', 300],
-                        ['Navigator', 100],
-                    ]);
-                    $column->append((new Box('Doughnut', $doughnut))->removable()->collapsable()->style('info'));
-                });
+                      $collapse = new Collapse();
 
+                      $bar = new Bar(
+                          ["January", "February", "March", "April", "May", "June", "July"],
+                          [
+                              ['First', [40, 56, 67, 23, 10, 45, 78]],
+                              ['Second', [93, 23, 12, 23, 75, 21, 88]],
+                              ['Third', [33, 82, 34, 56, 87, 12, 56]],
+                              ['Forth', [34, 25, 67, 12, 48, 91, 16]],
+                          ]
+                      );
+                      $collapse->add('Bar', $bar);
+                      $collapse->add('Orders', new Table());
+                      $column->append($collapse);
 
-            });
-
-            $headers = ['Id', 'Email', 'Name', 'Company', 'Last Login', 'Status'];
-            $rows = [
-                [1, 'labore21@yahoo.com', 'Ms. Clotilde Gibson', 'Goodwin-Watsica', '1997-08-13 13:59:21', 'open'],
-                [2, 'omnis.in@hotmail.com', 'Allie Kuhic', 'Murphy, Koepp and Morar', '1988-07-19 03:19:08', 'blocked'],
-                [3, 'quia65@hotmail.com', 'Prof. Drew Heller', 'Kihn LLC', '1978-06-19 11:12:57', 'blocked'],
-                [4, 'xet@yahoo.com', 'William Koss', 'Becker-Raynor', '1988-09-07 23:57:45', 'open'],
-                [5, 'ipsa.aut@gmail.com', 'Ms. Antonietta Kozey Jr.', 'Braun Ltd', '2013-10-16 10:00:01', 'open'],
-            ];
-
-            $content->row((new Box('Table', new Table($headers, $rows)))->style('info')->solid());
-            $rader = new Radar();
-
-            $content->row($rader);*/
+                      $doughnut = new Doughnut([
+                          ['Chrome', 700],
+                          ['IE', 500],
+                          ['FireFox', 400],
+                          ['Safari', 600],
+                          ['Opera', 300],
+                          ['Navigator', 100],
+                      ]);
+                      $column->append((new Box('Doughnut', $doughnut))->removable()->collapsable()->style('info'));
+                  });
 
 
+              });
+
+              $headers = ['Id', 'Email', 'Name', 'Company', 'Last Login', 'Status'];
+              $rows = [
+                  [1, 'labore21@yahoo.com', 'Ms. Clotilde Gibson', 'Goodwin-Watsica', '1997-08-13 13:59:21', 'open'],
+                  [2, 'omnis.in@hotmail.com', 'Allie Kuhic', 'Murphy, Koepp and Morar', '1988-07-19 03:19:08', 'blocked'],
+                  [3, 'quia65@hotmail.com', 'Prof. Drew Heller', 'Kihn LLC', '1978-06-19 11:12:57', 'blocked'],
+                  [4, 'xet@yahoo.com', 'William Koss', 'Becker-Raynor', '1988-09-07 23:57:45', 'open'],
+                  [5, 'ipsa.aut@gmail.com', 'Ms. Antonietta Kozey Jr.', 'Braun Ltd', '2013-10-16 10:00:01', 'open'],
+              ];
+
+              $content->row((new Box('Table', new Table($headers, $rows)))->style('info')->solid());
+              $rader = new Radar();
+
+              $content->row($rader);*/
 
 
         });
