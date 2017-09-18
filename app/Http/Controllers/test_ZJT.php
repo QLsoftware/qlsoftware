@@ -87,8 +87,10 @@ class test_ZJT extends Controller
 //            成功进入到了选课系统
             echo '已进入';
             DB::table('getcourses')->where('index', $this->index)->increment('times');
+
             if (head($con['re_c'])->status == 4) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);
+
 //                TODO 检索课程名称
             }
 //          请求选课
