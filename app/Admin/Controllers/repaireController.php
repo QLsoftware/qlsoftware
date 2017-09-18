@@ -94,23 +94,8 @@ class repaireController extends Controller
                 'off' => ['value' => '待处理', 'text' => '待处理', 'color' => 'danger'],
             ];
             $grid->re_state('状态')->switch($states);
-//            $grid->column('profile.homepage', '图片')->images()；
 
 
-//            $grid->avater();
-//
-////            "['foo.jpg', 'bar.png']"
-//
-//// 链式方法调用来显示多图
-//            $grid->avater()->display(function ($images) {
-//
-//                return json_decode($images, true);
-//
-//            })->map(function ($path) {
-//
-//                return 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiQ74qrna7WAhXMzVQKHd-wC9sQjRwIBw&url=http%3A%2F%2Fwww.tooopen.com%2Fimg%2F87_311.aspx&psig=AFQjCNGo2OxRZzK2AAuU_4WBg4d9ki6zOQ&ust=1505806729813779';
-//
-//            })->image();
 
 
 //          禁用创建菜单
@@ -137,13 +122,31 @@ class repaireController extends Controller
      */
     protected function form()
     {
-        return Admin::form(YourModel::class, function (Form $form) {
+        return Admin::form(repair::class, function (Form $form) {
 
-            $form->display('id', 'ID');
+            $form->display('re_id', '编号');
+
+            $form->display('re_name','学生姓名');
+            $form->display('re_xh','学生学号');
+            $form->display('re_phone','联系方式');
+
+            $form->display('re_xq','校区');
+            $form->display('re_lfh','楼房号');
+            $form->display('re_mph','门牌号');
+            $form->display('re_kind','报修种类');
+
+            $form->display('re_remarks','描述');
+            $form->image('re_avatars', trans('admin::lang.avatar'));
 
 
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->display('re_date','提交日期');
+            $form->checkbox('re_state', '状态')->value(['已处理', '未处理']);
+
+
+            $form->display('re_feedback','反馈');
+            $form->display('re_evaluate','评级');
+
+
         });
     }
 }

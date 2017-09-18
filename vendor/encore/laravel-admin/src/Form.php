@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class Form.
  *
- * @method Field\Text           text($column, $label = '')
+ * display@method Field\Text           text($column, $label = '')
  * @method Field\Checkbox       checkbox($column, $label = '')
  * @method Field\Radio          radio($column, $label = '')
  * @method Field\Select         select($column, $label = '')
