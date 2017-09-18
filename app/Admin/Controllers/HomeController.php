@@ -33,10 +33,10 @@ class HomeController extends Controller
             /**最上方的4行*/
             $content->row(function ($row) {
 //                __construct($name, $icon, $color, $link, $info)
-                $row->column(3, new InfoBox('用户总数', 'users', 'aqua', '', User::getusers_num()));
-                $row->column(3, new InfoBox('论坛话题总数', 'book', 'green', '', chatter::getdiscussion_num()));
-                $row->column(3, new InfoBox('报修的申请数量', 'fix', 'yellow', '', repair::getsum()));
-                $row->column(3, new InfoBox('总访问量', 'file', 'red', '/admin/files', 800));
+                $row->column(4, new InfoBox('用户总数', 'users', 'aqua', '', User::getusers_num()));
+                $row->column(4, new InfoBox('论坛话题总数', 'book', 'green', '', chatter::getdiscussion_num()));
+                $row->column(4, new InfoBox('报修的申请数量', 'fix', 'yellow', '', repair::getsum()));
+//                $row->column(3, new InfoBox('总访问量', 'file', 'red', '', '800'));
             });
 
             //话题讨论
@@ -50,12 +50,14 @@ class HomeController extends Controller
                 });
 
             });
+
             $content->row(function (Row $row) {
                 $row->column(12, function (Column $column) {
                     $polarArea = new PolarArea(chatter::getchategories_bili());
                     $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
                 });
             });
+
             $content->row(function (Row $row) {
 
                 $row->column(12, function (Column $column) {
@@ -66,88 +68,34 @@ class HomeController extends Controller
                 });
 
             });
-
-
-//            $content->row(function (Row $row) {
-//
-//                $row->column(6, function (Column $column) {
-//                    $tab = new Tab();
-//                    $pie = new Bar(
-//                        ["January", "February", "March", "April", "May", "June", "July"],
-//                        [
-//                            ['First', [40, 56, 67, 23, 10, 45, 78]],
-//                            ['Second', [93, 23, 12, 23, 75, 21, 88]],
-//                            ['Third', [33, 82, 34, 56, 87, 12, 56]],
-//                            ['Forth', [34, 25, 67, 12, 48, 91, 16]],
-//                        ]
-//                    );
-//                    $tab->add('楼房请求数量', $pie);
-//                    $column->append($tab);
-//                });
-
-//            });
-
-            /*  $content->row(function (Row $row) {
-                  $row->column(6, function (Column $column) {
-
-                      $tab = new Tab();
-
-                      $pie = new Pie([
-                          ['Stracke Ltd', 450], ['Halvorson PLC', 650], ['Dicki-Braun', 250], ['Russel-Blanda', 300],
-                          ['Emmerich-O\'Keefe', 400], ['Bauch Inc', 200], ['Leannon and Sons', 250], ['Gibson LLC', 250],
-                      ]);
-
-                      $tab->add('Pie', $pie);
-                      $tab->add('Table', new Table());
-                      $tab->add('Text', 'blablablabla....');
-
-                      $tab->dropDown([['Orders', '/admin/orders'], ['administrators', '/admin/administrators']]);
-                      $tab->title('Tabs');
-
-                      $column->append($tab);
-
-                      $collapse = new Collapse();
-
-                      $bar = new Bar(
-                          ["January", "February", "March", "April", "May", "June", "July"],
-                          [
-                              ['First', [40, 56, 67, 23, 10, 45, 78]],
-                              ['Second', [93, 23, 12, 23, 75, 21, 88]],
-                              ['Third', [33, 82, 34, 56, 87, 12, 56]],
-                              ['Forth', [34, 25, 67, 12, 48, 91, 16]],
-                          ]
-                      );
-                      $collapse->add('Bar', $bar);
-                      $collapse->add('Orders', new Table());
-                      $column->append($collapse);
-
-                      $doughnut = new Doughnut([
-                          ['Chrome', 700],
-                          ['IE', 500],
-                          ['FireFox', 400],
-                          ['Safari', 600],
-                          ['Opera', 300],
-                          ['Navigator', 100],
-                      ]);
-                      $column->append((new Box('Doughnut', $doughnut))->removable()->collapsable()->style('info'));
-                  });
-
-
-              });
-
-              $headers = ['Id', 'Email', 'Name', 'Company', 'Last Login', 'Status'];
-              $rows = [
-                  [1, 'labore21@yahoo.com', 'Ms. Clotilde Gibson', 'Goodwin-Watsica', '1997-08-13 13:59:21', 'open'],
-                  [2, 'omnis.in@hotmail.com', 'Allie Kuhic', 'Murphy, Koepp and Morar', '1988-07-19 03:19:08', 'blocked'],
-                  [3, 'quia65@hotmail.com', 'Prof. Drew Heller', 'Kihn LLC', '1978-06-19 11:12:57', 'blocked'],
-                  [4, 'xet@yahoo.com', 'William Koss', 'Becker-Raynor', '1988-09-07 23:57:45', 'open'],
-                  [5, 'ipsa.aut@gmail.com', 'Ms. Antonietta Kozey Jr.', 'Braun Ltd', '2013-10-16 10:00:01', 'open'],
-              ];
-
-              $content->row((new Box('Table', new Table($headers, $rows)))->style('info')->solid());
-              $rader = new Radar();
-
-              $content->row($rader);*/
+            $content->row(function (Row $row) {
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('中心校区'));
+                    $column->append((new Box('中心校区', $polarArea))->removable()->collapsable());
+                });
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('洪家楼校区'));
+                    $column->append((new Box('洪家楼校区', $polarArea))->removable()->collapsable());
+                });
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('千佛山校区'));
+                    $column->append((new Box('千佛山校区', $polarArea))->removable()->collapsable());
+                });
+            });
+            $content->row(function (Row $row) {
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('兴隆山校区'));
+                    $column->append((new Box('兴隆山校区', $polarArea))->removable()->collapsable());
+                });
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('兴隆山校区'));
+                    $column->append((new Box('趵突泉校区', $polarArea))->removable()->collapsable());
+                });
+                $row->column(4, function (Column $column) {
+                    $polarArea = new PolarArea(repair::getstate('软件园校区'));
+                    $column->append((new Box('软件园校区', $polarArea))->removable()->collapsable());
+                });
+            });
 
 
         });

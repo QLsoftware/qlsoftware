@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Mail;
 use App\zjtcourses;
+use App\repair;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,29 +45,32 @@ class test_ZJT extends Controller
 
     public function index()
     {
-        echo 'ceshi       <br>';
-        $jar = new \GuzzleHttp\Cookie\CookieJar();
-        $mima = md5('DREAM0418');
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'http://bkjws.sdu.edu.cn',
-            // You can set any number of default request options.
-            'timeout' => 2.0,
-            //参数
-            'form_params' => [
-                'j_username' => '201500130051',
-                'j_password' => $mima,
-            ],
-            'cookies' => $jar,
-        ]);
-        $result = null;
-        try {
-            $result = $client->request('post', '/b/ajaxLogin');
-        } catch (\Exception $exception) {
-            return null;
-        }
-        $result = $client->request('post', '/b/');
-        return $result->getBody();
+
+
+        return DB::table('repair')->where(['re_evaluate' => '好'],['re_xq'=>'中心校区'])->count();
+//        echo 'ceshi       <br>';
+//        $jar = new \GuzzleHttp\Cookie\CookieJar();
+//        $mima = md5('DREAM0418');
+//        $client = new Client([
+//            // Base URI is used with relative requests
+//            'base_uri' => 'http://bkjws.sdu.edu.cn',
+//            // You can set any number of default request options.
+//            'timeout' => 2.0,
+//            //参数
+//            'form_params' => [
+//                'j_username' => '201500130051',
+//                'j_password' => $mima,
+//            ],
+//            'cookies' => $jar,
+//        ]);
+//        $result = null;
+//        try {
+//            $result = $client->request('post', '/b/ajaxLogin');
+//        } catch (\Exception $exception) {
+//            return null;
+//        }
+//        $result = $client->request('post', '/b/');
+//        return $result->getBody();
 //        if ((string)$result->getBody() == '"success"')
 //            return 1;
 //        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')

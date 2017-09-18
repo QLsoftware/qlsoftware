@@ -26,25 +26,35 @@ class repair extends Model
         return $result;
     }
 
-    public static function getre_num()
-    {
-        $re = DB::select('SELECT count(*) as num , date(re_date) as date FROM repair GROUP BY date(re_date);');
-        $result = [];
-//        $da = array();
-        $i = 1;
-        foreach ($re as $r) {
-            $result[0] = $result[0].$r->date;
-        }
-        foreach ($re as $r) {
-            $result[1] = [$r->date, $r->num];
-            $i++;
-        }
-        return $result;
-    }
+//    public static function getre_num()
+//    {
+//        $re = DB::select('SELECT count(*) as num , date(re_date) as date FROM repair GROUP BY date(re_date);');
+//        $result = [];
+////        $da = array();
+//        $i = 1;
+//        foreach ($re as $r) {
+//            $result[0] = $result[0].$r->date;
+//        }
+//        foreach ($re as $r) {
+//            $result[1] = [$r->date, $r->num];
+//            $i++;
+//        }
+//        return $result;
+//    }
 
     public static function getsum(){
-       $re = DB::select('select count(*) from repair');
-       return $re;
+       return DB::table('repair')->count();;
+    }
+
+
+    public static function getstate($xq){
+        $result = [];
+        $result[1] = ['非常好',DB::table('repair')->where(['re_evaluate' => '非常好'],['re_xq'=>$xq])->count()];
+        $result[2] = ['好',DB::table('repair')->where(['re_evaluate' => '好'],['re_xq'=>$xq])->count()];
+        $result[3] = ['一般',DB::table('repair')->where(['re_evaluate' => '一般'],['re_xq'=>$xq])->count()];
+        $result[4] = ['差',DB::table('repair')->where(['re_evaluate' => '差'],['re_xq'=>$xq])->count()];
+        $result[5] = ['非常差',DB::table('repair')->where(['re_evaluate' => '非常差'],['re_xq'=>$xq])->count()];
+
     }
 
 }
