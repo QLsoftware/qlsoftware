@@ -37,7 +37,7 @@ class FixController extends Controller
     public function fix_history()
     {   $SearchOption=['SearchOption' => 1];$repairData = repair::paginate(8);
         $xuehao = Auth::user()->j_username;
-        $repairData = repair::where('re_xh','=',$xuehao)->all();
+        $repairData = repair::where('re_xh','=',$xuehao);
         return view("fix",['repairData'=>$repairData])->with($SearchOption);
     }
 
