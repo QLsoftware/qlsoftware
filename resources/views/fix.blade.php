@@ -236,7 +236,7 @@
                                                                                     <h4 class="list-group-item-heading">
                                                                                         照片</h4>
                                                                                     <img src='{{ $data->re_avatars }}'
-                                                                                         style="width: 100px;height: 100px;float:left;margin-right: 25px">
+                                                                                         style="width: 400px;height: 400px;float:right;margin-right: 122px">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="modal-footer">
