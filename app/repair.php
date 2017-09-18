@@ -49,11 +49,11 @@ class repair extends Model
 
     public static function getstate($xq){
         $result = [];
-        $result[0] = ['非常好',DB::table('repair')->where(['re_evaluate' => '非常好'],['re_xq'=>$xq])->count()];
+        $result[0] = ['非常好',DB::table('repair')->where(['re_evaluate' => '非常好'])->where(['re_xq'=>$xq])->count()];
         $result[1] = ['好',DB::table('repair')->where(['re_evaluate' => '好'])->where(['re_xq'=>$xq])->count()];
-        $result[2] = ['一般',DB::table('repair')->where(['re_evaluate' => '一般'],['re_xq'=>$xq])->count()];
-        $result[3] = ['差',DB::table('repair')->where(['re_evaluate' => '差'],['re_xq'=>$xq])->count()];
-        $result[4] = ['非常差',DB::table('repair')->where(['re_evaluate' => '非常差'],['re_xq'=>$xq])->count()];
+        $result[2] = ['一般',DB::table('repair')->where(['re_evaluate' => '一般'])->where(['re_xq'=>$xq])->count()];
+        $result[3] = ['差',DB::table('repair')->where(['re_evaluate' => '差'])->where(['re_xq'=>$xq])->count()];
+        $result[4] = ['非常差',DB::table('repair')->where(['re_evaluate' => '非常差'])->where(['re_xq'=>$xq])->count()];
         return $result;
     }
 
