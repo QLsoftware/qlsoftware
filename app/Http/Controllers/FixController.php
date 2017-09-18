@@ -38,7 +38,7 @@ class FixController extends Controller
     {   $SearchOption=['SearchOption' => 1];
         $xuehao = Auth::user()->j_username;
 
-        $repairData = repair::where('re_xh',$xuehao)->paginate(10);
+        $repairData = repair::where('re_xh',$xuehao)->paginate(2);
         return view("fix",['repairData'=>$repairData])->with($SearchOption);
     }
 
