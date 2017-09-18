@@ -35,8 +35,8 @@ class HomeController extends Controller
 //                __construct($name, $icon, $color, $link, $info)
                 $row->column(3, new InfoBox('用户总数', 'users', 'aqua', '', User::getusers_num()));
                 $row->column(3, new InfoBox('论坛话题总数', 'book', 'green', '', chatter::getdiscussion_num()));
-                $row->column(3, new InfoBox('报修的申请数量', 'fix', 'yellow', '', 'TODO'));
-                $row->column(3, new InfoBox('总访问量', 'file', 'red', '/admin/files', 'TODO'));
+                $row->column(3, new InfoBox('报修的申请数量', 'fix', 'yellow', '', repair::getsum()));
+                $row->column(3, new InfoBox('总访问量', 'file', 'red', '/admin/files', 800));
             });
 
             //话题讨论
@@ -50,7 +50,12 @@ class HomeController extends Controller
                 });
 
             });
-
+            $content->row(function (Row $row) {
+                $row->column(12, function (Column $column) {
+                    $polarArea = new PolarArea(chatter::getchategories_bili());
+                    $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
+                });
+            });
             $content->row(function (Row $row) {
 
                 $row->column(12, function (Column $column) {
@@ -61,12 +66,7 @@ class HomeController extends Controller
                 });
 
             });
-            $content->row(function (Row $row) {
-                $row->column(12, function (Column $column) {
-                    $polarArea = new PolarArea(chatter::getchategories_bili());
-                    $column->append((new Box('话题类别热度', $polarArea))->removable()->collapsable());
-                });
-            });
+
 
 //            $content->row(function (Row $row) {
 //

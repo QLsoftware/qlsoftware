@@ -40,7 +40,7 @@ class chatter extends Model
         $text_other = '其他';
         $count_other = 0;
         foreach ($re as $r) {
-            if ($i >= 6) {
+            if ($i >= 12) {
                 $count_other += $r->num;
                 continue;
             }

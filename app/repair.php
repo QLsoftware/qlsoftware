@@ -41,4 +41,10 @@ class repair extends Model
         }
         return $result;
     }
+
+    public static function getsum(){
+       $re = DB::select('select count(*) from repair');
+       return $re;
+    }
+
 }
