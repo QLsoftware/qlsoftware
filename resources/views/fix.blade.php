@@ -181,7 +181,7 @@
                                                 @php($details = 'details'.$i)    <!-- 这个用于评价-->
                                                     @php($details_ = '#details'.$i)
                                                     {{--@php($id = '#id'.$i)--}}
-                                                    {{--@if(Auth::user()->j_username==$data->re_xh)--}}
+                                                    @if(true)
                                                         <tr>
                                                             <td>{{$data->re_id}}</td>
                                                             <td>{{$data->re_date}}</td>
@@ -310,7 +310,7 @@
                                                                         </div>
                                                                     </div>
 
-                                                    {{--@endif--}}
+                                                    @endif
 
                                                 </form>
 
