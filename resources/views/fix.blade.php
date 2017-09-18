@@ -3,8 +3,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            {{--<div class="col-md-10 col-md-offset-1">--}}
                 <div class="panel panel-default">
                     <div class="panel-heading">维修界面</div>
 
@@ -156,18 +155,18 @@
                                                 </ul></div>
 
 
-                                                <h2> <div class="panel panel-default" style="width: 80%; margin: 0 auto" >
+                                             <h4>
+                                                 {{--<div class="panel panel-default" style="width: 80%; margin: 0 auto" >--}}
                                                         <!-- Default panel contents -->
-                                                        <div class="panel-heading" >Panel heading</div>
                                                         <!-- Table -->
                                                         <table class="table">
                                                             <tr>
-                                                                <th>id</th>
+                                                                <th>编号</th>
                                                                 <th>时间</th>
                                                                 <th>地点</th>
                                                                 <th>问题</th>
-                                                                <th>stasus</th>
-                                                                <th>option</th>
+                                                                <th>状态</th>
+                                                                <th>操作</th>
                                                             </tr>
                                                         @php($i = 0)
                                                             @foreach($repairData as $data)
@@ -220,7 +219,7 @@
 
                                                                                                     </div>
                                                                                                     @if($data->re_state=="已处理")
-                                                                                                        <button type="button" class="btn btn-primary btn-lg" style="font-size: 12px;" data-toggle="modal" data-target="{{$details_}}">
+                                                                                                        <button type="button" class="btn btn-success btn-lg" style="font-size: 12px;" data-toggle="modal" data-target="{{$details_}}">
                                                                                                             评价
                                                                                                         </button>
                                                                                                         <div class="modal fade" id={{$details}}>
@@ -230,7 +229,8 @@
                                                                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                                                                                         <h4 class="modal-title" id="myModalLabel">评价</h4>
                                                                                                                     </div>
-                                                                                                                    <div class="panel panel-success"><div class="list-group-item active">
+                                                                                                                    <div class="panel panel-default">
+                                                                                                                        <div class="list-group-item active">
                                                                                                                             <h4 class="list-group-item-heading">评价信息</h4>
 
                                                                                                                             {{--<input type="text" name="id" value={{$data->re_id}} />--}}
@@ -245,12 +245,10 @@
 
                                                                                                                             <input type="hidden" name="id" value={{$data->re_id}}>
 
-                                                                                                                            <p class="list-group-item-text">评价: {{$data->re_evaluate}}</p>
+                                                                                                                            <h4>评价: {{$data->re_evaluate}}</h4>
                                                                                                                         </div></div>
                                                                                                                     <div class="modal-footer">
-                                                                                                                        <button type="submit" class="input" style="font-size:15px; font-family:'微软雅黑'; cursor:pointer;">提交</button>
-                                                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal" >GET</button>
-
+                                                                                                                        <button type="submit" class="btn btn-success input" style="font-size:15px; font-family:'微软雅黑'; cursor:pointer;">提交</button>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
@@ -266,10 +264,16 @@
                                                                                         @endif
                                                                                         @endforeach
                                                         </table>
-                                                    </div>
+                                             </h4>
+                                                    {{--</div>--}}
+
+
+
+
+
                                                     <div style="text-align: center; margin: 0 auto">
                                                         {{ $repairData->render() }}
-                                                    </div></h2>
+                                                    </div>
 
 
                                         @elseif($SearchOption == 2)

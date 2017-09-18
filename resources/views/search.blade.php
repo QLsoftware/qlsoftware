@@ -217,7 +217,7 @@
                                                 </table>
                                             </div>
                                         </div>
-
+                                        {{$bjgarray}}
                                         @if($bjgarray!=null)
                                         <div class="panel panel-default">
                                             <div class="panel-heading"><h4>不及格成绩</h4></div>
