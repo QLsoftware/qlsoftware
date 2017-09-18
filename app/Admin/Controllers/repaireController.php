@@ -86,8 +86,8 @@ class repaireController extends Controller
 
 //            是否已经处理
             $states = [
-                '已处理'  => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
-                '待处理' => ['value' => '待处理', 'text' => '已处理', 'color' => 'danger'],
+                'on'  => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
+                'off' => ['value' => '待处理', 'text' => '已处理', 'color' => 'danger'],
             ];
             $grid->re_state('状态')->switch($states);
 
