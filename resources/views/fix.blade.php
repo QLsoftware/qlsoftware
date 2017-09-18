@@ -295,7 +295,6 @@
 
                                                                                         <input type="hidden" name="id"
                                                                                                value={{$data->re_id}}>
-
                                                                                         <h4>
                                                                                             评价: {{$data->re_evaluate}}</h4>
                                                                                     </div>
