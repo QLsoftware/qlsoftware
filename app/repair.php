@@ -54,7 +54,7 @@ class repair extends Model
         $result[3] = ['一般',DB::table('repair')->where(['re_evaluate' => '一般'],['re_xq'=>$xq])->count()];
         $result[4] = ['差',DB::table('repair')->where(['re_evaluate' => '差'],['re_xq'=>$xq])->count()];
         $result[5] = ['非常差',DB::table('repair')->where(['re_evaluate' => '非常差'],['re_xq'=>$xq])->count()];
-
+        return $result;
     }
 
 }

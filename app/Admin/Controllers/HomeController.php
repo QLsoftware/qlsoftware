@@ -71,29 +71,29 @@ class HomeController extends Controller
             $content->row(function (Row $row) {
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('中心校区'));
-                    $column->append((new Box('中心校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('中心校区维修评价比', $polarArea))->removable()->collapsable());
                 });
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('洪家楼校区'));
-                    $column->append((new Box('洪家楼校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('洪家楼校区维修评价比', $polarArea))->removable()->collapsable());
                 });
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('千佛山校区'));
-                    $column->append((new Box('千佛山校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('千佛山校区维修评价比', $polarArea))->removable()->collapsable());
                 });
             });
             $content->row(function (Row $row) {
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('兴隆山校区'));
-                    $column->append((new Box('兴隆山校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('兴隆山校区维修评价比', $polarArea))->removable()->collapsable());
                 });
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('兴隆山校区'));
-                    $column->append((new Box('趵突泉校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('趵突泉校区维修评价比', $polarArea))->removable()->collapsable());
                 });
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('软件园校区'));
-                    $column->append((new Box('软件园校区', $polarArea))->removable()->collapsable());
+                    $column->append((new Box('软件园校区维修评价比', $polarArea))->removable()->collapsable());
                 });
             });
 
