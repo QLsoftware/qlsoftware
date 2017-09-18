@@ -236,13 +236,13 @@
                                                                                     <h4 class="list-group-item-heading">
                                                                                         照片</h4>
                                                                                     <img src='{{ $data->re_avatars }}'
-                                                                                         style="width: 100px;height: 100px;float:left;border-radius: 50%;margin-right: 25px">
+                                                                                         style="width: 100px;height: 100px;float:left;margin-right: 25px">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="modal-footer">
                                                                                 <button type="button"
                                                                                         class="btn btn-default"
-                                                                                        data-dismiss="modal">GET
+                                                                                        data-dismiss="modal">关闭
                                                                                 </button>
                                                                             </div>
                                                                         </div>
