@@ -89,7 +89,7 @@ class repaireController extends Controller
                 '已处理'  => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
                 '待处理' => ['value' => '待处理', 'text' => '已处理', 'color' => 'danger'],
             ];
-            $grid->status()->switch($states);
+            $grid->re_state('状态')->switch($states);
 
 //          禁用创建菜单
             $grid->disableCreation();
