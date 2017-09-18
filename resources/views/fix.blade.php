@@ -235,8 +235,10 @@
                                                                                 <div class="list-group-item active">
                                                                                     <h4 class="list-group-item-heading">
                                                                                         照片</h4>
+                                                                                    @if($data->re_avatars!='')
                                                                                     <img src='{{ $data->re_avatars }}'
                                                                                          style="width: 400px;height: 400px;float:right;margin-right: 122px">
+                                                                                     @endif
                                                                                 </div>
                                                                             </div>
                                                                             <div class="modal-footer">
