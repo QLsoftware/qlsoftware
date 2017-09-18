@@ -70,8 +70,8 @@ class HomeController extends Controller
             });
             $content->row(function (Row $row) {
                 $row->column(4, function (Column $column) {
-                    $polarArea = new PolarArea(repair::getstate('中心校区'));
-                    $column->append((new Box('中心校区维修评价比', $polarArea))->removable()->collapsable());
+                    $polarArea_1 = new PolarArea(repair::getstate('中心校区'));
+                    $column->append((new Box('中心校区维修评价比', $polarArea_1))->removable()->collapsable());
                 });
                 $row->column(4, function (Column $column) {
                     $polarArea = new PolarArea(repair::getstate('洪家楼校区'));
