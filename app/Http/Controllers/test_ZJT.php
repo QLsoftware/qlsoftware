@@ -27,7 +27,7 @@ use App\Http\Requests;
 class test_ZJT extends Controller
 {
 
-    protected $index = 1;
+    protected $index = 6;
 
     protected $email = '851207685@qq.com';
     protected $title = '关于2014级本科生因暑期夏令营申请缓考科目补考时间的通知';
@@ -35,8 +35,9 @@ class test_ZJT extends Controller
     protected $link = 'http://www.bkjx.sdu.edu.cn/info/1010/25308.htm';
     protected $from = '本科教育';
     protected $selected = '已选';
+    protected $succ = '成功';
     protected $failed = '失败';
-    protected $full = '已满!<br/>';
+    protected $full = '上课人数已满';
 
 
     //添加中间件，进行
@@ -72,6 +73,7 @@ class test_ZJT extends Controller
                 sleep(10);
                 dispatch(new GetC($this->index));
                 Log::info('系统未开放');
+                echo '未进入';
                 return;
             }
 //            若选课系统开放了，还是没有认证成功，则考虑是不是用户的张哈和密码有问题  直接throw这样一个异常，便可以了
@@ -83,6 +85,7 @@ class test_ZJT extends Controller
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => '密码失效']);
         } else {
 //            成功进入到了选课系统
+            echo '已进入';
             DB::table('getcourses')->where('index', $this->index)->increment('times');
             if (head($con['re_c'])->status == 4) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);
@@ -93,13 +96,14 @@ class test_ZJT extends Controller
 //            TODO 结果分析   由于网站未开放，代码正确性有待确认
             $result = get_object_vars(json_decode($result->getBody()));
             $msg = $result['msg'];
-
-            if (substr($msg, -3, -1) == $this->selected) {
-                return '已选';
+//            课程[数值计算]已选!
+//            [数值计算]选课成功!
+            return 'asdasdasdasd'.mb_substr($msg, -12,-6) . 'asd';
+            if (mb_substr($msg, -3, -1) == $this->selected || mb_substr($msg, -3, -1) == $this->succ) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 1]);
                 dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, 1))->onQueue('email'));
             }
-            if (substr($msg, -8) == $this->full) {
+            if (mb_substr($msg, -12,-6) == $this->full) {
                 dispatch(new GetC($this->index));
             }
             if (substr($msg, -3) == $this->failed) {

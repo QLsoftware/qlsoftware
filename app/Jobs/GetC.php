@@ -82,7 +82,7 @@ class GetC extends Job implements ShouldQueue
             if (baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password) == -1))
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => '密码失效']);
         } else {
-//            成功进入到了选课系统
+//            echo('成功进入到了选课系统');
             DB::table('getcourses')->where('index', $this->index)->increment('times');
             if (head($con['re_c'])->status == 4) {
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => 0]);

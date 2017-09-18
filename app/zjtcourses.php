@@ -71,7 +71,7 @@ class zjtcourses extends Model
 
     public function getatask($index)
     {
-        $re_c = DB::table("getcourses")->where(['id' => $index])->get();
+        $re_c = DB::table("getcourses")->where(['index' => $index])->get();
         $re_u = null;
         if ($re_c) {
             $id = head($re_c)->id;
