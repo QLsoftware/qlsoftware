@@ -88,6 +88,9 @@ class repaireController extends Controller
 
             $grid->model()->where('re_xq', '=', Admin::user()->place);
 
+            $grid->picture()->image('http://do.zjtao.me'.$this->re_avatars, 100, 100);
+
+
 //            是否已经处理
             $states = [
                 'on' => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
