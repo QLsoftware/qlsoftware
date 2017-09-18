@@ -84,7 +84,14 @@ class repaireController extends Controller
             $grid->re_remarks('问题描述');
             $grid->re_feedback('申请者评价');
 
+            $grid->filter(function($filter){
 
+                // 去掉默认的id过滤器
+                $filter->disableIdFilter();
+
+                // 在这里添加字段过滤器
+                $filter->equal('re_xq', Auth::user()->place);
+            });
 
 
 
