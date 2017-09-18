@@ -125,21 +125,13 @@
                                                     <span class="input-group-addon">上传图片</span>
                                                     <!--只需要将输入的内容类型‘type’，定义为file即可；name为键   选中的文件为键值-->
                                                     {{--<file name ="avatar" id="avatar" class="form-control"></file>--}}
-                                                    <input class="form-control" type="file" name="avatar">
+                                                    <input class="form-control" type="file" name="asd">
                                                 </div>
                                             </div>
-
-
-
-
                                             <div class="bottom">
                                                 <button type="submit" class="input" style="font-size:15px; font-family:'微软雅黑'; cursor:pointer;">提交</button>
                                                 <input class="input" id="resetz" type="reset" value="重置">
                                             </div>
-
-
-
-
                                         </form>
 
 

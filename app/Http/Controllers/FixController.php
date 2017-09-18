@@ -53,18 +53,18 @@ class FixController extends Controller
 
     public function text(Request $request)
     {
-
+        return $request->all();
         $f_avatars = '';//若没有图片则为空；
-        if ($request->hasFile('avatar')) {
+        if ($request->hasFile('asd')) {
             //echo "<script language=javascript>alert({{$f_avatars}});</script>";
             //获取头像文件
-            $avatar = $request->file('avatar');
+            $avatar = $request->file('asd');
             //生成文件名称   getClientOriginalExtension()得到图像的后缀名称
             $file_name = time() . '.' . $avatar->getClientOriginalExtension();
             //修改头像文件的尺寸   并进行本地存储    注意需要先  use Intervention\Image\Facades\Image;
             Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/p_avatars/' . $file_name));
             //在数据库中保存文件的存储地址      数据库中只保存地址，不存储图像数据
-            $f_avatars = 'uploads/p_avatars/' . $file_name; //生成图片文件
+            $f_avatars = '/uploads/p_avatars/' . $file_name; //生成图片文件
             //echo  $f_avatars;
             //存储结束
         }
