@@ -119,7 +119,7 @@ class baseapi extends Controller
         }
         if ((string)$result->getBody() == '"success"')
             return $client;
-        elseif ((string)$result->getBody() == '"用户名或密码错误!"')
+        elseif ((string)$result->getBody() == '"对不起,用户名或密码输入有误,请重新输入!"')
             return null;
         else {
             echo '连接教务:'.(string)$result->getBody() ;

@@ -78,7 +78,7 @@ class GetC extends Job implements ShouldQueue
             }
 //            若选课系统开放了，还是没有认证成功，则考虑是不是用户的张哈和密码有问题  直接throw这样一个异常，便可以了
 //            异常会核实账号和密码是否有问题，若有问题会将密码删除
-            throw new usernamefailed(head($con['re_u'])->id);
+//            throw new usernamefailed(head($con['re_u'])->id);
 
 //            单独判断密码是否有误，若有误，将选课任务设为异常，挂起
             if (baseapi::testj_username(head($con['re_u'])->j_username, base64_decode(head($con['re_u'])->j_password) == -1))
