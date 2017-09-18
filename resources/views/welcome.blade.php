@@ -113,7 +113,7 @@
 
                         <!-- 滚动图片 -->
                         <div class="carousel-inner">
-                            <div class=" active item menu-item light-orange">
+                            <div class=" active item menu-item ">
                                 {{--<a href="{{ url('/forums') }}" data-toggle="modal">--}}
                                 @foreach($a1 as $a)
                                     <a href={{$a->href}}> {{$a->title.'  '.$a->data}}</a>
