@@ -88,8 +88,7 @@ class repaireController extends Controller
 
             $grid->model()->where('re_xq', '=', Admin::user()->place);
 
-            $im =   'http://do.zjtao.me'.$this->re_avatars;
-            $grid->picture()->image($im, 100, 100);
+            $grid->picture()->re_avatars();
 
 
 //            是否已经处理
