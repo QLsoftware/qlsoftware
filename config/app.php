@@ -169,7 +169,7 @@ return [
         Encore\Admin\Providers\AdminServiceProvider::class,
 
 //        debug
-        Barryvdh\Debugbar\ServiceProvider::class,
+//        Barryvdh\Debugbar\ServiceProvider::class,
 
 //        google分析
         Ipunkt\LaravelAnalytics\AnalyticsServiceProvider::class,
