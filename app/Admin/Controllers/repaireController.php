@@ -9,6 +9,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 use App\repair;
+use Illuminate\Support\Facades\Auth;
 
 class repaireController extends Controller
 {
@@ -23,7 +24,7 @@ class repaireController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('维修人员列表');
+            $content->header('维修申请');
             $content->description();
 
             $content->body($this->grid());
@@ -72,10 +73,47 @@ class repaireController extends Controller
     {
         return Admin::grid(repair::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->re_id('编号');
+            $grid->column('地点')->display(function () {
+                return $this->re_xq . ' ' . $this->re_lfh . ' ' . $this->re_mph;
+            });
+            $grid->column('学生信息')->display(function () {
+                return $this->re_name . ' ' . $this->re_xh ;
+            });
+            $grid->re_phone('联系方式');
+            $grid->re_date('报修时间');
+            $grid->re_remarks('问题描述');
+            $grid->re_feedback('申请者评价');
 
-            $grid->created_at();
-            $grid->updated_at();
+            $grid->filter(function($filter){
+
+                // 去掉默认的id过滤器
+                $filter->disableIdFilter();
+
+                // 在这里添加字段过滤器
+                $filter->equal('re_xq', Auth::user()->place);
+            });
+
+
+
+//            是否已经处理
+            $states = [
+                'on'  => ['value' => '已处理', 'text' => '已处理', 'color' => 'success'],
+                'off' => ['value' => '待处理', 'text' => '已处理', 'color' => 'danger'],
+            ];
+            $grid->re_state('状态')->switch($states);
+
+//          禁用创建菜单
+            $grid->disableCreation();
+
+
+
+
+
+            $grid->actions(function ($actions) {
+                $actions->disableDelete();
+                $actions->disableEdit();
+            });
         });
     }
 

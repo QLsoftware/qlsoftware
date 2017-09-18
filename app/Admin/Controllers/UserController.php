@@ -73,8 +73,8 @@ class UserController extends Controller
     {
         return Admin::grid(User::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
-            $grid->column('name');
+            $grid->id('编号')->sortable();
+            $grid->column('姓名');
             $grid->email('邮箱');
             $grid->column('是否绑定学号')->display(function (){
                if($this->j_password==null||$this->j_password=='')

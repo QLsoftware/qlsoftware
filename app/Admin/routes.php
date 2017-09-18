@@ -16,6 +16,8 @@ Route::group([
     $router->resource('data/jobs', jobsController::class);
     $router->resource('data/getc', getcoursesController::class);
     $router->resource('data/ch_cat', chatter_categoriesController::class);
+    $router->resource('repair', repaireController::class);
+
 });
 
 
