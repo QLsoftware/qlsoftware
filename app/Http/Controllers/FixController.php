@@ -53,7 +53,6 @@ class FixController extends Controller
 
     public function text(Request $request)
     {
-        return $request->all();
         $f_avatars = '';//若没有图片则为空；
         if ($request->hasFile('asd')) {
             //echo "<script language=javascript>alert({{$f_avatars}});</script>";
