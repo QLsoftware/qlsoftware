@@ -51,6 +51,10 @@ class test_ZJT extends Controller
     public function index()
     {
 
+
+
+
+        return DB::table('users')->where(['sdu_notify' => 1])->get();
         //        检查任务状态
         echo 'start' .' '. $this->index;
         $zjtcourses = new zjtcourses();
