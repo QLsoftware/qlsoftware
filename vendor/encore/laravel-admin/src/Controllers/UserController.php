@@ -115,6 +115,8 @@ class UserController extends Controller
             $form->multipleSelect('roles', trans('admin::lang.roles'))->options(Role::all()->pluck('name', 'id'));
             $form->multipleSelect('permissions', trans('admin::lang.permissions'))->options(Permission::all()->pluck('name', 'id'));
 
+            $form->radio('place', '分管校区')->options(['中心校区' => '中心校区', '千佛山校区'=> '千佛山校区','兴隆山校区' => '兴隆山校区','趵突泉校区'=>'趵突泉校区','洪家楼校区'=>'洪家楼校区','软件园校区'=>'软件园校区']);
+
             $form->display('created_at', trans('admin::lang.created_at'));
             $form->display('updated_at', trans('admin::lang.updated_at'));
 
