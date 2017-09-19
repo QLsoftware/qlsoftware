@@ -29,7 +29,7 @@ class studenonline extends Model
         }
         echo '分配结束';
         dispatch(new \App\Jobs\curl($href));
-        log::info((string)$re);
+//        log::info((string)$re);
     }
 
     public function addarecord_init($title, $data, $href, $from)
