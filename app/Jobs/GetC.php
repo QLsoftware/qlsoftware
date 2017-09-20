@@ -28,7 +28,7 @@ class GetC extends Job implements ShouldQueue
     protected $index;
     protected $selected = '已选';
     protected $succ = '成功';
-    protected $failed = '失败';
+    protected $failed = '失败!';
     protected $full = '上课人数已满';
     /**
      * GetC constructor.
@@ -107,7 +107,7 @@ class GetC extends Job implements ShouldQueue
             if (mb_substr($msg, -12,-6) == $this->full) {
                 dispatch(new GetC($this->index));
             }
-            if (substr($msg, -3) == $this->failed) {
+            if (mb_substr($msg, -3) == $this->failed) {
 //              TODO 不知所措
                 DB::table('getcourses')->where('index', $this->index)->update(['status' => -2, 'info' => $msg]);
                 dispatch((new \App\Jobs\sendgetc(head($con['re_u'])->email, head($con['re_c'])->kch, head($con['re_c'])->kxh, head($con['re_c'])->name, -2))->onQueue('email'));
