@@ -51,7 +51,7 @@ class GetC extends Job implements ShouldQueue
     public function handle()
     {
         //        检查任务状态
-        sleep(2);
+        sleep(3);
         echo 'start' .' '. $this->index;
         $zjtcourses = new zjtcourses();
 //        若任务已经被删除，挂起
